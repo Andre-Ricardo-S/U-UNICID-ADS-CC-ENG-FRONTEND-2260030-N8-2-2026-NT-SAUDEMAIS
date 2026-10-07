@@ -1,0 +1,86 @@
+body{
+    font-family:Arial, Helvetica, sans-serif ;
+    background-color: #E0F2FE;
+}
+/* Cabeçalho */
+
+
+header img{
+    width: 0.9cm ;
+    height: 0.8cm
+    
+}
+
+header hr{
+    color: gray;
+    
+}
+
+/* navbar */
+navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+navbar h1 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+navbar img {
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+}
+/* navbar */
+/* Cabeçalho */
+
+/* Conteiner */
+
+
+nav section {
+    padding-left: 2cm;
+    width: 30cm;
+    display: flex;
+    gap: 80px;
+    align-items: center;
+}
+
+nav section img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.botoes button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #376cdf;
+    color: white;
+    font-size: 10px;
+    
+}
+
+.botoes .secundario{
+    background-color: rgb(209, 205, 205);
+    color: black ;
+    border: none;
+}
+/* Conteiner */
+
+

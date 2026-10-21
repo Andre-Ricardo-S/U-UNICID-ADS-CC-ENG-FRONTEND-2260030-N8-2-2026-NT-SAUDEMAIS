@@ -1,75 +1,49 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Saude Para Todos</title>
-
+    <title>SaúdeMais</title>
 </head>
 <body>
-    <!-- Cabeçalho -->
     <header>
-
-        <navbar>
+        <nav class="navbar">
             <h1>
-                <img src="./assets/image-removebg-preview.png" alt="Logo">
-                Saude Legal
+                <a href="./index.html">
+                    <img src="./assets/image-removebg-preview.png" alt="Logo SaúdeMais">
+                    SaúdeMais
+                </a>
             </h1>
-    
+
             <div class="menu">
-                <a href="#">Serviços</a>
+                <a href="./agendar.html">Serviços</a>
                 <a href="#">Prevenção</a>
                 <a href="#">SUS</a>
-                <a href="#">Contato</a>
-                <a href="#">Emergência</a>
+                <a href="./sobre-nos.html">Sobre nós</a>
+                <a href="./contato.html">Emergência</a>
             </div>
-        </navbar>
-    
+        </nav>
         <hr>
-    
     </header>
-    <!-- Cabeçalho -->
 
-    <!-- Corpo -->
-    <nav>
-        <br>
-        <br>
-    
-        <section>
-    
-            <div>
-                <h1>
-                    Saude em todo lugar
-                </h1>
-    
-                <p>
-                    Encontre unidades de saúde próximas, 
-                    agende consultas e acesse informações de 
-                    prevenção para você e sua família.
-                </p>
-    
+    <main>
+        <section class="hero">
+            <div class="hero-texto">
+                <h1>Saúde em todo lugar</h1>
+                <p>Unidades próximas, consultas e prevenção — simples e perto de você.</p>
                 <div class="botoes">
-                    <button>
-                        Agendar Consulta
-                    </button>
-    
-                    <button class="secundario">
-                        Encontrar unidades
-                    </button>
+                    <a href="./agendar.html">Agendar consulta</a>
+                    <a class="secundario" href="#mapa">Encontrar unidades</a>
                 </div>
             </div>
-    
-            <img src="./assets/medica.avif" alt="medica_infos">
-    
+            <img src="./assets/medica.avif" alt="Profissional de saúde">
         </section>
-    </nav>
-   <!-- Corpo -->
+    </main>
 
-   <!-- Rodapé -->
-    <footer>
-
+    <footer id="mapa">
+        <h2>Onde nos encontrar?</h2>
+        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14631.85098269539!2d-46.563328!3d-23.5338423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5fdcd8db398f%3A0x97014393e4ef19b8!2sUNICID%20-%20Universidade%20Cidade%20de%20S%C3%A3o%20Paulo%20-%20Campus%20Tatuap%C3%A9!5e0!3m2!1spt-BR!2sbr!4v1792540688211!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa da UNICID Campus Tatuapé"></iframe>
     </footer>
-   <!-- Rodapé -->
 </body>
 </html>

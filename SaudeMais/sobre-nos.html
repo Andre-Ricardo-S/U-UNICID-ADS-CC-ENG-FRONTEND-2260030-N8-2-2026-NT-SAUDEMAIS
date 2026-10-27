@@ -5,27 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SaúdeMais - Sobre Nós</title>
     <style>
-        /* ESTILOS INTEGRADOS PARA GARANTIR QUE NUNCA QUEBRE */
+        /* RESET E CONFIGURAÇÕES GLOBAIS (AZUL, BRANCO E CINZA) */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
-            background-color: #f4f9f6;
-            color: #333333;
+            background-color: #f8fafc; /* Cinza bem claro e limpo */
+            color: #334155; /* Cinza escuro para texto */
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
+
+        /* CABEÇALHO */
         header {
             background: #ffffff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
+
         nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -35,74 +39,89 @@
             padding: 1rem 2rem;
             flex-wrap: wrap;
         }
+
         nav h1 a {
             display: flex;
             align-items: center;
             gap: 10px;
             text-decoration: none;
-            color: #0d7c66;
+            color: #1d4ed8; /* Azul corporativo */
             font-size: 1.5rem;
             font-weight: 700;
         }
-        /* TRAVA DE SEGURANÇA PARA A LOGO NÃO FICAR GIGANTE */
+
+        /* TRAVA DE SEGURANÇA PARA A LOGO */
         nav h1 img {
             height: 35px;
             max-height: 35px;
             width: auto;
         }
+
         nav div {
             display: flex;
             gap: 1rem;
             align-items: center;
             flex-wrap: wrap;
         }
+
         nav div a {
             text-decoration: none;
-            color: #555555;
+            color: #64748b; /* Cinza médio */
             font-weight: 500;
             font-size: 0.9rem;
             transition: color 0.3s ease;
         }
-        nav div a:hover, nav div a.active {
-            color: #0d7c66;
+
+        nav div a:hover, 
+        nav div a.active {
+            color: #1d4ed8; /* Azul ao passar o mouse ou na página ativa */
             font-weight: 600;
         }
+
         header hr {
             border: none;
             border-top: 1px solid #e2e8f0;
         }
+
+        /* CONTEÚDO PRINCIPAL */
         main {
             flex: 1;
             max-width: 1200px;
             width: 100%;
-            margin: 2rem auto;
+            margin: 2.5rem auto;
             padding: 0 2rem;
         }
+
         .card {
             background: #ffffff;
             padding: 2.5rem;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
             margin-bottom: 1.5rem;
+            border: 1px solid #e2e8f0;
         }
+
         h2 {
-            color: #0d7c66;
+            color: #1e3a8a; /* Azul escuro elegante */
             margin-bottom: 1rem;
             font-size: 1.8rem;
         }
+
         h3 {
             color: #1e293b;
             margin-bottom: 0.5rem;
             font-size: 1.2rem;
         }
+
         p {
             line-height: 1.6;
             color: #64748b;
             margin-bottom: 1rem;
         }
+
         .btn {
             display: inline-block;
-            background: #0d7c66;
+            background: #2563eb; /* Azul moderno de destaque */
             color: #ffffff;
             padding: 0.75rem 1.5rem;
             border-radius: 6px;
@@ -112,20 +131,26 @@
             cursor: pointer;
             transition: background 0.3s ease;
         }
+
         .btn:hover {
-            background: #095c4d;
+            background: #1d4ed8;
         }
+
+        /* RODAPÉ */
         footer {
-            background: #1e293b;
+            background: #0f172a; /* Azul escuro quase preto */
             color: #ffffff;
             text-align: center;
             padding: 2rem;
             margin-top: auto;
         }
+
         footer p {
             color: #94a3b8;
             margin-bottom: 0;
         }
+
+        /* RESPONSIVO */
         @media (max-width: 968px) {
             nav {
                 flex-direction: column;
@@ -139,7 +164,8 @@
     </style>
 </head>
 <body>
-    <!-- Cabeçalho Padrão -->
+
+    <!-- CABEÇALHO COM LINKS CORRETOS -->
     <header>
         <nav>
             <h1>
@@ -164,50 +190,51 @@
         <hr>
     </header>
 
-    <!-- Conteúdo Principal -->
+    <!-- CONTEÚDO DA PÁGINA SOBRE NÓS -->
     <main>
-        <!-- Seção de Introdução -->
+        <!-- Introdução -->
         <div class="card" style="text-align: center; padding: 3rem 2rem;">
             <h2>Transformando o Acesso à Saúde</h2>
             <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
-                O <strong>SaúdeMais</strong> nasceu com um propósito claro: aproximar o cidadão dos serviços públicos essenciais de saúde, unindo tecnologia, agilidade e humanização.
+                O <strong>SaúdeMais</strong> nasceu com um propósito claro: aproximar o cidadão dos serviços públicos essenciais de saúde, unindo tecnologia moderna, agilidade e humanização.
             </p>
         </div>
 
-        <!-- Grid de Missão, Visão e Valores -->
+        <!-- Missão, Visão e Valores (Grid) -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
-            <div class="card" style="border-top: 4px solid #0d7c66;">
+            <div class="card" style="border-top: 4px solid #2563eb;">
                 <h3>🎯 Nossa Missão</h3>
                 <p>Facilitar o dia a dia da população na busca por unidades de atendimento, agendamentos e informações preventivas de forma transparente e rápida.</p>
             </div>
-            <div class="card" style="border-top: 4px solid #0d7c66;">
+            <div class="card" style="border-top: 4px solid #2563eb;">
                 <h3>👁️ Nossa Visão</h3>
-                <p>Ser a principal referência em plataformas digitais de apoio à saúde pública integrada, servindo de modelo para inovação no setor.</p>
+                <p>Ser a principal referência em plataformas digitais de apoio à saúde pública integrada, servindo de modelo para inovação tecnológica no setor.</p>
             </div>
-            <div class="card" style="border-top: 4px solid #0d7c66;">
+            <div class="card" style="border-top: 4px solid #2563eb;">
                 <h3>💡 Nossos Valores</h3>
-                <p>Empatia com o próximo, acessibilidade universal, inovação constante, transparência nas informações e compromisso com o bem-estar social.</p>
+                <p>Empatia com o próximo, acessibilidade universal, inovação constante, transparência nas informações e compromisso absoluto com o bem-estar social.</p>
             </div>
         </div>
 
-        <!-- Seção Contexto Acadêmico (UNICID) -->
+        <!-- Seção Acadêmica UNICID -->
         <div class="card" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
             <div style="flex: 1; min-width: 280px;">
                 <h2>Inovação Acadêmica (UNICID)</h2>
-                <p>Este projeto foi desenvolvido como parte das entregas da disciplina de Front-End da <strong>Universidade Cidade de São Paulo (UNICID)</strong>.</p>
-                <p>Nossa equipe uniu conhecimentos técnicos de desenvolvimento web, design de interface (UI/UX) e experiência do usuário para criar uma solução real e funcional voltada à comunidade.</p>
-                <a href="./contato.html" class="btn" style="margin-top: 1rem;">Entre em Contato Conosco</a>
+                <p>Este projeto foi desenvolvido como parte das entregas oficiais da disciplina de Front-End da <strong>Universidade Cidade de São Paulo (UNICID)</strong>.</p>
+                <p>Nossa equipe uniu conhecimentos técnicos de desenvolvimento web, design de interface (UI/UX) e experiência do usuário para criar uma solução digital funcional e de alto impacto.</p>
+                <a href="./contato.html" class="btn" style="margin-top: 1rem;">Entre em Contato</a>
             </div>
-            <div style="background: #e6f4ea; padding: 2rem; border-radius: 12px; text-align: center; flex: 1; min-width: 250px;">
-                <h3 style="color: #0d7c66; font-size: 1.5rem; margin-bottom: 0.5rem;">Projeto Front-End</h3>
-                <p style="color: #333; font-weight: 500;">Tecnologia com foco humano e impacto social positivo.</p>
+            <div style="background: #f1f5f9; padding: 2rem; border-radius: 12px; text-align: center; flex: 1; min-width: 250px; border: 1px solid #cbd5e1;">
+                <h3 style="color: #1e3a8a; font-size: 1.5rem; margin-bottom: 0.5rem;">Projeto Front-End</h3>
+                <p style="color: #475569; font-weight: 500;">Tecnologia com foco humano, eficiência e design moderno.</p>
             </div>
         </div>
     </main>
 
-    <!-- Rodapé Padrão -->
+    <!-- RODAPÉ -->
     <footer>
         <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
     </footer>
+
 </body>
 </html>

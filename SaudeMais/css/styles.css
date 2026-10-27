@@ -1,5 +1,5 @@
 /* ==========================================
-   RESET E CONFIGURAÇÕES GLOBAIS
+   RESET E CONFIGURAÇÕES GLOBAIS (AZUL, BRANCO E CINZA)
    ========================================== */
    * {
     margin: 0;
@@ -9,8 +9,8 @@
 }
 
 body {
-    background-color: #f4f9f6;
-    color: #333333;
+    background-color: #f8fafc; /* Cinza bem claro e limpo */
+    color: #334155; /* Cinza escuro para o texto */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -20,8 +20,8 @@ body {
    CABEÇALHO E NAVEGAÇÃO
    ========================================== */
 header {
-    background: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    background: #ffffff; /* Fundo branco */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -41,15 +41,15 @@ nav h1 a {
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    color: #0d7c66;
+    color: #1d4ed8; /* Azul corporativo moderno */
     font-size: 1.5rem;
     font-weight: 700;
 }
 
-/* TRAVA DE SEGURANÇA PARA A LOGO NÃO FICAR GIGANTE */
+/* TRAVA DE SEGURANÇA PARA A LOGO */
 nav h1 img {
-    height: 40px;
-    max-height: 40px;
+    height: 35px;
+    max-height: 35px;
     width: auto;
 }
 
@@ -62,7 +62,7 @@ nav div {
 
 nav div a {
     text-decoration: none;
-    color: #555555;
+    color: #64748b; /* Cinza médio para os links */
     font-weight: 500;
     font-size: 0.95rem;
     transition: color 0.3s ease;
@@ -70,13 +70,13 @@ nav div a {
 
 nav div a:hover, 
 nav div a.active {
-    color: #0d7c66;
+    color: #1d4ed8; /* Azul ao passar o mouse ou na página ativa */
     font-weight: 600;
 }
 
 header hr {
     border: none;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid #e2e8f0; /* Linha divisória cinza clara */
 }
 
 /* ==========================================
@@ -91,18 +91,19 @@ main {
 }
 
 .card {
-    background: #ffffff;
+    background: #ffffff; /* Cartões brancos */
     padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     margin-bottom: 1.5rem;
+    border: 1px solid #e2e8f0; /* Borda cinza suave */
 }
 
 /* ==========================================
    TIPOGRAFIA
    ========================================== */
 h2 {
-    color: #0d7c66;
+    color: #1e3a8a; /* Azul escuro elegante */
     margin-bottom: 1rem;
     font-size: 1.8rem;
 }
@@ -124,7 +125,7 @@ p {
    ========================================== */
 .btn {
     display: inline-block;
-    background: #0d7c66;
+    background: #2563eb; /* Azul moderno para botões */
     color: #ffffff;
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
@@ -136,7 +137,7 @@ p {
 }
 
 .btn:hover {
-    background: #095c4d;
+    background: #1d4ed8; /* Tom de azul mais escuro no hover */
 }
 
 input[type="text"],
@@ -158,7 +159,7 @@ input:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    border-color: #0d7c66;
+    border-color: #2563eb;
     background-color: #ffffff;
 }
 
@@ -171,7 +172,7 @@ label {
    RODAPÉ
    ========================================== */
 footer {
-    background: #1e293b;
+    background: #0f172a; /* Azul escuro quase preto corporativo */
     color: #ffffff;
     text-align: center;
     padding: 2rem;

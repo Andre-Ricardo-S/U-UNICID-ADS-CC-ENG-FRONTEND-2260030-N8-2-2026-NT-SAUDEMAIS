@@ -46,8 +46,10 @@ nav h1 a {
     font-weight: 700;
 }
 
+/* TRAVA DE SEGURANÇA PARA A LOGO NÃO FICAR GIGANTE */
 nav h1 img {
     height: 40px;
+    max-height: 40px;
     width: auto;
 }
 

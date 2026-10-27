@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaúdeMais - Unidades</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f8fafc; color: #334155; display: flex; flex-direction: column; min-height: 100vh; }
+        header { background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; flex-wrap: wrap; }
+        nav h1 a { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1d4ed8; font-size: 1.5rem; font-weight: 700; }
+        nav h1 img { height: 35px !important; max-height: 35px !important; width: auto !important; }
+        nav div { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+        nav div a { text-decoration: none; color: #64748b; font-weight: 500; font-size: 0.9rem; transition: color 0.3s; }
+        nav div a:hover, nav div a.active { color: #1d4ed8; font-weight: 600; }
+        header hr { border: none; border-top: 1px solid #e2e8f0; margin: 0; }
+        main { flex: 1; max-width: 1200px; width: 100%; margin: 2rem auto; padding: 0 2rem; }
+        .card { background: #ffffff; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; margin-bottom: 1.5rem; }
+        h2 { color: #1e3a8a; margin-bottom: 1rem; font-size: 1.8rem; }
+        h3 { color: #1e293b; margin-bottom: 0.5rem; }
+        p { line-height: 1.6; color: #64748b; margin-bottom: 0.5rem; }
+        . unidade-box { background: #f8fafc; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #2563eb; margin-top: 1rem; border: 1px solid #e2e8f0; }
+        footer { background: #0f172a; color: #ffffff; text-align: center; padding: 2rem; margin-top: auto; }
+        footer p { color: #94a3b8; margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="./index.html"><img alt="Logo" src="./assets/image-removebg-preview.png">SaúdeMais</a></h1>
+            <div>
+                <a href="./index.html">Home</a>
+                <a href="./agendar.html">Serviços</a>
+                <a href="./unidades.html" class="active">Unidades</a>
+                <a href="./prevencao.html">Prevenção</a>
+                <a href="./sus.html">SUS</a>
+                <a href="./sobre-nos.html">Sobre nós</a>
+                <a href="./contato.html">Contato</a>
+                <a href="./emergencia.html">Emergência</a>
+                <a href="./perfil.html">Perfil</a>
+                <a href="./configuracoes.html">Configurações</a>
+            </div>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <div class="card">
+            <h2>Encontre uma Unidade Básica de Saúde (UBS)</h2>
+            <p>Busque postos de atendimento, hospitais e farmácias populares parceiras próximas de você.</p>
+            
+            <div class="unidade-box">
+                <h3>UBS Centro - Unicid Saúde</h3>
+                <p><strong>Endereço:</strong> Rua Principal, 123 - Centro</p>
+                <p><strong>Horário:</strong> Segunda a Sexta, das 07h às 19h</p>
+            </div>
+            <div class="unidade-box">
+                <h3>UBS Zona Leste - Bem Estar</h3>
+                <p><strong>Endereço:</strong> Avenida das Flores, 456 - Tatuapé</p>
+                <p><strong>Horário:</strong> Atendimento de Urgência 24h</p>
+            </div>
+        </div>
+    </main>
+    <footer><p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p></footer>
+</body>
+</html>

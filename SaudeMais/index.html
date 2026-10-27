@@ -3,47 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
-    <title>SaúdeMais</title>
+    <title>SaúdeMais - Início</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* ESTILOS ESPECÍFICOS PARA O CARROSSEL E BANNER DA HOME */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            padding: 3rem 2.5rem;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: #ffffff;
+            color: #2563eb;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #2563eb;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: #f1f5f9;
+        }
+
+        /* CONTAINER DO CARROSSEL */
+        .carousel-container {
+            flex: 1;
+            max-width: 480px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            background: #f1f5f9;
+        }
+
+        .carousel-slide {
+            display: none;
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+
+        /* BOTÕES DO CARROSSEL (SETAS) */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(30, 58, 138, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(30, 58, 138, 1);
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        /* SEÇÕES DE DESTAQUE NA HOME */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 0.75rem;
+        }
+
+        @media (max-width: 968px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .carousel-container {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- CABEÇALHO COM TODAS AS 10 PÁGINAS -->
     <header>
-        <nav class="navbar">
+        <nav>
             <h1>
                 <a href="./index.html">
-                    <img src="./assets/image-removebg-preview.png" alt="Logo SaúdeMais">
+                    <img alt="Logo SaúdeMais" src="./assets/image-removebg-preview.png">
                     SaúdeMais
                 </a>
             </h1>
-
-            <div class="menu">
+            <div>
+                <a href="./index.html" class="active">Home</a>
                 <a href="./agendar.html">Serviços</a>
-                <a href="#">Prevenção</a>
-                <a href="#">SUS</a>
+                <a href="./unidades.html">Unidades</a>
+                <a href="./prevencao.html">Prevenção</a>
+                <a href="./sus.html">SUS</a>
                 <a href="./sobre-nos.html">Sobre nós</a>
-                <a href="./contato.html">Emergência</a>
+                <a href="./contato.html">Contato</a>
+                <a href="./emergencia.html">Emergência</a>
+                <a href="./perfil.html">Perfil</a>
+                <a href="./configuracoes.html">Configurações</a>
             </div>
         </nav>
         <hr>
     </header>
 
+    <!-- CONTEÚDO PRINCIPAL -->
     <main>
-        <section class="hero">
-            <div class="hero-texto">
-                <h1>Saúde em todo lugar</h1>
-                <p>Unidades próximas, consultas e prevenção — simples e perto de você.</p>
-                <div class="botoes">
-                    <a href="./agendar.html">Agendar consulta</a>
-                    <a class="secundario" href="#mapa">Encontrar unidades</a>
+        <!-- SEÇÃO HERO COM CARROSSEL -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Saúde em todo lugar</h2>
+                <p>Unidades próximas, consultas e campanhas de prevenção — simples, rápido e perto de você através do SUS.</p>
+                <div class="hero-buttons">
+                    <a href="./agendar.html" class="btn">Agendar Consulta</a>
+                    <a href="./unidades.html" class="btn-outline">Encontrar Unidades</a>
                 </div>
             </div>
-            <img src="./assets/medica.avif" alt="Profissional de saúde">
+
+            <!-- CARROSSEL DE IMAGENS -->
+            <div class="carousel-container">
+                <!-- Imagem 1 (A sua imagem original) -->
+                <img src="./assets/medica.avif" class="carousel-slide active" alt="Profissional de Saúde">
+                <!-- Imagem 2 (Unidade de atendimento moderna) -->
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" class="carousel-slide" alt="Hospital e Atendimento">
+                <!-- Imagem 3 (Prevenção e Bem-estar) -->
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" class="carousel-slide" alt="Cuidados Médicos">
+
+                <button class="carousel-btn prev" onclick="mudarSlide(-1)">&#10094;</button>
+                <button class="carousel-btn next" onclick="mudarSlide(1)">&#10095;</button>
+            </div>
         </section>
+
+        <!-- SEÇÕES ADICIONAIS DE DESTAQUE -->
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>🏥 Atendimento Ágil</h3>
+                <p>Encontre UBSs, postos de saúde e farmácias populares com poucos cliques.</p>
+                <a href="./unidades.html" style="color: #2563eb; text-decoration: none; font-weight: 600;">Ver Unidades &rarr;</a>
+            </div>
+            <div class="feature-card">
+                <h3>🛡️ Campanhas de Vacinação</h3>
+                <p>Fique por dentro do calendário de imunização e mantenha sua caderneta em dia.</p>
+                <a href="./prevencao.html" style="color: #2563eb; text-decoration: none; font-weight: 600;">Saiba Mais &rarr;</a>
+            </div>
+            <div class="feature-card">
+                <h3>🚨 Pronto Atendimento</h3>
+                <p>Acesse rapidamente telefones de emergência, SAMU e guias de primeiros socorros.</p>
+                <a href="./emergencia.html" style="color: #2563eb; text-decoration: none; font-weight: 600;">Emergência &rarr;</a>
+            </div>
+        </div>
     </main>
 
-    <footer id="mapa">
-        <h2>Onde nos encontrar?</h2>
-        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14631.85098269539!2d-46.563328!3d-23.5338423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5fdcd8db398f%3A0x97014393e4ef19b8!2sUNICID%20-%20Universidade%20Cidade%20de%20S%C3%A3o%20Paulo%20-%20Campus%20Tatuap%C3%A9!5e0!3m2!1spt-BR!2sbr!4v1792540688211!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa da UNICID Campus Tatuapé"></iframe>
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- SCRIPT DO CARROSSEL -->
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+
+        function mostrarSlide(index) {
+            if (index >= slides.length) { slideIndex = 0; }
+            if (index < 0) { slideIndex = slides.length - 1; }
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[slideIndex].classList.add('active');
+        }
+
+        function mudarDirecao(n) {
+            slideIndex += n;
+            mostrarSlide(slideIndex);
+        }
+
+        function mudarSlide(n) {
+            mudarDirecao(n);
+        }
+
+        // Troca automática de imagem a cada 4 segundos
+        setInterval(() => {
+            slideIndex++;
+            mostrarSlide(slideIndex);
+        }, 4000);
+    </script>
 </body>
 </html>

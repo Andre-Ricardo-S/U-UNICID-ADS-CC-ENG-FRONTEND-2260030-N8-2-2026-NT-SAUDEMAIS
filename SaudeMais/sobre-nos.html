@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <!-- Cabeçalho Padrão -->
     <header>
         <nav>
-            <h1><a href="./index.html"><img alt="Logo" src="./assets/image-removebg-preview.png">SaúdeMais</a></h1>
+            <h1>
+                <a href="./index.html">
+                    <img alt="Logo SaúdeMais" src="./assets/image-removebg-preview.png">
+                    SaúdeMais
+                </a>
+            </h1>
             <div>
                 <a href="./index.html">Home</a>
                 <a href="./agendar.html">Serviços</a>
@@ -26,14 +32,50 @@
         <hr>
     </header>
 
+    <!-- Conteúdo Principal -->
     <main>
-        <div class="card">
-            <h2>Quem Somos</h2>
-            <p>O <strong>SaúdeMais</strong> é um projeto desenvolvido no âmbito acadêmico da UNICID (Universidade Cidade de São Paulo) para a disciplina de Front-End.</p>
-            <p>Nossa missão é aproximar o cidadão dos serviços públicos essenciais de saúde, utilizando a tecnologia para tornar o acesso a informações, unidades e agendamentos simples, rápido e humanizado.</p>
+        <!-- Seção de Introdução -->
+        <div class="card" style="text-align: center; padding: 3rem 2rem;">
+            <h2 style="font-size: 2.2rem; color: #0d7c66; margin-bottom: 1rem;">Transformando o Acesso à Saúde</h2>
+            <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; color: #555;">
+                O <strong>SaúdeMais</strong> nasceu com um propósito claro: aproximar o cidadão dos serviços públicos essenciais de saúde, unindo tecnologia, agilidade e humanização.
+            </p>
+        </div>
+
+        <!-- Grid de Missão, Visão e Valores -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+            <div class="card" style="border-top: 4px solid #0d7c66;">
+                <h3>🎯 Nossa Missão</h3>
+                <p>Facilitar o dia a dia da população na busca por unidades de atendimento, agendamentos e informações preventivas de forma transparente e rápida.</p>
+            </div>
+            <div class="card" style="border-top: 4px solid #0d7c66;">
+                <h3>👁️ Nossa Visão</h3>
+                <p>Ser a principal referência em plataformas digitais de apoio à saúde pública integrada, servindo de modelo para inovação no setor.</p>
+            </div>
+            <div class="card" style="border-top: 4px solid #0d7c66;">
+                <h3>💡 Nossos Valores</h3>
+                <p>Empatia com o próximo, acessibilidade universal, inovação constante, transparência nas informações e compromisso com o bem-estar social.</p>
+            </div>
+        </div>
+
+        <!-- Seção Contexto Acadêmico (UNICID) -->
+        <div class="card" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+            <div style="flex: 1; min-width: 280px;">
+                <h2>Inovação Acadêmica (UNICID)</h2>
+                <p>Este projeto foi desenvolvido como parte das entregas da disciplina de Front-End da <strong>Universidade Cidade de São Paulo (UNICID)</strong>.</p>
+                <p>Nossa equipe uniu conhecimentos técnicos de desenvolvimento web, design de interface (UI/UX) e experiência do usuário para criar uma solução real e funcional voltada à comunidade.</p>
+                <a href="./contato.html" class="btn" style="margin-top: 1rem;">Entre em Contato Conosco</a>
+            </div>
+            <div style="background: #e6f4ea; padding: 2rem; border-radius: 12px; text-align: center; flex: 1; min-width: 250px;">
+                <h3 style="color: #0d7c66; font-size: 1.5rem; margin-bottom: 0.5rem;">Projeto Front-End</h3>
+                <p style="color: #333; font-weight: 500;">Tecnologia com foco humano e impacto social positivo.</p>
+            </div>
         </div>
     </main>
 
-    <footer><p>&copy; 2026 SaúdeMais - UNICID</p></footer>
+    <!-- Rodapé Padrão -->
+    <footer>
+        <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>

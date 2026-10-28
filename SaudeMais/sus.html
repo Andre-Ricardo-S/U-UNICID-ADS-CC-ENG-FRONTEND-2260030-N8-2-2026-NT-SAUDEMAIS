@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <script>
+        // Aplica as configurações salvas assim que a página começa a carregar (evita o "piscar" da tela)
+        (function() {
+            const savedContrast = localStorage.getItem('saudeMais_contrast');
+            const savedCase = localStorage.getItem('saudeMais_case');
+            const savedDaltonism = localStorage.getItem('saudeMais_daltonism');
+    
+            if (savedContrast === 'true') {
+                document.documentElement.classList.add('high-contrast');
+            }
+            if (savedCase) {
+                document.documentElement.classList.add(savedCase);
+            }
+            if (savedDaltonism && savedDaltonism !== 'none') {
+                document.documentElement.classList.add('daltonism-' + savedDaltonism);
+            }
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SaúdeMais - SUS</title>

@@ -1,0 +1,9 @@
+---
+description: Padrões de estilo em Azul, Branco e Cinza
+globs: **/*.css
+alwaysApply: false
+# Padrão de Estilo - SaúdeMais
+- Cores principais: Azul corporativo (#1d4ed8 / #2563eb), Fundo limpo (#f8fafc), Cartões brancos (#ffffff) e textos em cinza escuro (#334155).
+- Layout responsivo utilizando Flexbox e CSS Grid.
+- Design moderno, corporativo e limpo, focado em usabilidade e acessibilidade (WCAG).
+---

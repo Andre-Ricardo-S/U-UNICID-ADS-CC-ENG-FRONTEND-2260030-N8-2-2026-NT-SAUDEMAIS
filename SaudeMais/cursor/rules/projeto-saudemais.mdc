@@ -1,0 +1,15 @@
+---
+description: Visão geral e plano de contexto do projeto SaúdeMais
+
+alwaysApply: true
+# Projeto SaúdeMais - UNICID
+## 1. Objetivo
+Desenvolver o portal web frontend acadêmico com 10 páginas interligadas para apoio aos serviços de saúde pública e SUS.
+## 2. Stack e Paleta
+- HTML5, CSS3 puros e JavaScript.
+- Identidade visual estritamente em Azul, Branco e Cinza (proibido o uso de verde).
+- Deploy blindado em arquivos únicos ou com CSS embutido para evitar erros de carregamento no Railway.
+---
+
+
+

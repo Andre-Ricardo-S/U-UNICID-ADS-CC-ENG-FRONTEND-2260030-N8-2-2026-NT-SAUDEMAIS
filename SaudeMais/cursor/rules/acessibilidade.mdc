@@ -1,0 +1,8 @@
+---
+description: Regras de acessibilidade e persistência de preferências
+globs: **/*.html
+alwaysApply: false
+# Acessibilidade (WCAG)
+- Inclusão obrigatória de ferramentas como leitor de áudio (SpeechSynthesis), widget do VLibras e opções de alto contraste.
+- Persistência de preferências do utilizador (como tipografia e daltonismo) utilizando o localStorage do navegador.
+---

@@ -399,6 +399,45 @@
             }
         }
     </script>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        // Quando a página carrega, marca os botões de acordo com o que já está salvo
+        window.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('saudeMais_contrast') === 'true') {
+                document.getElementById('toggle-contrast').checked = true;
+            }
+            const savedCase = localStorage.getItem('saudeMais_case');
+            if (savedCase) {
+                document.getElementById('case-selector').value = savedCase.replace('-mode', '');
+            }
+            const savedDaltonism = localStorage.getItem('saudeMais_daltonism');
+            if (savedDaltonism) {
+                document.getElementById('daltonism-selector').value = savedDaltonism;
+            }
+        });
+    
+        // Função global que salva as preferências ao clicar no botão
+        function salvarConfiguracoes() {
+            // 1. Alto Contraste
+            const contrastChecked = document.getElementById('toggle-contrast').checked;
+            localStorage.setItem('saudeMais_contrast', contrastChecked);
+    
+            // 2. Tipografia (Maiúsculas/Minúsculas)
+            const caseVal = document.getElementById('case-selector').value;
+            if (caseVal === 'uppercase') {
+                localStorage.setItem('saudeMais_case', 'uppercase-mode');
+            } else if (caseVal === 'lowercase') {
+                localStorage.setItem('saudeMais_case', 'lowercase-mode');
+            } else {
+                localStorage.removeItem('saudeMais_case');
+            }
+    
+            // 3. Daltonismo
+            const daltonismVal = document.getElementById('daltonism-selector').value;
+            localStorage.setItem('saudeMais_daltonism', daltonismVal);
+    
+            alert('Configurações de acessibilidade salvas com sucesso e aplicadas em todo o site!');
+            location.reload(); // Recarrega a página para aplicar
+        }
+    </script>
 </body>
 </html>

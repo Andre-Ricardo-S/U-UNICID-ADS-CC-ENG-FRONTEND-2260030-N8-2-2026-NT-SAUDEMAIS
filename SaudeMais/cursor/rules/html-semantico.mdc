@@ -1,0 +1,10 @@
+---
+description: Padrões de HTML semântico e acessível
+globs: **/*.html
+alwaysApply: false
+# HTML Semântico e Acessibilidade
+- Utilize estrutura semântica limpa: <header>, <nav>, <main>, <section> e <footer>.
+- Mantenha o menu de navegação idêntico e completo (com as 10 páginas) em todos os ficheiros.
+- Garanta o atributo lang="pt-BR" no elemento html e tags alt descritivas em todas as imagens.
+- Garanta que a logo tenha trava de estilo (ex: height: 35px) para nunca esticar.
+---

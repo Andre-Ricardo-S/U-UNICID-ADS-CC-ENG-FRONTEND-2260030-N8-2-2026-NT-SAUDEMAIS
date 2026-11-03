@@ -1,8 +1,25 @@
 ---
-description: Regras de acessibilidade e persistência de preferências
-globs: **/*.html
+description: Acessibilidade para a interface do SaudeMais
+globs: **/*.{html,css}
 alwaysApply: false
-# Acessibilidade (WCAG)
-- Inclusão obrigatória de ferramentas como leitor de áudio (SpeechSynthesis), widget do VLibras e opções de alto contraste.
-- Persistência de preferências do utilizador (como tipografia e daltonismo) utilizando o localStorage do navegador.
 ---
+## Objetivo
+Evitar barreiras de acesso nas paginas e estilos da interface.
+
+## Contexto
+O SaudeMais declara `pt-BR` e ja inclui recursos de contraste, preferencias e VLibras.
+
+## Regras
+- Use HTML semantico, textos alternativos uteis e controles operaveis por teclado.
+- Preserve foco visivel, contraste legivel e preferencias existentes sem presumir conformidade nao verificada.
+- Nao adicione ferramenta ou coleta de dados de acessibilidade fora do escopo atual.
+
+## Exemplo concreto
+Em `SaudeMais/index.html`, a configuracao `saudeMais_contrast` aplica a classe `high-contrast` quando ativa.
+
+## Erros a evitar
+- Depender somente de cor, hover, audio ou movimento para transmitir informacao.
+- Remover preferencias ou recursos de acessibilidade existentes sem substituir seu comportamento.
+
+## Quando perguntar
+Pergunte quando uma mudanca afetar um recurso existente ou quando o criterio de acessibilidade esperado nao estiver especificado.

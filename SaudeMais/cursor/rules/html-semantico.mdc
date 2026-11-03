@@ -1,10 +1,26 @@
 ---
-description: Padrões de HTML semântico e acessível
+description: Convencoes HTML5 e JavaScript inline do SaudeMais
 globs: **/*.html
 alwaysApply: false
-# HTML Semântico e Acessibilidade
-- Utilize estrutura semântica limpa: <header>, <nav>, <main>, <section> e <footer>.
-- Mantenha o menu de navegação idêntico e completo (com as 10 páginas) em todos os ficheiros.
-- Garanta o atributo lang="pt-BR" no elemento html e tags alt descritivas em todas as imagens.
-- Garanta que a logo tenha trava de estilo (ex: height: 35px) para nunca esticar.
 ---
+## Objetivo
+Manter paginas HTML claras, semanticas e compativeis com a estrutura existente.
+
+## Contexto
+As dez paginas atuais estao em `SaudeMais/`; ha scripts JavaScript inline, sem arquivos `.js` proprios.
+
+## Regras
+- Use `lang="pt-BR"`, estrutura semantica e caminhos relativos compativeis com as paginas atuais.
+- Ao alterar a navegacao, preserve links validos para as dez paginas listadas em `SaudeMais/docs/readme.md`.
+- Em JavaScript inline, evite handlers duplicados e preserve o comportamento existente.
+- Prefira os estilos compartilhados existentes; nao mova ou replique codigo sem necessidade.
+
+## Exemplo concreto
+`SaudeMais/index.html` usa `<html lang="pt-BR">` e `<img alt="Logo SaúdeMais" src="./assets/image-removebg-preview.png">`.
+
+## Erros a evitar
+- Criar uma pagina, arquivo JavaScript ou dependencia fora do plano.
+- Usar caminhos que quebrem ao navegar entre as paginas.
+
+## Quando perguntar
+Pergunte se o pedido exigir uma pagina nova, comportamento sem especificacao ou alteracao de navegacao fora do plano.

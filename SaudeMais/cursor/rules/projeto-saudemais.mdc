@@ -1,15 +1,27 @@
 ---
-description: Visão geral e plano de contexto do projeto SaúdeMais
-
+description: Visao e limites atuais do projeto SaudeMais
 alwaysApply: true
-# Projeto SaúdeMais - UNICID
-## 1. Objetivo
-Desenvolver o portal web frontend acadêmico com 10 páginas interligadas para apoio aos serviços de saúde pública e SUS.
-## 2. Stack e Paleta
-- HTML5, CSS3 puros e JavaScript.
-- Identidade visual estritamente em Azul, Branco e Cinza (proibido o uso de verde).
-- Deploy blindado em arquivos únicos ou com CSS embutido para evitar erros de carregamento no Railway.
 ---
+## Objetivo
+Manter a implementacao alinhada ao contexto do SaudeMais descrito em `SaudeMais/docs/readme.md`.
+
+## Contexto
+Portal academico de saude; a stack e HTML5, CSS3 e JavaScript inline nas paginas existentes.
+
+## Regras
+- Use somente as dez paginas, tecnologias e dependencias registradas em `SaudeMais/docs/readme.md`.
+- Nao invente paginas, modulos ou dependencias; confirme expansoes com a pessoa solicitante.
+- Preserve a identidade azul, branca e cinza existente.
+
+## Exemplo concreto
+Em `SaudeMais/index.html`, a pagina declara `<html lang="pt-BR">`.
+
+## Erros a evitar
+- Tratar o escopo antigo do README da raiz como lista atual de paginas.
+- Introduzir frameworks, paginas ou dependencias sem autorizacao.
+
+## Quando perguntar
+Pergunte antes de ampliar a stack, a lista de paginas ou o escopo funcional registrado no plano.
 
 
 

@@ -1,0 +1,24 @@
+---
+description: Convencao pontual para commits solicitados
+alwaysApply: false
+---
+## Objetivo
+Manter commits pequenos e relacionados ao pedido explicito.
+
+## Contexto
+O repositorio contem paginas independentes, como `SaudeMais/index.html` e `SaudeMais/agendar.html`.
+
+## Regras
+- Crie commit somente quando solicitado.
+- Mantenha cada commit focado nos arquivos e no comportamento pedidos.
+- Nao inclua arquivos nao relacionados, segredos ou dados pessoais.
+
+## Exemplo concreto
+Uma alteracao restrita ao inicio deve citar `SaudeMais/index.html`, sem incluir `SaudeMais/agendar.html` sem necessidade.
+
+## Erros a evitar
+- Criar commits automaticamente ou incluir alteracoes alheias ao pedido.
+- Inventar um padrao de mensagem de commit sem convencao confirmada.
+
+## Quando perguntar
+Pergunte se a solicitacao de commit nao indicar escopo suficiente ou se houver arquivos sem relacao clara com a mudanca.

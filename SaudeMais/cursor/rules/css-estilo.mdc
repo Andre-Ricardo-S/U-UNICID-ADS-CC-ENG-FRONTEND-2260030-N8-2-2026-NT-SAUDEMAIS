@@ -1,9 +1,25 @@
 ---
-description: Padrões de estilo em Azul, Branco e Cinza
+description: Convencoes CSS3 do SaudeMais
 globs: **/*.css
 alwaysApply: false
-# Padrão de Estilo - SaúdeMais
-- Cores principais: Azul corporativo (#1d4ed8 / #2563eb), Fundo limpo (#f8fafc), Cartões brancos (#ffffff) e textos em cinza escuro (#334155).
-- Layout responsivo utilizando Flexbox e CSS Grid.
-- Design moderno, corporativo e limpo, focado em usabilidade e acessibilidade (WCAG).
 ---
+## Objetivo
+Manter estilos legiveis, responsivos e coerentes com a interface existente.
+
+## Contexto
+O projeto usa CSS3 em `SaudeMais/css/styles.css` e tambem possui estilos embutidos em HTML.
+
+## Regras
+- Reutilize as cores e os padroes visuais existentes antes de criar novos.
+- Preserve o comportamento responsivo e os estados de foco dos controles.
+- Mantenha estilos compartilhados em `SaudeMais/css/styles.css` quando apropriado.
+
+## Exemplo concreto
+Em `SaudeMais/css/styles.css`, `nav h1 img` define `height: 35px`, `max-height: 35px` e `width: auto`.
+
+## Erros a evitar
+- Criar paleta ou estilo global conflitante com as paginas existentes.
+- Alterar CSS sem verificar os estados responsivos e de foco afetados.
+
+## Quando perguntar
+Pergunte se o pedido exigir uma nova identidade visual ou mudanca ampla nos estilos compartilhados.

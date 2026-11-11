@@ -171,34 +171,6 @@
             margin-left: 10px;
         }
 
-        /* MODOS DE ACESSIBILIDADE APLICADOS VIA JS */
-        body.uppercase-mode {
-            text-transform: uppercase;
-        }
-        body.lowercase-mode {
-            text-transform: lowercase;
-        }
-        body.high-contrast {
-            background-color: #000000 !important;
-            color: #ffff00 !important;
-        }
-        body.high-contrast .card {
-            background-color: #111111 !important;
-            border: 2px solid #ffff00 !important;
-            color: #ffff00 !important;
-        }
-        body.high-contrast h2, body.high-contrast h3, body.high-contrast p, body.high-contrast label {
-            color: #ffff00 !important;
-        }
-
-        /* FILTROS PARA DALTONISMO */
-        body.daltonism-protanopia {
-            filter: url('#protanopia-filter');
-        }
-        body.daltonism-deuteranopia {
-            filter: hue-rotate(90deg) saturate(150%);
-        }
-
         /* WIDGET DE LIBRAS (SIMULAÇÃO VISUAL MODERNA) */
         #libras-modal {
             display: none;
@@ -229,11 +201,13 @@
             margin-bottom: 0;
         }
     </style>
+    <link rel="stylesheet" href="./css/acessibilidade.css">
     <!-- SCRIPT OFICIAL DO VLIBRAS -->
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
+    <script src="./js/acessibilidade.js"></script>
 </head>
 <body id="main-body">
 
@@ -273,11 +247,11 @@
                 <h3>♿ Ferramentas de Acessibilidade</h3>
                 
                 <label>
-                    <input type="checkbox" id="toggle-audio" onchange="alternarAudio()"> 🔊 Ativar Leitor de Áudio (Síntese de Voz da Página)
+                    <input type="checkbox" id="toggle-audio"> 🔊 Ativar Leitor de Áudio (Síntese de Voz da Página)
                 </label>
 
                 <label>
-                    <input type="checkbox" id="toggle-libras" onchange="alternarLibras()"> 🤟 Ativar Assistente de Libras Virtual (Janela de Tradução)
+                    <input type="checkbox" id="toggle-libras"> 🤟 Ativar Assistente de Libras Virtual (Janela de Tradução)
                 </label>
             </div>
 
@@ -285,7 +259,7 @@
             <div class="config-section">
                 <h3>🔠 Ajuste de Tipografia (Caixa Alta / Baixa)</h3>
                 <label>Modo de Exibição de Texto:
-                    <select id="case-selector" onchange="mudarTipografia()">
+                    <select id="case-selector">
                         <option value="normal">Padrão do Sistema</option>
                         <option value="uppercase">Somente Letras Maiúsculas (CAPSLOCK)</option>
                         <option value="lowercase">Somente Letras Minúsculas</option>
@@ -298,11 +272,11 @@
                 <h3>👁️ Cores e Modos para Daltônicos</h3>
                 
                 <label>
-                    <input type="checkbox" id="toggle-contrast" onchange="alternarContraste()"> ⬛ Modo de Alto Contraste (Visual Escuro/Amarelo)
+                    <input type="checkbox" id="toggle-contrast"> ⬛ Modo de Alto Contraste (Visual Escuro/Amarelo)
                 </label>
 
                 <label>Filtro para Daltonismo:
-                    <select id="daltonism-selector" onchange="mudarDaltonismo()">
+                    <select id="daltonism-selector">
                         <option value="none">Visão Padrão</option>
                         <option value="protanopia">Correção para Protanopia (Dificuldade com Vermelho)</option>
                         <option value="deuteranopia">Correção para Deuteranopia (Dificuldade com Verde)</option>
@@ -318,7 +292,7 @@
             </div>
 
             <div style="margin-top: 2rem;">
-                <button type="button" class="btn" onclick="alert('Configurações e preferências de acessibilidade salvas com sucesso!')">Salvar Configurações</button>
+                <button type="button" class="btn" id="save-settings">Salvar Configurações</button>
             </div>
         </div>
     </main>
@@ -327,7 +301,7 @@
     <div id="libras-modal">
         <p style="color: white; font-weight: bold; margin-bottom: 5px;">🤟 Assistente Libras Ativo</p>
         <p style="font-size: 0.85rem; color: #cbd5e1;">Traduzindo comandos de navegação em tempo real para Língua Brasileira de Sinais.</p>
-        <button onclick="alternarLibras()" style="background: #ef4444; color: white; border: none; padding: 4px 10px; border-radius: 4px; margin-top: 8px; cursor: pointer;">Fechar Libras</button>
+        <button id="close-libras" style="background: #ef4444; color: white; border: none; padding: 4px 10px; border-radius: 4px; margin-top: 8px; cursor: pointer;">Fechar Libras</button>
     </div>
 
     <!-- RODAPÉ -->
@@ -335,109 +309,5 @@
         <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- SCRIPTS DE ACESSIBILIDADE INTERATIVA -->
-    <script>
-        // 1. Leitor de Áudio (Text-to-Speech)
-        function alternarAudio() {
-            const checkbox = document.getElementById('toggle-audio');
-            if (checkbox.checked) {
-                if ('speechSynthesis' in window) {
-                    const textoParaLer = "Bem-vindo às configurações de acessibilidade do SaúdeMais. Ferramentas de áudio, libras e daltonismo ativadas.";
-                    const utterance = new SpeechSynthesisUtterance(textoParaLer);
-                    utterance.lang = 'pt-BR';
-                    window.speechSynthesis.speak(utterance);
-                } else {
-                    alert('Seu navegador não suporta síntese de voz.');
-                }
-            } else {
-                if ('speechSynthesis' in window) {
-                    window.speechSynthesis.cancel();
-                }
-            }
-        }
-
-        // 2. Assistente de Libras
-        function alternarLibras() {
-            const modal = document.getElementById('libras-modal');
-            const checkbox = document.getElementById('toggle-libras');
-            if (modal.style.display === 'block') {
-                modal.style.display = 'none';
-                checkbox.checked = false;
-            } else {
-                modal.style.display = 'block';
-                checkbox.checked = true;
-            }
-        }
-
-        // 3. Tipografia (Maiúsculas / Minúsculas)
-        function mudarTipografia() {
-            const modo = document.getElementById('case-selector').value;
-            const body = document.getElementById('main-body');
-            body.classList.remove('uppercase-mode', 'lowercase-mode');
-            if (modo === 'uppercase') {
-                body.classList.add('uppercase-mode');
-            } else if (modo === 'lowercase') {
-                body.classList.add('lowercase-mode');
-            }
-        }
-
-        // 4. Alto Contraste
-        function alternarContraste() {
-            const body = document.getElementById('main-body');
-            body.classList.toggle('high-contrast');
-        }
-
-        // 5. Filtros para Daltonismo
-        function mudarDaltonismo() {
-            const modo = document.getElementById('daltonism-selector').value;
-            const body = document.getElementById('main-body');
-            body.classList.remove('daltonism-protanopia', 'daltonism-deuteranopia');
-            if (modo === 'protanopia') {
-                body.classList.add('daltonism-protanopia');
-            } else if (modo === 'deuteranopia') {
-                body.classList.add('daltonism-deuteranopia');
-            }
-        }
-    </script>
-    <script>
-        // Quando a página carrega, marca os botões de acordo com o que já está salvo
-        window.addEventListener('DOMContentLoaded', () => {
-            if (localStorage.getItem('saudeMais_contrast') === 'true') {
-                document.getElementById('toggle-contrast').checked = true;
-            }
-            const savedCase = localStorage.getItem('saudeMais_case');
-            if (savedCase) {
-                document.getElementById('case-selector').value = savedCase.replace('-mode', '');
-            }
-            const savedDaltonism = localStorage.getItem('saudeMais_daltonism');
-            if (savedDaltonism) {
-                document.getElementById('daltonism-selector').value = savedDaltonism;
-            }
-        });
-    
-        // Função global que salva as preferências ao clicar no botão
-        function salvarConfiguracoes() {
-            // 1. Alto Contraste
-            const contrastChecked = document.getElementById('toggle-contrast').checked;
-            localStorage.setItem('saudeMais_contrast', contrastChecked);
-    
-            // 2. Tipografia (Maiúsculas/Minúsculas)
-            const caseVal = document.getElementById('case-selector').value;
-            if (caseVal === 'uppercase') {
-                localStorage.setItem('saudeMais_case', 'uppercase-mode');
-            } else if (caseVal === 'lowercase') {
-                localStorage.setItem('saudeMais_case', 'lowercase-mode');
-            } else {
-                localStorage.removeItem('saudeMais_case');
-            }
-    
-            // 3. Daltonismo
-            const daltonismVal = document.getElementById('daltonism-selector').value;
-            localStorage.setItem('saudeMais_daltonism', daltonismVal);
-    
-            alert('Configurações de acessibilidade salvas com sucesso e aplicadas em todo o site!');
-            location.reload(); // Recarrega a página para aplicar
-        }
-    </script>
 </body>
 </html>

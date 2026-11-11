@@ -1,0 +1,41 @@
+html.uppercase-mode body,
+body.uppercase-mode,
+html.uppercase-mode body *,
+body.uppercase-mode * {
+    text-transform: uppercase !important;
+}
+
+html.lowercase-mode body,
+body.lowercase-mode,
+html.lowercase-mode body *,
+body.lowercase-mode * {
+    text-transform: lowercase !important;
+}
+
+html.high-contrast body,
+body.high-contrast {
+    background-color: #000 !important;
+    color: #ff0 !important;
+}
+
+html.high-contrast body *,
+body.high-contrast * {
+    color: #ff0 !important;
+    border-color: #ff0 !important;
+}
+
+html.high-contrast body *:not(img):not(video):not(canvas):not(svg),
+body.high-contrast *:not(img):not(video):not(canvas):not(svg) {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+html.daltonism-protanopia body,
+body.daltonism-protanopia {
+    filter: hue-rotate(25deg) saturate(1.15);
+}
+
+html.daltonism-deuteranopia body,
+body.daltonism-deuteranopia {
+    filter: hue-rotate(90deg) saturate(1.15);
+}

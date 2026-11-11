@@ -223,30 +223,71 @@
     </header>
 
     <!-- CONTEÚDO DA PÁGINA DE CONTATO -->
-    <main>
-        <div class="card">
-            <h2>Fale Conosco</h2>
-            <p>Tem dúvidas, sugestões ou precisa de suporte técnico com a plataforma SaúdeMais? Envie uma mensagem para a nossa equipa.</p>
-            
-            <form style="max-width: 600px; margin-top: 1.5rem;" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso! Responderemos em breve.');">
-                <label>Nome Completo:
-                    <input type="text" placeholder="Digite o seu nome" required>
-                </label>
+ <main>
+    <div class="card">
+        <h2>Fale Conosco</h2>
+        <p>Tem dúvidas, sugestões ou precisa de suporte técnico com a plataforma SaúdeMais? Envie uma mensagem para a nossa equipa.</p>
 
-                <label>E-mail de Contato:
-                    <input type="email" placeholder="seu.email@exemplo.com" required>
-                </label>
+        <form id="formContato" style="max-width: 600px; margin-top: 1.5rem;">
+            <label>Nome Completo:
+                <input type="text" id="nome" placeholder="Digite o seu nome" required>
+            </label>
 
-                <label>Mensagem:
-                    <textarea rows="4" placeholder="Escreva a sua dúvida ou sugestão aqui..." required></textarea>
-                </label>
+            <label>E-mail de Contato:
+                <input type="email" id="email" placeholder="seu.email@exemplo.com" required>
+            </label>
 
-                <div style="margin-top: 1.5rem;">
-                    <button type="submit" class="btn">Enviar Mensagem</button>
-                </div>
-            </form>
-        </div>
-    </main>
+            <label>Mensagem:
+                <textarea id="mensagem" rows="4" placeholder="Escreva a sua dúvida ou sugestão aqui..." required></textarea>
+            </label>
+
+            <div style="margin-top: 1.5rem;">
+                <button type="submit" class="btn">Enviar Mensagem</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<script>
+    const CHAVE = 'saudemais_mensagens';
+    const form = document.getElementById('formContato');
+
+    // Lê as mensagens já guardadas
+    function obterMensagens() {
+        try {
+            return JSON.parse(localStorage.getItem(CHAVE)) || [];
+        } catch (e) {
+            return [];
+        }
+    }
+
+    // Guarda uma nova mensagem
+    function salvarMensagem(dados) {
+        const mensagens = obterMensagens();
+        mensagens.push(dados);
+        localStorage.setItem(CHAVE, JSON.stringify(mensagens));
+    }
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const dados = {
+            id: Date.now(),
+            nome: document.getElementById('nome').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            mensagem: document.getElementById('mensagem').value.trim(),
+            data: new Date().toLocaleString('pt-BR')
+        };
+
+        try {
+            salvarMensagem(dados);
+            alert('Mensagem enviada com sucesso! Responderemos em breve.');
+            form.reset();
+        } catch (e) {
+            alert('Não foi possível guardar a mensagem. Tente novamente.');
+        }
+    });
+</script>
 
     <!-- RODAPÉ -->
     <footer>

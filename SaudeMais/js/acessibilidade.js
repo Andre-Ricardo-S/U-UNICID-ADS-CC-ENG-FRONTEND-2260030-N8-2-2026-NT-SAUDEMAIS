@@ -12,7 +12,8 @@
                 caseMode: localStorage.getItem(preferenceKeys.caseMode) || 'normal',
                 daltonism: localStorage.getItem(preferenceKeys.daltonism) || 'none'
             };
-        } catch {
+        } catch (error) {
+            console.warn('Não foi possível ler as preferências de acessibilidade.', error);
             return { contrast: false, caseMode: 'normal', daltonism: 'none' };
         }
     }
@@ -33,13 +34,18 @@
         if (preferences.daltonism === 'protanopia' || preferences.daltonism === 'deuteranopia') {
             element.classList.add(`daltonism-${preferences.daltonism}`);
         }
+
+        if (element === document.body) {
+            element.style.backgroundColor = preferences.contrast ? '#000' : '';
+            element.style.color = preferences.contrast ? '#ff0' : '';
+        }
     }
 
-    const savedPreferences = readPreferences();
-    applyPreferences(document.documentElement, savedPreferences);
+    applyPreferences(document.documentElement, readPreferences());
 
     function initializeAccessibilitySettings() {
         const body = document.body;
+        const savedPreferences = readPreferences();
         applyPreferences(body, savedPreferences);
 
         const audioToggle = document.getElementById('toggle-audio');
@@ -131,7 +137,8 @@
                     applyPreferences(document.documentElement, preferences);
                     applyPreferences(body, preferences);
                     window.alert('Configurações de acessibilidade salvas com sucesso.');
-                } catch {
+                } catch (error) {
+                    console.error('Não foi possível salvar as preferências de acessibilidade.', error);
                     window.alert('Não foi possível salvar as preferências neste navegador.');
                 }
             });

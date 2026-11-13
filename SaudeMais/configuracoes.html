@@ -3,174 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaúdeMais - Configurações e Acessibilidade</title>
+    <title>SaúdeMais - Acessibilidade</title>
+    <meta name="description" content="Ajuste o tamanho da letra, o contraste, as cores e a leitura em voz alta do SaúdeMais.">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
+    <script src="./js/acessibilidade.js"></script>
+    <script src="./js/site.js" defer></script>
     <style>
-        /* ==========================================
-           ESTILOS EMBUTIDOS (AZUL, BRANCO E CINZA)
-           ========================================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f8fafc;
-            color: #334155;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            transition: all 0.3s ease;
-        }
-
-        /* CABEÇALHO */
-        header {
-            background: #ffffff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            flex-wrap: wrap;
-        }
-
-        nav h1 a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: #1d4ed8;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        nav h1 img {
-            height: 35px !important;
-            max-height: 35px !important;
-            width: auto !important;
-        }
-
-        nav div {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        nav div a {
-            text-decoration: none;
-            color: #64748b;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        nav div a:hover, 
-        nav div a.active {
-            color: #1d4ed8;
-            font-weight: 600;
-        }
-
-        header hr {
-            border: none;
-            border-top: 1px solid #e2e8f0;
-            margin: 0;
-        }
-
-        /* CONTEÚDO PRINCIPAL */
-        main {
-            flex: 1;
-            max-width: 1200px;
-            width: 100%;
-            margin: 2rem auto;
-            padding: 0 2rem;
-        }
-
-        .card {
-            background: #ffffff;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-            border: 1px solid #e2e8f0;
-            margin-bottom: 1.5rem;
-        }
-
-        h2 {
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
-        h3 {
-            color: #1e293b;
-            margin-bottom: 0.75rem;
-            font-size: 1.2rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 5px;
-        }
-
-        p {
-            line-height: 1.6;
-            color: #64748b;
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #2563eb;
-            color: #ffffff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .btn:hover {
-            background: #1d4ed8;
-        }
-
         .config-section {
-            margin-bottom: 2rem;
+            margin-top: 2rem;
         }
 
-        label {
-            font-weight: 500;
-            color: #334155;
+        .config-section h2 {
+            border-bottom: 2px solid var(--cinza-borda);
+            padding-bottom: 0.4rem;
+        }
+
+        .controle-fonte {
             display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 0.75rem;
-            cursor: pointer;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
         }
 
-        input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            accent-color: #2563eb;
+        .controle-fonte button {
+            min-width: 5rem;
+            font-size: 1.3rem;
         }
 
-        select {
-            padding: 0.5rem;
-            border-radius: 6px;
-            border: 1px solid #cbd5e1;
-            font-size: 0.95rem;
-            background: #f8fafc;
-            color: #334155;
-            margin-left: 10px;
+        .controle-fonte button[aria-pressed="true"] {
+            outline: 3px solid var(--preto);
+            outline-offset: 2px;
         }
 
+<<<<<<< Updated upstream
         /* MODOS DE ACESSIBILIDADE APLICADOS VIA JS */
         body.uppercase-mode {
             text-transform: uppercase;
@@ -213,61 +79,75 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             z-index: 2000;
             text-align: center;
+=======
+        .controle-fonte button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+>>>>>>> Stashed changes
         }
 
-        /* RODAPÉ */
-        footer {
-            background: #0f172a;
-            color: #ffffff;
-            text-align: center;
-            padding: 2rem;
-            margin-top: auto;
-        }
-
-        footer p {
-            color: #94a3b8;
-            margin-bottom: 0;
+        .config-section select {
+            max-width: 32rem;
         }
     </style>
+<<<<<<< Updated upstream
     <!-- SCRIPT OFICIAL DO VLIBRAS -->
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
+=======
+>>>>>>> Stashed changes
 </head>
 <body id="main-body">
+    <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
 
-    <!-- CABEÇALHO COM AS 10 PÁGINAS CORretas -->
+    <!-- CABEÇALHO -->
     <header>
-        <nav>
-            <h1>
-                <a href="./index.html">
-                    <img alt="Logo SaúdeMais" src="./assets/image-removebg-preview.png">
-                    SaúdeMais
-                </a>
-            </h1>
-            <div>
-                <a href="./index.html">Home</a>
-                <a href="./agendar.html">Serviços</a>
-                <a href="./unidades.html">Unidades</a>
-                <a href="./prevencao.html">Prevenção</a>
-                <a href="./sus.html">SUS</a>
-                <a href="./sobre-nos.html">Sobre nós</a>
-                <a href="./contato.html">Contato</a>
-                <a href="./emergencia.html">Emergência</a>
-                <a href="./perfil.html">Perfil</a>
-                <a href="./configuracoes.html" class="active">Configurações</a>
+        <div class="barra-acessibilidade">
+            <div class="conteudo-barra">
+                <div class="grupo" role="group" aria-label="Tamanho da letra e contraste">
+                    <span aria-hidden="true">Letra:</span>
+                    <button type="button" data-fonte="diminuir">A-<span class="visualmente-oculto"> diminuir letra</span></button>
+                    <button type="button" data-fonte="padrao">A<span class="visualmente-oculto"> letra no tamanho padrão</span></button>
+                    <button type="button" data-fonte="aumentar">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+                    <span class="visualmente-oculto" data-fonte-indicador aria-live="polite"></span>
+                    <button type="button" data-contraste-rapido aria-pressed="false">◐ Contraste</button>
+                </div>
+                <p><strong>Emergência?</strong> Ligue <a href="tel:192">192 (SAMU)</a></p>
             </div>
-        </nav>
+        </div>
+        <div class="topo">
+            <a class="logo" href="./index.html">
+                <img src="./assets/image-removebg-preview.png" alt="">
+                SaúdeMais
+            </a>
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal">☰ <span data-rotulo>Menu</span></button>
+            <nav id="menu-principal" class="menu" aria-label="Menu principal">
+                <ul>
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./sobre-nos.html">Sobre</a></li>
+                    <li><a href="./como-funciona.html">Como Funciona</a></li>
+                    <li><a href="./preciso-de-ajuda.html">Preciso de Ajuda</a></li>
+                    <li><a href="./quero-ajudar.html">Quero Ajudar</a></li>
+                    <li><a href="./mapa.html">Mapa</a></li>
+                    <li><a href="./unidades.html">Postos de Saúde</a></li>
+                    <li><a href="./configuracoes.html" aria-current="page">Acessibilidade</a></li>
+                    <li><a href="./seguranca.html">Segurança</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
         <hr>
     </header>
 
-    <!-- CONTEÚDO DE CONFIGURAÇÕES E ACESSIBILIDADE -->
-    <main>
+    <!-- CONTEÚDO DE ACESSIBILIDADE -->
+    <main id="conteudo">
         <div class="card">
-            <h2>Configurações e Acessibilidade Inclusiva</h2>
-            <p>Personalize sua experiência de navegação com ferramentas avançadas de acessibilidade, áudio, tradução em Libras e ajustes visuais.</p>
+            <h1>Acessibilidade</h1>
+            <p class="texto-grande">Deixe o site do jeito que fica melhor para você. As escolhas ficam <strong>salvas neste aparelho</strong> e valem para todas as páginas.</p>
 
+<<<<<<< Updated upstream
             <!-- SEÇÃO 1: ACESSIBILIDADE E INCLUSÃO -->
             <div class="config-section" style="margin-top: 1.5rem;">
                 <h3>♿ Ferramentas de Acessibilidade</h3>
@@ -278,9 +158,39 @@
 
                 <label>
                     <input type="checkbox" id="toggle-libras" onchange="alternarLibras()"> 🤟 Ativar Assistente de Libras Virtual (Janela de Tradução)
-                </label>
-            </div>
+=======
+            <!-- MENSAGEM NA TELA -->
+            <div id="config-status" class="alerta alerta-sucesso" role="status" hidden></div>
 
+            <!-- SEÇÃO 1: TAMANHO DA LETRA -->
+            <section class="config-section" aria-labelledby="titulo-fonte">
+                <h2 id="titulo-fonte"><span aria-hidden="true">🔎</span> Tamanho da letra</h2>
+                <p>Toque em <strong>A+</strong> para aumentar, <strong>A-</strong> para diminuir ou <strong>A</strong> para voltar ao normal. A escolha é salva na hora. Esses botões também ficam no topo de todas as páginas.</p>
+                <div class="controle-fonte" role="group" aria-label="Tamanho da letra">
+                    <button type="button" class="btn" data-fonte="diminuir">A-<span class="visualmente-oculto"> diminuir letra</span></button>
+                    <button type="button" class="btn" data-fonte="padrao">A<span class="visualmente-oculto"> letra no tamanho padrão</span></button>
+                    <button type="button" class="btn" data-fonte="aumentar">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+                </div>
+            </section>
+
+            <!-- SEÇÃO 2: ÁUDIO E LIBRAS -->
+            <section class="config-section" aria-labelledby="titulo-ferramentas">
+                <h2 id="titulo-ferramentas"><span aria-hidden="true">♿</span> Ouvir e Libras</h2>
+
+                <label class="opcao" for="toggle-audio">
+                    <input type="checkbox" id="toggle-audio">
+                    <span><span aria-hidden="true">🔊</span> Ler esta página em voz alta (desmarque para parar)</span>
+                </label>
+
+                <label class="opcao" for="toggle-libras" style="margin-top: 0.6rem;">
+                    <input type="checkbox" id="toggle-libras">
+                    <span><span aria-hidden="true">🤟</span> Mostrar janela do assistente de Libras</span>
+>>>>>>> Stashed changes
+                </label>
+                <p style="margin-top: 0.6rem;">O tradutor oficial <strong>VLibras</strong> (do Governo Federal) fica no botão azul do lado direito da tela, em todas as páginas.</p>
+            </section>
+
+<<<<<<< Updated upstream
             <!-- SEÇÃO 2: TIPOGRAFIA (MAIÚSCULAS / MINÚSCULAS) -->
             <div class="config-section">
                 <h3>🔠 Ajuste de Tipografia (Caixa Alta / Baixa)</h3>
@@ -289,10 +199,22 @@
                         <option value="normal">Padrão do Sistema</option>
                         <option value="uppercase">Somente Letras Maiúsculas (CAPSLOCK)</option>
                         <option value="lowercase">Somente Letras Minúsculas</option>
+=======
+            <!-- SEÇÃO 3: TIPOGRAFIA (MAIÚSCULAS / MINÚSCULAS) -->
+            <section class="config-section" aria-labelledby="titulo-tipografia">
+                <h2 id="titulo-tipografia"><span aria-hidden="true">🔠</span> Letras maiúsculas ou minúsculas</h2>
+                <div class="campo">
+                    <label for="case-selector">Como mostrar o texto</label>
+                    <select id="case-selector">
+                        <option value="normal">Normal</option>
+                        <option value="uppercase">TUDO EM LETRA MAIÚSCULA</option>
+                        <option value="lowercase">tudo em letra minúscula</option>
+>>>>>>> Stashed changes
                     </select>
-                </label>
-            </div>
+                </div>
+            </section>
 
+<<<<<<< Updated upstream
             <!-- SEÇÃO 3: CORES E DALTONISMO -->
             <div class="config-section">
                 <h3>👁️ Cores e Modos para Daltônicos</h3>
@@ -306,10 +228,41 @@
                         <option value="none">Visão Padrão</option>
                         <option value="protanopia">Correção para Protanopia (Dificuldade com Vermelho)</option>
                         <option value="deuteranopia">Correção para Deuteranopia (Dificuldade com Verde)</option>
-                    </select>
-                </label>
-            </div>
+=======
+            <!-- SEÇÃO 4: CORES E DALTONISMO -->
+            <section class="config-section" aria-labelledby="titulo-cores">
+                <h2 id="titulo-cores"><span aria-hidden="true">👁️</span> Cores e contraste</h2>
 
+                <label class="opcao" for="toggle-contrast">
+                    <input type="checkbox" id="toggle-contrast">
+                    <span><span aria-hidden="true">⬛</span> Alto contraste (fundo preto e letras amarelas)</span>
+                </label>
+
+                <div class="campo">
+                    <label for="daltonism-selector">Filtro para daltonismo</label>
+                    <select id="daltonism-selector">
+                        <option value="none">Visão padrão</option>
+                        <option value="protanopia">Protanopia (dificuldade com vermelho)</option>
+                        <option value="deuteranopia">Deuteranopia (dificuldade com verde)</option>
+>>>>>>> Stashed changes
+                    </select>
+                </div>
+            </section>
+
+            <!-- SEÇÃO 5: AVISOS -->
+            <section class="config-section" aria-labelledby="titulo-avisos">
+                <h2 id="titulo-avisos"><span aria-hidden="true">🔔</span> Como prefere ser avisado</h2>
+                <label class="opcao" for="aviso-ligacao">
+                    <input type="checkbox" id="aviso-ligacao" data-aviso="ligacao" checked>
+                    <span>Receber ligação confirmando o voluntário</span>
+                </label>
+                <label class="opcao" for="aviso-sms" style="margin-top: 0.6rem;">
+                    <input type="checkbox" id="aviso-sms" data-aviso="sms" checked>
+                    <span>Receber mensagem (SMS) no dia anterior lembrando do horário</span>
+                </label>
+            </section>
+
+<<<<<<< Updated upstream
             <!-- SEÇÃO 4: NOTIFICAÇÕES -->
             <div class="config-section">
                 <h3>🔔 Preferências de Notificação</h3>
@@ -319,22 +272,99 @@
 
             <div style="margin-top: 2rem;">
                 <button type="button" class="btn" onclick="alert('Configurações e preferências de acessibilidade salvas com sucesso!')">Salvar Configurações</button>
+=======
+            <div class="acoes-form">
+                <button type="button" class="btn" id="save-settings">Salvar configurações</button>
+>>>>>>> Stashed changes
             </div>
         </div>
+
+        <!-- EXPLICAÇÃO DOS RECURSOS -->
+        <section class="card" aria-labelledby="titulo-recursos">
+            <h2 id="titulo-recursos">Para que serve cada recurso</h2>
+            <div class="tabela-container">
+                <table>
+                    <caption>Recursos de acessibilidade do SaúdeMais</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Recurso</th>
+                            <th scope="col">Ajuda quem</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">Letra maior (A+)</th><td>Pessoas com baixa visão e idosos que têm dificuldade para ler letras pequenas.</td></tr>
+                        <tr><th scope="row">Alto contraste</th><td>Quem enxerga pouco, tem catarata ou se cansa com telas claras.</td></tr>
+                        <tr><th scope="row">Leitura em voz alta</th><td>Quem não enxerga bem, tem pouca leitura ou prefere ouvir.</td></tr>
+                        <tr><th scope="row">VLibras</th><td>Pessoas surdas que se comunicam pela Língua Brasileira de Sinais.</td></tr>
+                        <tr><th scope="row">Filtros de daltonismo</th><td>Quem confunde cores como vermelho e verde.</td></tr>
+                        <tr><th scope="row">Navegação pelo teclado</th><td>Quem não usa mouse. Use a tecla <kbd>Tab</kbd> para andar e <kbd>Enter</kbd> para escolher. O item selecionado fica com uma borda azul.</td></tr>
+                        <tr><th scope="row">Botões grandes e textos curtos</th><td>Quem tem tremor nas mãos, pouca prática com celular ou dificuldade de entendimento.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card" aria-labelledby="titulo-necessidades">
+            <h2 id="titulo-necessidades">Conhecendo as necessidades de idosos e pessoas com deficiência</h2>
+            <p>Cada pessoa é diferente. Por isso, no pedido de ajuda você conta do que precisa e o voluntário se prepara.</p>
+            <div class="grade" style="margin-bottom: 0;">
+                <div>
+                    <h3>Idosos</h3>
+                    <p>Podem ter dificuldade para andar, enxergar, ouvir ou lembrar. Precisam de tempo, paciência e caminhos sem degraus. Muitos ficam inseguros em lugares desconhecidos.</p>
+                </div>
+                <div>
+                    <h3>Deficiência física</h3>
+                    <p>Quem usa cadeira de rodas, andador ou muleta precisa de rampas, calçadas lisas e veículos adaptados. Pergunte antes de empurrar a cadeira.</p>
+                </div>
+                <div>
+                    <h3>Deficiência visual</h3>
+                    <p>Ofereça o braço para guiar, avise sobre degraus e buracos e diga o que está ao redor. Não puxe a pessoa.</p>
+                </div>
+                <div>
+                    <h3>Deficiência auditiva</h3>
+                    <p>Fale de frente, devagar e sem cobrir a boca. Escreva no celular ou use Libras quando possível.</p>
+                </div>
+                <div>
+                    <h3>Autismo (TEA)</h3>
+                    <p>Avise antes o que vai acontecer, evite barulho e lugares cheios e respeite o tempo da pessoa.</p>
+                </div>
+                <div>
+                    <h3>Deficiência intelectual</h3>
+                    <p>Use frases curtas e simples, confirme se a pessoa entendeu e fale diretamente com ela, não só com o acompanhante.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- JANELA FLUTUANTE DO ASSISTENTE DE LIBRAS -->
+<<<<<<< Updated upstream
     <div id="libras-modal">
         <p style="color: white; font-weight: bold; margin-bottom: 5px;">🤟 Assistente Libras Ativo</p>
         <p style="font-size: 0.85rem; color: #cbd5e1;">Traduzindo comandos de navegação em tempo real para Língua Brasileira de Sinais.</p>
         <button onclick="alternarLibras()" style="background: #ef4444; color: white; border: none; padding: 4px 10px; border-radius: 4px; margin-top: 8px; cursor: pointer;">Fechar Libras</button>
+=======
+    <div id="libras-modal" role="dialog" aria-labelledby="libras-titulo" aria-hidden="true">
+        <p id="libras-titulo" style="color: white; font-weight: bold; margin-bottom: 5px;"><span aria-hidden="true">🤟</span> Assistente Libras ativo</p>
+        <p style="font-size: 0.9rem;">Use o botão azul do VLibras, à direita da tela, para traduzir os textos para a Língua Brasileira de Sinais.</p>
+        <button type="button" id="close-libras" class="btn btn-perigo" style="margin-top: 8px;">Fechar</button>
+>>>>>>> Stashed changes
     </div>
 
     <!-- RODAPÉ -->
     <footer>
+        <nav aria-label="Outras páginas">
+            <ul class="rodape-links">
+                <li><a href="./perfil.html">Meus pedidos (Perfil)</a></li>
+                <li><a href="./prevencao.html">Prevenção</a></li>
+                <li><a href="./sus.html">SUS</a></li>
+                <li><a href="./seguranca.html#canais">Canais de denúncia e emergência</a></li>
+            </ul>
+        </nav>
+        <p>O SaúdeMais não marca consultas, não faz atendimento médico e não substitui serviços de emergência. Em emergência, ligue <a href="tel:192">192 (SAMU)</a>.</p>
         <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
     </footer>
 
+<<<<<<< Updated upstream
     <!-- SCRIPTS DE ACESSIBILIDADE INTERATIVA -->
     <script>
         // 1. Leitor de Áudio (Text-to-Speech)
@@ -439,5 +469,14 @@
             location.reload(); // Recarrega a página para aplicar
         }
     </script>
+=======
+    <!-- VLIBRAS (TRADUÇÃO PARA LIBRAS) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }</script>
+>>>>>>> Stashed changes
 </body>
 </html>

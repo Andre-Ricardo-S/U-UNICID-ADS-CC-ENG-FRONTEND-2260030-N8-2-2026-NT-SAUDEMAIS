@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaúdeMais - Preciso de Ajuda</title>
+    <meta name="description" content="Peça transporte ou acompanhante para ir ao posto de saúde.">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
+    <script src="./js/acessibilidade.js"></script>
+    <script src="./js/site.js" defer></script>
+</head>
+<body>
+    <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="barra-acessibilidade">
+            <div class="conteudo-barra">
+                <div class="grupo" role="group" aria-label="Tamanho da letra e contraste">
+                    <span aria-hidden="true">Letra:</span>
+                    <button type="button" data-fonte="diminuir">A-<span class="visualmente-oculto"> diminuir letra</span></button>
+                    <button type="button" data-fonte="padrao">A<span class="visualmente-oculto"> letra no tamanho padrão</span></button>
+                    <button type="button" data-fonte="aumentar">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+                    <span class="visualmente-oculto" data-fonte-indicador aria-live="polite"></span>
+                    <button type="button" data-contraste-rapido aria-pressed="false">◐ Contraste</button>
+                </div>
+                <p><strong>Emergência?</strong> Ligue <a href="tel:192">192 (SAMU)</a></p>
+            </div>
+        </div>
+        <div class="topo">
+            <a class="logo" href="./index.html">
+                <img src="./assets/image-removebg-preview.png" alt="">
+                SaúdeMais
+            </a>
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal">☰ <span data-rotulo>Menu</span></button>
+            <nav id="menu-principal" class="menu" aria-label="Menu principal">
+                <ul>
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./sobre-nos.html">Sobre</a></li>
+                    <li><a href="./como-funciona.html">Como Funciona</a></li>
+                    <li><a href="./preciso-de-ajuda.html" aria-current="page">Preciso de Ajuda</a></li>
+                    <li><a href="./quero-ajudar.html">Quero Ajudar</a></li>
+                    <li><a href="./mapa.html">Mapa</a></li>
+                    <li><a href="./unidades.html">Postos de Saúde</a></li>
+                    <li><a href="./configuracoes.html">Acessibilidade</a></li>
+                    <li><a href="./seguranca.html">Segurança</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+        <hr>
+    </header>
+
+    <main id="conteudo">
+        <div class="card">
+            <h1>Preciso de ajuda para ir ao posto</h1>
+            <p class="texto-grande">Preencha o pedido abaixo. Vamos procurar um voluntário perto de você e <strong>ligar para confirmar</strong>.</p>
+
+            <div class="alerta alerta-emergencia">
+                <p><strong>Atenção:</strong> este pedido <strong>não marca consulta</strong> e <strong>não é para emergência</strong>. Se alguém está passando mal agora, ligue <a href="tel:192"><strong>192 (SAMU)</strong></a>.</p>
+            </div>
+
+            <!-- MENSAGEM DE CONFIRMAÇÃO -->
+            <div id="confirmacao" class="alerta alerta-sucesso" tabindex="-1" hidden></div>
+
+            <p id="aviso-preenchido" class="alerta alerta-info" hidden>Preenchemos alguns campos com os dados do seu último pedido. Confira se está tudo certo.</p>
+
+            <form id="form-ajuda" class="formulario" data-validar novalidate>
+                <p>Todos os campos são obrigatórios, menos os marcados com <strong>(opcional)</strong>.</p>
+
+                <!-- 1. QUEM PRECISA -->
+                <fieldset>
+                    <legend>1. Quem precisa de ajuda</legend>
+
+                    <fieldset id="grupo-perfil" data-obrigatorio data-mensagem="Escolha quem está fazendo o pedido.">
+                        <legend>Quem está fazendo o pedido?</legend>
+                        <div class="opcoes">
+                            <label class="opcao"><input type="radio" name="perfil" value="Idoso(a) (60 anos ou mais)"> Sou idoso(a) (60 anos ou mais)</label>
+                            <label class="opcao"><input type="radio" name="perfil" value="Pessoa com deficiência"> Sou pessoa com deficiência</label>
+                            <label class="opcao"><input type="radio" name="perfil" value="Idoso(a) com deficiência"> Sou idoso(a) e tenho deficiência</label>
+                            <label class="opcao"><input type="radio" name="perfil" value="Familiar ou responsável"> Sou familiar ou responsável</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="campo">
+                        <label for="nome">Nome de quem vai ao posto</label>
+                        <input type="text" id="nome" name="nome" autocomplete="name" required data-valida="nome" data-nome="Nome de quem vai ao posto">
+                    </div>
+
+                    <div class="campo" id="campo-responsavel" hidden>
+                        <label for="responsavel">Seu nome (familiar ou responsável)</label>
+                        <input type="text" id="responsavel" name="responsavel" required data-valida="nome" data-nome="Seu nome (familiar ou responsável)">
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefone">Telefone com DDD <span class="dica" id="dica-telefone">Vamos ligar neste número para confirmar. Exemplo: (11) 91234-5678</span></label>
+                        <input type="tel" id="telefone" name="telefone" inputmode="tel" autocomplete="tel" required data-valida="telefone" data-nome="Telefone" aria-describedby="dica-telefone">
+                    </div>
+                </fieldset>
+
+                <!-- 2. ONDE BUSCAR -->
+                <fieldset>
+                    <legend>2. Onde buscar você</legend>
+
+                    <div class="campo">
+                        <label for="endereco">Endereço (rua, número e bairro)</label>
+                        <input type="text" id="endereco" name="endereco" autocomplete="street-address" required data-nome="Endereço">
+                    </div>
+
+                    <div class="campo">
+                        <label for="referencia">Ponto de referência (opcional) <span class="dica" id="dica-referencia">Exemplo: perto da padaria, portão azul, no fim do beco, 3º andar sem elevador.</span></label>
+                        <input type="text" id="referencia" name="referencia" aria-describedby="dica-referencia">
+                    </div>
+                </fieldset>
+
+                <!-- 3. TIPO DE AJUDA -->
+                <fieldset>
+                    <legend>3. Que ajuda você precisa</legend>
+
+                    <fieldset id="grupo-tipo" data-obrigatorio data-mensagem="Escolha o tipo de ajuda: transporte, acompanhante a pé ou os dois.">
+                        <legend>Tipo de ajuda</legend>
+                        <div class="opcoes">
+                            <label class="opcao"><input type="radio" name="tipoAjuda" value="Transporte (carro ou van)"> <span aria-hidden="true">🚐</span> Transporte (carro ou van)</label>
+                            <label class="opcao"><input type="radio" name="tipoAjuda" value="Acompanhante a pé"> <span aria-hidden="true">🚶</span> Acompanhante a pé</label>
+                            <label class="opcao"><input type="radio" name="tipoAjuda" value="Transporte e acompanhante"> <span aria-hidden="true">🤝</span> Os dois: transporte e acompanhante</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset id="grupo-trajeto" data-obrigatorio data-mensagem="Escolha se precisa de ajuda na ida, na volta ou nas duas.">
+                        <legend>Ida e volta</legend>
+                        <div class="opcoes">
+                            <label class="opcao"><input type="radio" name="trajeto" value="Ida e volta"> Ida e volta</label>
+                            <label class="opcao"><input type="radio" name="trajeto" value="Só ida"> Só ida</label>
+                            <label class="opcao"><input type="radio" name="trajeto" value="Só volta"> Só volta</label>
+                        </div>
+                    </fieldset>
+                </fieldset>
+
+                <!-- 4. PARA ONDE E QUANDO -->
+                <fieldset>
+                    <legend>4. Para onde e quando</legend>
+
+                    <div class="campo">
+                        <label for="posto">Posto de saúde de destino</label>
+                        <select id="posto" name="posto" required data-nome="Posto de saúde de destino">
+                            <option value="">Escolha o posto</option>
+                            <option value="UBS Centro – Unicid Saúde">UBS Centro – Unicid Saúde</option>
+                            <option value="UBS Zona Leste – Bem Estar">UBS Zona Leste – Bem Estar</option>
+                            <option value="UBS Vila Esperança">UBS Vila Esperança</option>
+                            <option value="Posto de Saúde Jardim Alegria">Posto de Saúde Jardim Alegria</option>
+                            <option value="outro">Outro posto (vou escrever o nome)</option>
+                        </select>
+                    </div>
+
+                    <div class="campo" id="campo-outro-posto" hidden>
+                        <label for="outroPosto">Nome e endereço do posto</label>
+                        <input type="text" id="outroPosto" name="outroPosto" required data-nome="Nome e endereço do posto">
+                    </div>
+
+                    <div class="campo">
+                        <label for="data">Data da consulta</label>
+                        <input type="date" id="data" name="data" required data-valida="data-futura" data-nome="Data da consulta">
+                    </div>
+
+                    <div class="campo">
+                        <label for="horario">Horário da consulta <span class="dica" id="dica-horario">O voluntário vai chegar com tempo antes desse horário.</span></label>
+                        <input type="time" id="horario" name="horario" required data-nome="Horário da consulta" aria-describedby="dica-horario">
+                    </div>
+                </fieldset>
+
+                <!-- 5. NECESSIDADES -->
+                <fieldset>
+                    <legend>5. Suas necessidades (opcional)</legend>
+                    <p>Marque tudo o que ajuda o voluntário a se preparar. Você pode marcar mais de uma opção.</p>
+                    <div class="opcoes">
+                        <label class="opcao"><input type="checkbox" name="necessidades" value="Uso cadeira de rodas"> Uso cadeira de rodas</label>
+                        <label class="opcao"><input type="checkbox" name="necessidades" value="Uso andador, muleta ou bengala"> Uso andador, muleta ou bengala</label>
+                        <label class="opcao"><input type="checkbox" name="necessidades" value="Dificuldade para andar ou subir escadas"> Tenho dificuldade para andar ou subir escadas</label>
+                        <label class="opcao"><input type="checkbox" name="necessidades" value="Autismo (TEA)"> Autismo (TEA)</label>
+                        <label class="opcao"><input type="checkbox" name="necessidades" value="Deficiência visual"> Deficiência visual (baixa visão ou cegueira)</label>
+                        <label class="opcao"><input type="checkbox" name="necessidades" value="Deficiência auditiva ou surdez"> Deficiência auditiva ou surdez</label>
+                        <label class="opcao"><input type="checkbox" name="necessidades" value="Comunicação em Libras"> Me comunico em Libras</label>
+                        <label class="opcao"><input type="checkbox" name="necessidades" value="Deficiência intelectual"> Deficiência intelectual</label>
+                        <label class="opcao"><input type="checkbox" name="necessidades" value="Esquecimento ou confusão"> Esquecimento ou confusão (ex.: Alzheimer)</label>
+                        <label class="opcao"><input type="checkbox" name="necessidades" value="Uso oxigênio ou outro aparelho"> Uso oxigênio ou outro aparelho</label>
+                    </div>
+
+                    <div class="campo">
+                        <label for="observacoes">Observações (opcional) <span class="dica" id="dica-obs">Exemplo: fico nervoso em lugares cheios; preciso que falem devagar; minha casa tem escada.</span></label>
+                        <textarea id="observacoes" name="observacoes" rows="4" aria-describedby="dica-obs"></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="campo">
+                    <label class="opcao" for="ciente">
+                        <input type="checkbox" id="ciente" name="ciente" required data-mensagem="Marque que você entendeu que o SaúdeMais não marca consultas e não atende emergências.">
+                        Entendi que o SaúdeMais <strong>não marca consultas</strong> e <strong>não atende emergências</strong>.
+                    </label>
+                </div>
+
+                <div class="acoes-form">
+                    <button type="submit" class="btn">Enviar pedido de ajuda</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <nav aria-label="Outras páginas">
+            <ul class="rodape-links">
+                <li><a href="./perfil.html">Meus pedidos (Perfil)</a></li>
+                <li><a href="./prevencao.html">Prevenção</a></li>
+                <li><a href="./sus.html">SUS</a></li>
+                <li><a href="./seguranca.html#canais">Canais de denúncia e emergência</a></li>
+            </ul>
+        </nav>
+        <p>O SaúdeMais não marca consultas, não faz atendimento médico e não substitui serviços de emergência. Em emergência, ligue <a href="tel:192">192 (SAMU)</a>.</p>
+        <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const S = window.SaudeMais;
+            const form = document.getElementById('form-ajuda');
+            const confirmacao = document.getElementById('confirmacao');
+            const campoResponsavel = document.getElementById('campo-responsavel');
+            const campoOutroPosto = document.getElementById('campo-outro-posto');
+            const selectPosto = document.getElementById('posto');
+
+            // Mostra "Seu nome" só para familiar/responsável
+            function atualizarResponsavel() {
+                campoResponsavel.hidden = S.valorMarcado(form, 'perfil') !== 'Familiar ou responsável';
+            }
+            // Mostra "Nome do posto" só quando escolher "Outro"
+            function atualizarOutroPosto() {
+                campoOutroPosto.hidden = selectPosto.value !== 'outro';
+            }
+            form.querySelectorAll('input[name="perfil"]').forEach((r) => r.addEventListener('change', atualizarResponsavel));
+            selectPosto.addEventListener('change', atualizarOutroPosto);
+
+            // Posto vindo da página "Postos de Saúde" (?posto=...)
+            const postoUrl = new URLSearchParams(window.location.search).get('posto');
+            if (postoUrl && Array.from(selectPosto.options).some((o) => o.value === postoUrl)) {
+                selectPosto.value = postoUrl;
+            }
+
+            // Preenche com o último cadastro salvo neste aparelho
+            let perfil = null;
+            try { perfil = JSON.parse(localStorage.getItem('saudemais_perfil')); } catch (e) { perfil = null; }
+            if (perfil) {
+                ['nome', 'responsavel', 'telefone', 'endereco', 'referencia'].forEach((campo) => {
+                    if (perfil[campo]) form.elements[campo].value = perfil[campo];
+                });
+                if (perfil.perfil) {
+                    const radio = form.querySelector(`input[name="perfil"][value="${CSS.escape(perfil.perfil)}"]`);
+                    if (radio) radio.checked = true;
+                }
+                (perfil.necessidades || []).forEach((n) => {
+                    const box = form.querySelector(`input[name="necessidades"][value="${CSS.escape(n)}"]`);
+                    if (box) box.checked = true;
+                });
+                atualizarResponsavel();
+                document.getElementById('aviso-preenchido').hidden = false;
+            }
+
+            form.addEventListener('submit', (evento) => {
+                evento.preventDefault();
+                const erros = S.validar(form);
+                if (erros.length) {
+                    S.mostrarErros(form, erros);
+                    return;
+                }
+                S.limparErros(form);
+
+                const posto = selectPosto.value === 'outro'
+                    ? form.elements.outroPosto.value.trim()
+                    : selectPosto.value;
+
+                const pedido = {
+                    protocolo: S.gerarProtocolo('AJ'),
+                    criadoEm: new Date().toLocaleString('pt-BR'),
+                    status: 'Aguardando voluntário',
+                    perfil: S.valorMarcado(form, 'perfil'),
+                    nome: form.elements.nome.value.trim(),
+                    responsavel: campoResponsavel.hidden ? '' : form.elements.responsavel.value.trim(),
+                    telefone: form.elements.telefone.value.trim(),
+                    endereco: form.elements.endereco.value.trim(),
+                    referencia: form.elements.referencia.value.trim(),
+                    tipoAjuda: S.valorMarcado(form, 'tipoAjuda'),
+                    trajeto: S.valorMarcado(form, 'trajeto'),
+                    posto,
+                    data: form.elements.data.value,
+                    horario: form.elements.horario.value,
+                    necessidades: S.textosMarcados(form, 'necessidades'),
+                    observacoes: form.elements.observacoes.value.trim()
+                };
+
+                try {
+                    S.salvarNaLista('saudemais_pedidos', pedido);
+                    localStorage.setItem('saudemais_perfil', JSON.stringify({
+                        perfil: pedido.perfil,
+                        nome: pedido.nome,
+                        responsavel: pedido.responsavel,
+                        telefone: pedido.telefone,
+                        endereco: pedido.endereco,
+                        referencia: pedido.referencia,
+                        necessidades: pedido.necessidades,
+                        observacoes: pedido.observacoes
+                    }));
+                } catch (e) {
+                    confirmacao.className = 'alerta alerta-erro';
+                    S.mostrarSucesso(confirmacao, '<h2>Não foi possível salvar</h2><p>Seu navegador bloqueou o armazenamento. Tente de novo ou peça ajuda a um familiar.</p>');
+                    return;
+                }
+
+                const e = S.escapar;
+                confirmacao.className = 'alerta alerta-sucesso';
+                S.mostrarSucesso(confirmacao, `
+                    <h2>✔ Pedido enviado com sucesso!</h2>
+                    <p>Número do seu pedido: <span class="protocolo">${e(pedido.protocolo)}</span></p>
+                    <p>Guarde este número. <strong>Vamos ligar para ${e(pedido.telefone)}</strong> com o nome e o número do crachá do voluntário.</p>
+                    <h3>Resumo</h3>
+                    <ul class="lista">
+                        <li><strong>Para:</strong> ${e(pedido.nome)}</li>
+                        <li><strong>Ajuda:</strong> ${e(pedido.tipoAjuda)} – ${e(pedido.trajeto)}</li>
+                        <li><strong>Posto:</strong> ${e(pedido.posto)}</li>
+                        <li><strong>Quando:</strong> ${e(S.formatarData(pedido.data))} às ${e(pedido.horario)}</li>
+                        <li><strong>Buscar em:</strong> ${e(pedido.endereco)}${pedido.referencia ? ` (${e(pedido.referencia)})` : ''}</li>
+                        ${pedido.necessidades.length ? `<li><strong>Necessidades:</strong> ${e(pedido.necessidades.join(', '))}</li>` : ''}
+                    </ul>
+                    <p><strong>Lembre:</strong> só entre no carro depois de conferir o crachá do voluntário.</p>
+                    <div class="acoes-form" style="margin-top: 1rem;">
+                        <a href="./perfil.html" class="btn">Ver meus pedidos</a>
+                        <button type="button" class="btn-outline" id="novo-pedido">Fazer outro pedido</button>
+                    </div>`);
+
+                form.reset();
+                form.hidden = true;
+                document.getElementById('aviso-preenchido').hidden = true;
+
+                document.getElementById('novo-pedido').addEventListener('click', () => {
+                    confirmacao.hidden = true;
+                    form.hidden = false;
+                    atualizarResponsavel();
+                    atualizarOutroPosto();
+                    form.elements.nome.focus();
+                });
+            });
+        });
+    </script>
+
+    <!-- VLIBRAS (TRADUÇÃO PARA LIBRAS) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }</script>
+</body>
+</html>

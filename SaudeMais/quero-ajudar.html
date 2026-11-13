@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaúdeMais - Quero Ajudar</title>
+    <meta name="description" content="Cadastre-se como voluntário, motorista ou acompanhante no SaúdeMais.">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
+    <script src="./js/acessibilidade.js"></script>
+    <script src="./js/site.js" defer></script>
+</head>
+<body>
+    <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="barra-acessibilidade">
+            <div class="conteudo-barra">
+                <div class="grupo" role="group" aria-label="Tamanho da letra e contraste">
+                    <span aria-hidden="true">Letra:</span>
+                    <button type="button" data-fonte="diminuir">A-<span class="visualmente-oculto"> diminuir letra</span></button>
+                    <button type="button" data-fonte="padrao">A<span class="visualmente-oculto"> letra no tamanho padrão</span></button>
+                    <button type="button" data-fonte="aumentar">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+                    <span class="visualmente-oculto" data-fonte-indicador aria-live="polite"></span>
+                    <button type="button" data-contraste-rapido aria-pressed="false">◐ Contraste</button>
+                </div>
+                <p><strong>Emergência?</strong> Ligue <a href="tel:192">192 (SAMU)</a></p>
+            </div>
+        </div>
+        <div class="topo">
+            <a class="logo" href="./index.html">
+                <img src="./assets/image-removebg-preview.png" alt="">
+                SaúdeMais
+            </a>
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal">☰ <span data-rotulo>Menu</span></button>
+            <nav id="menu-principal" class="menu" aria-label="Menu principal">
+                <ul>
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./sobre-nos.html">Sobre</a></li>
+                    <li><a href="./como-funciona.html">Como Funciona</a></li>
+                    <li><a href="./preciso-de-ajuda.html">Preciso de Ajuda</a></li>
+                    <li><a href="./quero-ajudar.html" aria-current="page">Quero Ajudar</a></li>
+                    <li><a href="./mapa.html">Mapa</a></li>
+                    <li><a href="./unidades.html">Postos de Saúde</a></li>
+                    <li><a href="./configuracoes.html">Acessibilidade</a></li>
+                    <li><a href="./seguranca.html">Segurança</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+        <hr>
+    </header>
+
+    <main id="conteudo">
+        <div class="card">
+            <h1>Quero ajudar</h1>
+            <p class="texto-grande">Com algumas horas por mês você ajuda um idoso ou uma pessoa com deficiência do seu bairro a chegar ao posto de saúde.</p>
+
+            <div class="grade" style="margin-bottom: 0;">
+                <div class="unidade-box" style="margin-top: 0;">
+                    <h2 style="font-size: 1.15rem;"><span aria-hidden="true">🚐</span> Motorista</h2>
+                    <p>Leva a pessoa de carro ou van, na ida e/ou na volta.</p>
+                </div>
+                <div class="unidade-box" style="margin-top: 0;">
+                    <h2 style="font-size: 1.15rem;"><span aria-hidden="true">🚶</span> Acompanhante</h2>
+                    <p>Vai junto a pé, ajuda em escadas e becos e fica com a pessoa no posto.</p>
+                </div>
+            </div>
+
+            <!-- MENSAGEM DE CONFIRMAÇÃO -->
+            <div id="confirmacao" class="alerta alerta-sucesso" tabindex="-1" hidden></div>
+
+            <form id="form-voluntario" class="formulario" data-validar novalidate>
+                <p>Todos os campos são obrigatórios, menos os marcados com <strong>(opcional)</strong>.</p>
+
+                <!-- 1. DADOS -->
+                <fieldset>
+                    <legend>1. Seus dados</legend>
+
+                    <div class="campo">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome" autocomplete="name" required data-valida="nome" data-nome="Nome completo">
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefone">Telefone com DDD <span class="dica" id="dica-telefone">Exemplo: (11) 91234-5678</span></label>
+                        <input type="tel" id="telefone" name="telefone" inputmode="tel" autocomplete="tel" required data-valida="telefone" data-nome="Telefone" aria-describedby="dica-telefone">
+                    </div>
+
+                    <div class="campo">
+                        <label for="bairro">Bairro onde você mora ou pode ajudar</label>
+                        <input type="text" id="bairro" name="bairro" required data-nome="Bairro">
+                    </div>
+                </fieldset>
+
+                <!-- 2. TIPO DE AJUDA -->
+                <fieldset>
+                    <legend>2. Como você quer ajudar</legend>
+
+                    <fieldset id="grupo-tipo" data-obrigatorio data-mensagem="Escolha como você quer ajudar.">
+                        <legend>Tipo de ajuda</legend>
+                        <div class="opcoes">
+                            <label class="opcao"><input type="radio" name="tipoAjuda" value="Transporte (carro ou van)"> <span aria-hidden="true">🚐</span> Tenho carro ou van</label>
+                            <label class="opcao"><input type="radio" name="tipoAjuda" value="Acompanhante a pé"> <span aria-hidden="true">🚶</span> Acompanhante a pé</label>
+                            <label class="opcao"><input type="radio" name="tipoAjuda" value="Transporte e acompanhante"> <span aria-hidden="true">🤝</span> Os dois</label>
+                        </div>
+                    </fieldset>
+
+                    <div id="bloco-veiculo" hidden>
+                        <div class="campo">
+                            <label for="veiculo">Qual veículo?</label>
+                            <select id="veiculo" name="veiculo" required data-nome="Qual veículo">
+                                <option value="">Escolha o veículo</option>
+                                <option value="Carro">Carro</option>
+                                <option value="Van">Van</option>
+                                <option value="Van adaptada (rampa ou elevador)">Van adaptada (com rampa ou elevador para cadeira de rodas)</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label class="opcao" for="cnh">
+                                <input type="checkbox" id="cnh" name="cnh" required data-mensagem="Para dirigir, confirme que você tem CNH válida e o veículo está com os documentos em dia.">
+                                Tenho CNH válida e o veículo está com os documentos em dia.
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- 3. DISPONIBILIDADE -->
+                <fieldset>
+                    <legend>3. Quando você pode ajudar</legend>
+
+                    <fieldset id="grupo-dias" data-obrigatorio data-mensagem="Marque pelo menos um dia da semana.">
+                        <legend>Dias da semana</legend>
+                        <div class="opcoes">
+                            <label class="opcao"><input type="checkbox" name="dias" value="Segunda"> Segunda</label>
+                            <label class="opcao"><input type="checkbox" name="dias" value="Terça"> Terça</label>
+                            <label class="opcao"><input type="checkbox" name="dias" value="Quarta"> Quarta</label>
+                            <label class="opcao"><input type="checkbox" name="dias" value="Quinta"> Quinta</label>
+                            <label class="opcao"><input type="checkbox" name="dias" value="Sexta"> Sexta</label>
+                            <label class="opcao"><input type="checkbox" name="dias" value="Sábado"> Sábado</label>
+                            <label class="opcao"><input type="checkbox" name="dias" value="Domingo"> Domingo</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset id="grupo-periodos" data-obrigatorio data-mensagem="Marque pelo menos um horário.">
+                        <legend>Horários</legend>
+                        <div class="opcoes">
+                            <label class="opcao"><input type="checkbox" name="periodos" value="Manhã (7h às 12h)"> Manhã (7h às 12h)</label>
+                            <label class="opcao"><input type="checkbox" name="periodos" value="Tarde (12h às 18h)"> Tarde (12h às 18h)</label>
+                            <label class="opcao"><input type="checkbox" name="periodos" value="Noite (18h às 22h)"> Noite (18h às 22h)</label>
+                        </div>
+                    </fieldset>
+                </fieldset>
+
+                <!-- 4. EXPERIÊNCIA -->
+                <fieldset>
+                    <legend>4. Experiência com idosos e pessoas com deficiência</legend>
+
+                    <fieldset id="grupo-experiencia" data-obrigatorio data-mensagem="Conte se você tem experiência com idosos ou pessoas com deficiência.">
+                        <legend>Você já cuidou ou acompanhou idosos ou PCDs?</legend>
+                        <div class="opcoes">
+                            <label class="opcao"><input type="radio" name="experiencia" value="Sim, tenho experiência"> Sim, tenho experiência</label>
+                            <label class="opcao"><input type="radio" name="experiencia" value="Um pouco"> Um pouco (por exemplo, com alguém da família)</label>
+                            <label class="opcao"><input type="radio" name="experiencia" value="Não, mas quero aprender"> Não, mas quero aprender</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>O que você sabe fazer (opcional)</legend>
+                        <div class="opcoes">
+                            <label class="opcao"><input type="checkbox" name="habilidades" value="Sei empurrar e transferir cadeira de rodas"> Sei empurrar e transferir cadeira de rodas</label>
+                            <label class="opcao"><input type="checkbox" name="habilidades" value="Sei Libras"> Sei Libras</label>
+                            <label class="opcao"><input type="checkbox" name="habilidades" value="Sei guiar pessoa cega"> Sei guiar pessoa cega</label>
+                            <label class="opcao"><input type="checkbox" name="habilidades" value="Curso de primeiros socorros"> Tenho curso de primeiros socorros</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="campo">
+                        <label for="relato">Conte um pouco da sua experiência (opcional)</label>
+                        <textarea id="relato" name="relato" rows="4"></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="campo">
+                    <label class="opcao" for="termo">
+                        <input type="checkbox" id="termo" name="termo" required data-mensagem="Para ser voluntário, aceite a verificação de cadastro e as regras de segurança.">
+                        Aceito passar pela verificação de cadastro, usar o crachá do SaúdeMais e seguir as <a href="./seguranca.html">regras de segurança</a>.
+                    </label>
+                </div>
+
+                <div class="acoes-form">
+                    <button type="submit" class="btn">Quero ser voluntário</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <nav aria-label="Outras páginas">
+            <ul class="rodape-links">
+                <li><a href="./perfil.html">Meus pedidos (Perfil)</a></li>
+                <li><a href="./prevencao.html">Prevenção</a></li>
+                <li><a href="./sus.html">SUS</a></li>
+                <li><a href="./seguranca.html#canais">Canais de denúncia e emergência</a></li>
+            </ul>
+        </nav>
+        <p>O SaúdeMais não marca consultas, não faz atendimento médico e não substitui serviços de emergência. Em emergência, ligue <a href="tel:192">192 (SAMU)</a>.</p>
+        <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const S = window.SaudeMais;
+            const form = document.getElementById('form-voluntario');
+            const confirmacao = document.getElementById('confirmacao');
+            const blocoVeiculo = document.getElementById('bloco-veiculo');
+
+            // Perguntas do veículo só aparecem para quem vai dirigir
+            function atualizarVeiculo() {
+                const tipo = S.valorMarcado(form, 'tipoAjuda');
+                blocoVeiculo.hidden = !(tipo === 'Transporte (carro ou van)' || tipo === 'Transporte e acompanhante');
+            }
+            form.querySelectorAll('input[name="tipoAjuda"]').forEach((r) => r.addEventListener('change', atualizarVeiculo));
+
+            form.addEventListener('submit', (evento) => {
+                evento.preventDefault();
+                const erros = S.validar(form);
+                if (erros.length) {
+                    S.mostrarErros(form, erros);
+                    return;
+                }
+                S.limparErros(form);
+
+                const voluntario = {
+                    cadastro: S.gerarProtocolo('VOL'),
+                    criadoEm: new Date().toLocaleString('pt-BR'),
+                    status: 'Em análise',
+                    nome: form.elements.nome.value.trim(),
+                    telefone: form.elements.telefone.value.trim(),
+                    bairro: form.elements.bairro.value.trim(),
+                    tipoAjuda: S.valorMarcado(form, 'tipoAjuda'),
+                    veiculo: blocoVeiculo.hidden ? '' : form.elements.veiculo.value,
+                    dias: S.textosMarcados(form, 'dias'),
+                    periodos: S.textosMarcados(form, 'periodos'),
+                    experiencia: S.valorMarcado(form, 'experiencia'),
+                    habilidades: S.textosMarcados(form, 'habilidades'),
+                    relato: form.elements.relato.value.trim()
+                };
+
+                try {
+                    S.salvarNaLista('saudemais_voluntarios', voluntario);
+                } catch (e) {
+                    confirmacao.className = 'alerta alerta-erro';
+                    S.mostrarSucesso(confirmacao, '<h2>Não foi possível salvar</h2><p>Seu navegador bloqueou o armazenamento. Tente de novo.</p>');
+                    return;
+                }
+
+                const e = S.escapar;
+                confirmacao.className = 'alerta alerta-sucesso';
+                S.mostrarSucesso(confirmacao, `
+                    <h2>✔ Obrigado, ${e(voluntario.nome.split(' ')[0])}! Cadastro recebido.</h2>
+                    <p>Número do seu cadastro: <span class="protocolo">${e(voluntario.cadastro)}</span></p>
+                    <p>Este número vai aparecer no seu <strong>crachá</strong>. Em breve vamos ligar para <strong>${e(voluntario.telefone)}</strong> para uma conversa rápida de orientação.</p>
+                    <h3>Resumo</h3>
+                    <ul class="lista">
+                        <li><strong>Bairro:</strong> ${e(voluntario.bairro)}</li>
+                        <li><strong>Ajuda:</strong> ${e(voluntario.tipoAjuda)}${voluntario.veiculo ? ` – ${e(voluntario.veiculo)}` : ''}</li>
+                        <li><strong>Dias:</strong> ${e(voluntario.dias.join(', '))}</li>
+                        <li><strong>Horários:</strong> ${e(voluntario.periodos.join(', '))}</li>
+                        <li><strong>Experiência:</strong> ${e(voluntario.experiencia)}</li>
+                    </ul>
+                    <div class="acoes-form" style="margin-top: 1rem;">
+                        <a href="./seguranca.html" class="btn">Ler as regras de segurança</a>
+                        <a href="./como-funciona.html" class="btn-outline">Como funciona</a>
+                    </div>`);
+
+                form.reset();
+                form.hidden = true;
+            });
+        });
+    </script>
+
+    <!-- VLIBRAS (TRADUÇÃO PARA LIBRAS) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }</script>
+</body>
+</html>

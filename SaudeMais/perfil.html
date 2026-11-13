@@ -21,6 +21,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
     <title>SaúdeMais - Perfil</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -48,44 +49,236 @@
 <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
+=======
+    <title>SaúdeMais - Meu Perfil</title>
+    <meta name="description" content="Veja seus pedidos de ajuda e suas necessidades cadastradas no SaúdeMais.">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
+    <script src="./js/acessibilidade.js"></script>
+    <script src="./js/site.js" defer></script>
+    <style>
+        .perfil-header { display: flex; gap: 1.5rem; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .avatar { background: var(--azul); color: white; width: 5rem; height: 5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; flex-shrink: 0; }
+        .status { display: inline-block; padding: 0.2rem 0.75rem; border-radius: 999px; font-weight: 700; font-size: 0.95rem; border: 2px solid; }
+        .status-aguardando { background: #fef9c3; color: #713f12; border-color: #ca8a04; }
+        .status-cancelado { background: #f1f5f9; color: #334155; border-color: #64748b; }
+        .pedido h3 { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center; }
+    </style>
+>>>>>>> Stashed changes
 </head>
 <body>
+    <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO -->
     <header>
-        <nav>
-            <h1><a href="./index.html"><img alt="Logo" src="./assets/image-removebg-preview.png">SaúdeMais</a></h1>
-            <div>
-                <a href="./index.html">Home</a>
-                <a href="./agendar.html">Serviços</a>
-                <a href="./unidades.html">Unidades</a>
-                <a href="./prevencao.html">Prevenção</a>
-                <a href="./sus.html">SUS</a>
-                <a href="./sobre-nos.html">Sobre nós</a>
-                <a href="./contato.html">Contato</a>
-                <a href="./emergencia.html">Emergência</a>
-                <a href="./perfil.html" class="active">Perfil</a>
-                <a href="./configuracoes.html">Configurações</a>
+        <div class="barra-acessibilidade">
+            <div class="conteudo-barra">
+                <div class="grupo" role="group" aria-label="Tamanho da letra e contraste">
+                    <span aria-hidden="true">Letra:</span>
+                    <button type="button" data-fonte="diminuir">A-<span class="visualmente-oculto"> diminuir letra</span></button>
+                    <button type="button" data-fonte="padrao">A<span class="visualmente-oculto"> letra no tamanho padrão</span></button>
+                    <button type="button" data-fonte="aumentar">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+                    <span class="visualmente-oculto" data-fonte-indicador aria-live="polite"></span>
+                    <button type="button" data-contraste-rapido aria-pressed="false">◐ Contraste</button>
+                </div>
+                <p><strong>Emergência?</strong> Ligue <a href="tel:192">192 (SAMU)</a></p>
             </div>
-        </nav>
+        </div>
+        <div class="topo">
+            <a class="logo" href="./index.html">
+                <img src="./assets/image-removebg-preview.png" alt="">
+                SaúdeMais
+            </a>
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal">☰ <span data-rotulo>Menu</span></button>
+            <nav id="menu-principal" class="menu" aria-label="Menu principal">
+                <ul>
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./sobre-nos.html">Sobre</a></li>
+                    <li><a href="./como-funciona.html">Como Funciona</a></li>
+                    <li><a href="./preciso-de-ajuda.html">Preciso de Ajuda</a></li>
+                    <li><a href="./quero-ajudar.html">Quero Ajudar</a></li>
+                    <li><a href="./mapa.html">Mapa</a></li>
+                    <li><a href="./unidades.html">Postos de Saúde</a></li>
+                    <li><a href="./configuracoes.html">Acessibilidade</a></li>
+                    <li><a href="./seguranca.html">Segurança</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
         <hr>
     </header>
-    <main>
+
+    <main id="conteudo">
         <div class="card">
-            <h2>Meu Perfil / Painel do Paciente</h2>
-            <div class="perfil-header">
-                <div class="avatar">AR</div>
-                <div>
-                    <h3>André Ricardo</h3>
-                    <p><strong>Cartão SUS:</strong> 123 4567 8910 1112</p>
-                    <p><strong>E-mail:</strong> andre@unicid.edu.br</p>
+            <h1>Meu perfil</h1>
+            <p>Os dados ficam salvos <strong>somente neste aparelho</strong>.</p>
+
+            <!-- DADOS (preenchido pelo script) -->
+            <div id="dados-perfil">
+                <div class="alerta alerta-info">
+                    <p>Você ainda não fez nenhum pedido neste aparelho. Seus dados e necessidades aparecem aqui depois do primeiro pedido.</p>
+                </div>
+                <a href="./preciso-de-ajuda.html" class="btn">Fazer meu primeiro pedido</a>
+            </div>
+        </div>
+
+        <section class="card" aria-labelledby="titulo-necessidades">
+            <h2 id="titulo-necessidades">Minhas necessidades cadastradas</h2>
+            <div id="lista-necessidades">
+                <p>Nenhuma necessidade cadastrada ainda.</p>
+            </div>
+        </section>
+
+        <section class="card" aria-labelledby="titulo-pedidos">
+            <h2 id="titulo-pedidos" tabindex="-1">Meus pedidos de ajuda</h2>
+            <div id="status-perfil" role="status"></div>
+            <div id="lista-pedidos">
+                <p>Nenhum pedido ainda.</p>
+            </div>
+            <p style="margin-top: 1rem;"><a href="./preciso-de-ajuda.html" class="btn">Fazer novo pedido</a></p>
+        </section>
+
+        <section class="card" aria-labelledby="titulo-apagar">
+            <h2 id="titulo-apagar">Apagar meus dados</h2>
+            <p>Remove seus pedidos e necessidades salvos neste aparelho. As configurações de acessibilidade continuam.</p>
+            <button type="button" class="btn btn-perigo" id="apagar-dados">Apagar meus dados</button>
+            <div id="confirmar-apagar" class="alerta alerta-erro" hidden>
+                <p><strong>Tem certeza?</strong> Isso não pode ser desfeito.</p>
+                <div class="acoes-form" style="margin-top: 0.5rem;">
+                    <button type="button" class="btn btn-perigo" id="apagar-sim">Sim, apagar</button>
+                    <button type="button" class="btn-outline" id="apagar-nao">Não, manter</button>
                 </div>
             </div>
-            <h3>Próximas Consultas Agendadas:</h3>
-            <p style="background: #f8fafc; padding: 1rem; border-radius: 6px; border: 1px solid #e2e8f0; margin-top: 5px;">
-                Clínico Geral - UBS Centro | 15/03/2026 às 10:00
-            </p>
-        </div>
+        </section>
     </main>
-    <footer><p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p></footer>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <nav aria-label="Outras páginas">
+            <ul class="rodape-links">
+                <li><a href="./perfil.html" aria-current="page">Meus pedidos (Perfil)</a></li>
+                <li><a href="./prevencao.html">Prevenção</a></li>
+                <li><a href="./sus.html">SUS</a></li>
+                <li><a href="./seguranca.html#canais">Canais de denúncia e emergência</a></li>
+            </ul>
+        </nav>
+        <p>O SaúdeMais não marca consultas, não faz atendimento médico e não substitui serviços de emergência. Em emergência, ligue <a href="tel:192">192 (SAMU)</a>.</p>
+        <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const S = window.SaudeMais;
+            const e = S.escapar;
+            const CHAVE_PEDIDOS = 'saudemais_pedidos';
+            const CHAVE_PERFIL = 'saudemais_perfil';
+            const statusPerfil = document.getElementById('status-perfil');
+
+            function lerPerfil() {
+                try { return JSON.parse(localStorage.getItem(CHAVE_PERFIL)); } catch (err) { return null; }
+            }
+
+            function iniciais(nome) {
+                const partes = nome.trim().split(/\s+/);
+                const primeira = partes[0] ? partes[0][0] : '';
+                const ultima = partes.length > 1 ? partes[partes.length - 1][0] : '';
+                return (primeira + ultima).toUpperCase();
+            }
+
+            function desenharPerfil() {
+                const perfil = lerPerfil();
+                if (!perfil) return;
+
+                document.getElementById('dados-perfil').innerHTML = `
+                    <div class="perfil-header">
+                        <div class="avatar" aria-hidden="true">${e(iniciais(perfil.nome || '?'))}</div>
+                        <div>
+                            <h2 style="margin-bottom: 0.25rem;">${e(perfil.nome)}</h2>
+                            <p style="margin-bottom: 0.25rem;"><strong>Perfil:</strong> ${e(perfil.perfil)}</p>
+                            ${perfil.responsavel ? `<p style="margin-bottom: 0.25rem;"><strong>Responsável:</strong> ${e(perfil.responsavel)}</p>` : ''}
+                            <p style="margin-bottom: 0.25rem;"><strong>Telefone:</strong> ${e(perfil.telefone)}</p>
+                            <p style="margin-bottom: 0;"><strong>Endereço:</strong> ${e(perfil.endereco)}${perfil.referencia ? ` (${e(perfil.referencia)})` : ''}</p>
+                        </div>
+                    </div>`;
+
+                const necessidades = perfil.necessidades || [];
+                document.getElementById('lista-necessidades').innerHTML = `
+                    ${necessidades.length
+                        ? `<ul class="lista-check">${necessidades.map((n) => `<li>${e(n)}</li>`).join('')}</ul>`
+                        : '<p>Nenhuma necessidade especial informada.</p>'}
+                    ${perfil.observacoes ? `<p><strong>Observações:</strong> ${e(perfil.observacoes)}</p>` : ''}
+                    <p>Para mudar, marque as necessidades no seu próximo <a href="./preciso-de-ajuda.html">pedido de ajuda</a>.</p>`;
+            }
+
+            function desenharPedidos() {
+                const pedidos = S.lerLista(CHAVE_PEDIDOS).slice().reverse();
+                const lista = document.getElementById('lista-pedidos');
+                if (!pedidos.length) {
+                    lista.innerHTML = '<p>Nenhum pedido ainda.</p>';
+                    return;
+                }
+
+                lista.innerHTML = pedidos.map((p) => {
+                    const cancelado = p.status === 'Cancelado';
+                    return `
+                    <article class="unidade-box pedido" aria-labelledby="pedido-${e(p.protocolo)}">
+                        <h3 id="pedido-${e(p.protocolo)}">
+                            Pedido ${e(p.protocolo)}
+                            <span class="status ${cancelado ? 'status-cancelado' : 'status-aguardando'}">${e(p.status)}</span>
+                        </h3>
+                        <p><strong>Quando:</strong> ${e(S.formatarData(p.data))} às ${e(p.horario)}</p>
+                        <p><strong>Posto:</strong> ${e(p.posto)}</p>
+                        <p><strong>Ajuda:</strong> ${e(p.tipoAjuda)} – ${e(p.trajeto)}</p>
+                        <p><strong>Para:</strong> ${e(p.nome)}</p>
+                        ${p.necessidades && p.necessidades.length ? `<p><strong>Necessidades:</strong> ${e(p.necessidades.join(', '))}</p>` : ''}
+                        <p><small>Feito em ${e(p.criadoEm)}</small></p>
+                        ${cancelado ? '' : `<button type="button" class="btn-outline" data-cancelar="${e(p.protocolo)}">Cancelar este pedido</button>`}
+                    </article>`;
+                }).join('');
+
+                lista.querySelectorAll('[data-cancelar]').forEach((botao) => {
+                    botao.addEventListener('click', () => {
+                        const todos = S.lerLista(CHAVE_PEDIDOS);
+                        const pedido = todos.find((p) => p.protocolo === botao.dataset.cancelar);
+                        if (pedido) {
+                            pedido.status = 'Cancelado';
+                            S.salvarLista(CHAVE_PEDIDOS, todos);
+                            desenharPedidos();
+                            statusPerfil.className = 'alerta alerta-sucesso';
+                            statusPerfil.textContent = `Pedido ${pedido.protocolo} cancelado. Obrigado por avisar!`;
+                            document.getElementById('titulo-pedidos').focus();
+                        }
+                    });
+                });
+            }
+
+            // Apagar dados com confirmação na própria tela
+            const confirmar = document.getElementById('confirmar-apagar');
+            document.getElementById('apagar-dados').addEventListener('click', () => {
+                confirmar.hidden = false;
+                document.getElementById('apagar-nao').focus();
+            });
+            document.getElementById('apagar-nao').addEventListener('click', () => {
+                confirmar.hidden = true;
+                document.getElementById('apagar-dados').focus();
+            });
+            document.getElementById('apagar-sim').addEventListener('click', () => {
+                localStorage.removeItem(CHAVE_PEDIDOS);
+                localStorage.removeItem(CHAVE_PERFIL);
+                window.location.reload();
+            });
+
+            desenharPerfil();
+            desenharPedidos();
+        });
+    </script>
+
+    <!-- VLIBRAS (TRADUÇÃO PARA LIBRAS) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+    </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }</script>
 </body>
 </html>

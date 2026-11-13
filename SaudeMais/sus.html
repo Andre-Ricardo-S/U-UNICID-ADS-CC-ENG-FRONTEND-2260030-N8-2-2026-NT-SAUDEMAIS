@@ -22,6 +22,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SaúdeMais - SUS</title>
+<<<<<<< Updated upstream
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f8fafc; color: #334155; display: flex; flex-direction: column; min-height: 100vh; }
@@ -45,34 +46,91 @@
 <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
+=======
+    <meta name="description" content="Informações sobre o Sistema Único de Saúde (SUS).">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
+    <script src="./js/acessibilidade.js"></script>
+    <script src="./js/site.js" defer></script>
+>>>>>>> Stashed changes
 </head>
 <body>
+    <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO -->
     <header>
-        <nav>
-            <h1><a href="./index.html"><img alt="Logo" src="./assets/image-removebg-preview.png">SaúdeMais</a></h1>
-            <div>
-                <a href="./index.html">Home</a>
-                <a href="./agendar.html">Serviços</a>
-                <a href="./unidades.html">Unidades</a>
-                <a href="./prevencao.html">Prevenção</a>
-                <a href="./sus.html" class="active">SUS</a>
-                <a href="./sobre-nos.html">Sobre nós</a>
-                <a href="./contato.html">Contato</a>
-                <a href="./emergencia.html">Emergência</a>
-                <a href="./perfil.html">Perfil</a>
-                <a href="./configuracoes.html">Configurações</a>
+        <div class="barra-acessibilidade">
+            <div class="conteudo-barra">
+                <div class="grupo" role="group" aria-label="Tamanho da letra e contraste">
+                    <span aria-hidden="true">Letra:</span>
+                    <button type="button" data-fonte="diminuir">A-<span class="visualmente-oculto"> diminuir letra</span></button>
+                    <button type="button" data-fonte="padrao">A<span class="visualmente-oculto"> letra no tamanho padrão</span></button>
+                    <button type="button" data-fonte="aumentar">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+                    <span class="visualmente-oculto" data-fonte-indicador aria-live="polite"></span>
+                    <button type="button" data-contraste-rapido aria-pressed="false">◐ Contraste</button>
+                </div>
+                <p><strong>Emergência?</strong> Ligue <a href="tel:192">192 (SAMU)</a></p>
             </div>
-        </nav>
+        </div>
+        <div class="topo">
+            <a class="logo" href="./index.html">
+                <img src="./assets/image-removebg-preview.png" alt="">
+                SaúdeMais
+            </a>
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal">☰ <span data-rotulo>Menu</span></button>
+            <nav id="menu-principal" class="menu" aria-label="Menu principal">
+                <ul>
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./sobre-nos.html">Sobre</a></li>
+                    <li><a href="./como-funciona.html">Como Funciona</a></li>
+                    <li><a href="./preciso-de-ajuda.html">Preciso de Ajuda</a></li>
+                    <li><a href="./quero-ajudar.html">Quero Ajudar</a></li>
+                    <li><a href="./mapa.html">Mapa</a></li>
+                    <li><a href="./unidades.html">Postos de Saúde</a></li>
+                    <li><a href="./configuracoes.html">Acessibilidade</a></li>
+                    <li><a href="./seguranca.html">Segurança</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
         <hr>
     </header>
-    <main>
+
+    <main id="conteudo">
         <div class="card">
-            <h2>Sistema Único de Saúde (SUS)</h2>
-            <p>O SUS é um dos maiores e melhores sistemas públicos de saúde do mundo, garantindo acesso integral, universal e gratuito para toda a população brasileira.</p>
-            <p>Através do portal SaúdeMais, facilitamos o acesso a orientações sobre emissão do Cartão do SUS, programas como Farmácia Popular e acompanhamento de direitos do cidadão.</p>
+            <h1>Sistema Único de Saúde (SUS)</h1>
+            <p>O SUS é um dos maiores sistemas públicos de saúde do mundo, garantindo acesso integral, universal e gratuito para toda a população brasileira.</p>
+            <p>Para ser atendido no posto de saúde, leve um <strong>documento com foto</strong> e o <strong>Cartão Nacional de Saúde (Cartão do SUS)</strong>. Se você ainda não tem o cartão, peça na recepção da UBS mais próxima.</p>
+            <p>Dúvidas, reclamações ou elogios sobre o atendimento no SUS podem ser feitos de graça pelo <a href="tel:136"><strong>Disque Saúde 136</strong></a>.</p>
+        </div>
+
+        <div class="card card-destaque">
+            <h2>O SaúdeMais e o SUS</h2>
+            <p>O SaúdeMais <strong>não marca consultas</strong>. Ele ajuda você a <strong>chegar</strong> ao posto do SUS no dia marcado, com transporte ou acompanhante.</p>
+            <a href="./unidades.html" class="btn-outline">Ver postos de saúde</a>
         </div>
     </main>
-    <footer><p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p></footer>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <nav aria-label="Outras páginas">
+            <ul class="rodape-links">
+                <li><a href="./perfil.html">Meus pedidos (Perfil)</a></li>
+                <li><a href="./prevencao.html">Prevenção</a></li>
+                <li><a href="./sus.html" aria-current="page">SUS</a></li>
+                <li><a href="./seguranca.html#canais">Canais de denúncia e emergência</a></li>
+            </ul>
+        </nav>
+        <p>O SaúdeMais não marca consultas, não faz atendimento médico e não substitui serviços de emergência. Em emergência, ligue <a href="tel:192">192 (SAMU)</a>.</p>
+        <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- VLIBRAS (TRADUÇÃO PARA LIBRAS) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+    </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }</script>
 </body>
 </html>

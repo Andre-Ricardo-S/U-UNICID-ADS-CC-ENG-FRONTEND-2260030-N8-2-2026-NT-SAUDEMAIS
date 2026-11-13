@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaúdeMais - Segurança</title>
+    <meta name="description" content="Como identificar um voluntário, cuidados no transporte, como denunciar e telefones gratuitos de emergência.">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
+    <script src="./js/acessibilidade.js"></script>
+    <script src="./js/site.js" defer></script>
+</head>
+<body>
+    <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="barra-acessibilidade">
+            <div class="conteudo-barra">
+                <div class="grupo" role="group" aria-label="Tamanho da letra e contraste">
+                    <span aria-hidden="true">Letra:</span>
+                    <button type="button" data-fonte="diminuir">A-<span class="visualmente-oculto"> diminuir letra</span></button>
+                    <button type="button" data-fonte="padrao">A<span class="visualmente-oculto"> letra no tamanho padrão</span></button>
+                    <button type="button" data-fonte="aumentar">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+                    <span class="visualmente-oculto" data-fonte-indicador aria-live="polite"></span>
+                    <button type="button" data-contraste-rapido aria-pressed="false">◐ Contraste</button>
+                </div>
+                <p><strong>Emergência?</strong> Ligue <a href="tel:192">192 (SAMU)</a></p>
+            </div>
+        </div>
+        <div class="topo">
+            <a class="logo" href="./index.html">
+                <img src="./assets/image-removebg-preview.png" alt="">
+                SaúdeMais
+            </a>
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal">☰ <span data-rotulo>Menu</span></button>
+            <nav id="menu-principal" class="menu" aria-label="Menu principal">
+                <ul>
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./sobre-nos.html">Sobre</a></li>
+                    <li><a href="./como-funciona.html">Como Funciona</a></li>
+                    <li><a href="./preciso-de-ajuda.html">Preciso de Ajuda</a></li>
+                    <li><a href="./quero-ajudar.html">Quero Ajudar</a></li>
+                    <li><a href="./mapa.html">Mapa</a></li>
+                    <li><a href="./unidades.html">Postos de Saúde</a></li>
+                    <li><a href="./configuracoes.html">Acessibilidade</a></li>
+                    <li><a href="./seguranca.html" aria-current="page">Segurança</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+        <hr>
+    </header>
+
+    <main id="conteudo">
+        <div class="card">
+            <h1>Segurança</h1>
+            <p class="texto-grande">Sua segurança vem em primeiro lugar. Veja como reconhecer um voluntário, os cuidados no caminho e onde pedir ajuda ou denunciar.</p>
+
+            <section id="emergencia" class="alerta alerta-emergencia" aria-labelledby="titulo-emergencia">
+                <h2 id="titulo-emergencia">Em emergência, não use o site</h2>
+                <p>Se alguém está passando mal, caiu, se machucou ou corre perigo, <strong>ligue agora</strong>: <a class="numero-tel" href="tel:192">192</a> (SAMU), <a class="numero-tel" href="tel:193">193</a> (Bombeiros) ou <a class="numero-tel" href="tel:190">190</a> (Polícia).</p>
+            </section>
+        </div>
+
+        <!-- COMO IDENTIFICAR UM VOLUNTÁRIO -->
+        <section id="verificar" class="card" aria-labelledby="titulo-identificar">
+            <h2 id="titulo-identificar"><span aria-hidden="true">🪪</span> Como identificar um voluntário</h2>
+            <ul class="lista-check">
+                <li>Antes do dia, <strong>ligamos para você</strong> com o nome do voluntário, o número do crachá e a placa do carro.</li>
+                <li>Todo voluntário usa um <strong>crachá do SaúdeMais</strong> com foto, nome e número de cadastro (exemplo: <strong>VOL-123456</strong>).</li>
+                <li>Confira se o nome, a foto e a placa são os mesmos que informamos.</li>
+                <li>Se algo estiver diferente, <strong>não entre no veículo</strong> e ligue para um familiar ou para o <a href="tel:190">190</a>.</li>
+            </ul>
+
+            <h3>Conferir o número do crachá</h3>
+            <p>Digite o número que está no crachá do voluntário.</p>
+            <form id="form-cracha" class="formulario" style="margin-top: 0.5rem;" data-validar novalidate>
+                <div class="campo" style="margin-top: 0;">
+                    <label for="numero-cracha">Número do crachá <span class="dica" id="dica-cracha">Exemplo: VOL-123456</span></label>
+                    <input type="text" id="numero-cracha" name="numeroCracha" required autocomplete="off" data-nome="Número do crachá" aria-describedby="dica-cracha">
+                </div>
+                <div class="acoes-form" style="margin-top: 1rem;">
+                    <button type="submit" class="btn">Conferir crachá</button>
+                </div>
+            </form>
+            <div id="resultado-cracha" class="alerta" tabindex="-1" hidden></div>
+            <p><small>Nesta versão de demonstração, a conferência usa os cadastros de voluntários feitos neste aparelho.</small></p>
+        </section>
+
+        <!-- CUIDADOS -->
+        <div class="grade">
+            <section class="card" aria-labelledby="titulo-passageiro">
+                <h2 id="titulo-passageiro"><span aria-hidden="true">🧓</span> Para quem recebe ajuda</h2>
+                <ul class="lista-check">
+                    <li>Avise um familiar ou vizinho do horário e do nome do voluntário.</li>
+                    <li>Use o cinto de segurança durante todo o caminho.</li>
+                    <li>Leve documento com foto, Cartão do SUS e a lista dos seus remédios.</li>
+                    <li>O voluntário <strong>nunca</strong> pode pedir dinheiro emprestado, cartão de banco, senha ou documentos.</li>
+                    <li>Se houver custo (van de baixo custo), o valor é informado <strong>antes</strong> pela equipe.</li>
+                    <li>Se você se sentir desconfortável, pode desistir a qualquer momento.</li>
+                </ul>
+            </section>
+
+            <section class="card" aria-labelledby="titulo-voluntario">
+                <h2 id="titulo-voluntario"><span aria-hidden="true">🤝</span> Regras para voluntários</h2>
+                <ul class="lista-check">
+                    <li>Use sempre o crachá e apresente-se pelo nome.</li>
+                    <li>Pergunte antes de tocar, guiar ou empurrar a cadeira de rodas.</li>
+                    <li>Trave as rodas da cadeira e prenda os cintos dentro do veículo.</li>
+                    <li>Respeite o tempo da pessoa. Não apresse.</li>
+                    <li>Siga as rotas seguras do <a href="./mapa.html">mapa</a> e evite escadas e buracos.</li>
+                    <li>Não fique com dinheiro, cartões ou documentos da pessoa.</li>
+                    <li>Em caso de mal-estar no caminho, pare em local seguro e ligue <a href="tel:192">192</a>.</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- COMO DENUNCIAR -->
+        <section class="card" aria-labelledby="titulo-denunciar">
+            <h2 id="titulo-denunciar"><span aria-hidden="true">📣</span> Como denunciar</h2>
+            <p>Se você sofreu ou viu maus-tratos, desrespeito, cobrança indevida ou qualquer abuso:</p>
+            <ol class="lista">
+                <li>Se houver perigo agora, ligue <a href="tel:190"><strong>190</strong></a> (Polícia).</li>
+                <li>Ligue <a href="tel:100"><strong>Disque 100</strong></a>: é gratuito, funciona 24 horas e você pode não dizer o seu nome.</li>
+                <li>Avise o SaúdeMais pela página de <a href="./contato.html">Contato</a>, escolhendo o assunto "Denúncia". O voluntário é afastado enquanto o caso é analisado.</li>
+            </ol>
+        </section>
+
+        <!-- TABELA DE CANAIS -->
+        <section id="canais" class="card" aria-labelledby="titulo-canais">
+            <h2 id="titulo-canais"><span aria-hidden="true">☎️</span> Telefones gratuitos</h2>
+            <p>Todas as ligações abaixo são <strong>gratuitas</strong>, de telefone fixo ou celular.</p>
+            <div class="tabela-container">
+                <table>
+                    <caption>Canais gratuitos de ajuda, denúncia e emergência</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Número</th>
+                            <th scope="col">Serviço</th>
+                            <th scope="col">Quando ligar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><a class="numero-tel" href="tel:100">100</a></th>
+                            <td>Disque 100 – Direitos Humanos</td>
+                            <td>Violações de direitos humanos, maus-tratos, abandono ou violência contra idosos e pessoas com deficiência.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a class="numero-tel" href="tel:136">136</a></th>
+                            <td>Disque Saúde 136 – Ouvidoria do SUS</td>
+                            <td>Reclamações, elogios e informações sobre o atendimento no SUS e nos postos de saúde.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a class="numero-tel" href="tel:192">192</a></th>
+                            <td>SAMU – Ambulância</td>
+                            <td>Urgência médica: desmaio, falta de ar, dor no peito, queda grave, convulsão.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a class="numero-tel" href="tel:193">193</a></th>
+                            <td>Corpo de Bombeiros</td>
+                            <td>Incêndio, acidente, resgate, pessoa presa ou soterrada.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a class="numero-tel" href="tel:190">190</a></th>
+                            <td>Polícia Militar</td>
+                            <td>Crime acontecendo agora, ameaça, agressão ou situação de perigo.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <nav aria-label="Outras páginas">
+            <ul class="rodape-links">
+                <li><a href="./perfil.html">Meus pedidos (Perfil)</a></li>
+                <li><a href="./prevencao.html">Prevenção</a></li>
+                <li><a href="./sus.html">SUS</a></li>
+                <li><a href="./seguranca.html#canais">Canais de denúncia e emergência</a></li>
+            </ul>
+        </nav>
+        <p>O SaúdeMais não marca consultas, não faz atendimento médico e não substitui serviços de emergência. Em emergência, ligue <a href="tel:192">192 (SAMU)</a>.</p>
+        <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const S = window.SaudeMais;
+            const form = document.getElementById('form-cracha');
+            const resultado = document.getElementById('resultado-cracha');
+
+            form.addEventListener('submit', (evento) => {
+                evento.preventDefault();
+                const erros = S.validar(form);
+                if (erros.length) {
+                    S.mostrarErros(form, erros);
+                    resultado.hidden = true;
+                    return;
+                }
+                S.limparErros(form);
+
+                // Aceita "VOL-123456", "vol 123456" ou só "123456"
+                const digitado = form.elements.numeroCracha.value.trim().toUpperCase();
+                const numeros = digitado.replace(/\D/g, '');
+                const codigo = `VOL-${numeros}`;
+                const voluntario = S.lerLista('saudemais_voluntarios').find((v) => v.cadastro === codigo);
+                const e = S.escapar;
+
+                if (voluntario) {
+                    resultado.className = 'alerta alerta-sucesso';
+                    S.mostrarSucesso(resultado, `
+                        <h3>✔ Crachá encontrado: ${e(codigo)}</h3>
+                        <p><strong>Nome:</strong> ${e(voluntario.nome)}<br>
+                        <strong>Bairro:</strong> ${e(voluntario.bairro)}<br>
+                        <strong>Tipo de ajuda:</strong> ${e(voluntario.tipoAjuda)}${voluntario.veiculo ? ` – ${e(voluntario.veiculo)}` : ''}<br>
+                        <strong>Situação do cadastro:</strong> ${e(voluntario.status)}</p>
+                        <p>Confira se o nome é o mesmo que informamos por telefone.</p>`);
+                } else {
+                    resultado.className = 'alerta alerta-erro';
+                    S.mostrarSucesso(resultado, `
+                        <h3>✖ Não encontramos o crachá ${e(codigo)}</h3>
+                        <p><strong>Não entre no veículo.</strong> Confira o número com calma. Se continuar diferente, avise um familiar e ligue <a href="tel:190">190</a> se sentir perigo.</p>`);
+                }
+            });
+        });
+    </script>
+
+    <!-- VLIBRAS (TRADUÇÃO PARA LIBRAS) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }</script>
+</body>
+</html>

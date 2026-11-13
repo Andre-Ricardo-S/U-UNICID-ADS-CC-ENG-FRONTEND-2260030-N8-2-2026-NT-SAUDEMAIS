@@ -21,6 +21,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
     <title>SaúdeMais - Sobre Nós</title>
     <style>
         /* RESET E CONFIGURAÇÕES GLOBAIS (AZUL, BRANCO E CINZA) */
@@ -185,79 +186,224 @@
 <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
+=======
+    <title>SaúdeMais - Sobre o Projeto</title>
+    <meta name="description" content="Objetivos, público, problemas tratados, sustentabilidade e ODS do projeto SaúdeMais.">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
+    <script src="./js/acessibilidade.js"></script>
+    <script src="./js/site.js" defer></script>
+>>>>>>> Stashed changes
 </head>
 <body>
+    <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
 
-    <!-- CABEÇALHO COM LINKS CORRETOS -->
+    <!-- CABEÇALHO -->
     <header>
-        <nav>
-            <h1>
-                <a href="./index.html">
-                    <img alt="Logo SaúdeMais" src="./assets/image-removebg-preview.png">
-                    SaúdeMais
-                </a>
-            </h1>
-            <div>
-                <a href="./index.html">Home</a>
-                <a href="./agendar.html">Serviços</a>
-                <a href="./unidades.html">Unidades</a>
-                <a href="./prevencao.html">Prevenção</a>
-                <a href="./sus.html">SUS</a>
-                <a href="./sobre-nos.html" class="active">Sobre nós</a>
-                <a href="./contato.html">Contato</a>
-                <a href="./emergencia.html">Emergência</a>
-                <a href="./perfil.html">Perfil</a>
-                <a href="./configuracoes.html">Configurações</a>
+        <div class="barra-acessibilidade">
+            <div class="conteudo-barra">
+                <div class="grupo" role="group" aria-label="Tamanho da letra e contraste">
+                    <span aria-hidden="true">Letra:</span>
+                    <button type="button" data-fonte="diminuir">A-<span class="visualmente-oculto"> diminuir letra</span></button>
+                    <button type="button" data-fonte="padrao">A<span class="visualmente-oculto"> letra no tamanho padrão</span></button>
+                    <button type="button" data-fonte="aumentar">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+                    <span class="visualmente-oculto" data-fonte-indicador aria-live="polite"></span>
+                    <button type="button" data-contraste-rapido aria-pressed="false">◐ Contraste</button>
+                </div>
+                <p><strong>Emergência?</strong> Ligue <a href="tel:192">192 (SAMU)</a></p>
             </div>
-        </nav>
+        </div>
+        <div class="topo">
+            <a class="logo" href="./index.html">
+                <img src="./assets/image-removebg-preview.png" alt="">
+                SaúdeMais
+            </a>
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal">☰ <span data-rotulo>Menu</span></button>
+            <nav id="menu-principal" class="menu" aria-label="Menu principal">
+                <ul>
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./sobre-nos.html" aria-current="page">Sobre</a></li>
+                    <li><a href="./como-funciona.html">Como Funciona</a></li>
+                    <li><a href="./preciso-de-ajuda.html">Preciso de Ajuda</a></li>
+                    <li><a href="./quero-ajudar.html">Quero Ajudar</a></li>
+                    <li><a href="./mapa.html">Mapa</a></li>
+                    <li><a href="./unidades.html">Postos de Saúde</a></li>
+                    <li><a href="./configuracoes.html">Acessibilidade</a></li>
+                    <li><a href="./seguranca.html">Segurança</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
         <hr>
     </header>
 
-    <!-- CONTEÚDO DA PÁGINA SOBRE NÓS -->
-    <main>
+    <!-- CONTEÚDO DA PÁGINA SOBRE -->
+    <main id="conteudo">
         <!-- Introdução -->
         <div class="card" style="text-align: center; padding: 3rem 2rem;">
-            <h2>Transformando o Acesso à Saúde</h2>
-            <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
-                O <strong>SaúdeMais</strong> nasceu com um propósito claro: aproximar o cidadão dos serviços públicos essenciais de saúde, unindo tecnologia moderna, agilidade e humanização.
+            <h1>Sobre o Projeto SaúdeMais</h1>
+            <p class="texto-grande" style="max-width: 50rem; margin: 0 auto;">
+                O <strong>SaúdeMais</strong> é uma plataforma que conecta <strong>idosos</strong> e <strong>pessoas com deficiência (PCDs)</strong> de comunidades a <strong>voluntários</strong> e <strong>transporte comunitário</strong>, para que consigam chegar ao posto de saúde com segurança.
             </p>
         </div>
 
-        <!-- Missão, Visão e Valores (Grid) -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
-            <div class="card" style="border-top: 4px solid #2563eb;">
-                <h3>🎯 Nossa Missão</h3>
-                <p>Facilitar o dia a dia da população na busca por unidades de atendimento, agendamentos e informações preventivas de forma transparente e rápida.</p>
-            </div>
-            <div class="card" style="border-top: 4px solid #2563eb;">
-                <h3>👁️ Nossa Visão</h3>
-                <p>Ser a principal referência em plataformas digitais de apoio à saúde pública integrada, servindo de modelo para inovação tecnológica no setor.</p>
-            </div>
-            <div class="card" style="border-top: 4px solid #2563eb;">
-                <h3>💡 Nossos Valores</h3>
-                <p>Empatia com o próximo, acessibilidade universal, inovação constante, transparência nas informações e compromisso absoluto com o bem-estar social.</p>
-            </div>
+        <!-- Objetivos -->
+        <div class="grade">
+            <section class="card card-destaque" aria-labelledby="titulo-objetivo-geral">
+                <h2 id="titulo-objetivo-geral"><span aria-hidden="true">🎯</span> Objetivo geral</h2>
+                <p>Facilitar o acesso de idosos e pessoas com deficiência aos postos de saúde, unindo quem precisa de ajuda a voluntários e a transporte comunitário gratuito ou de baixo custo.</p>
+            </section>
+            <section class="card card-destaque" aria-labelledby="titulo-objetivos-especificos">
+                <h2 id="titulo-objetivos-especificos"><span aria-hidden="true">📋</span> Objetivos específicos</h2>
+                <ul class="lista-check">
+                    <li>Criar um jeito simples de pedir transporte ou acompanhante.</li>
+                    <li>Cadastrar voluntários, motoristas e vans da própria comunidade.</li>
+                    <li>Mostrar rotas seguras e trechos perigosos (escadas, buracos).</li>
+                    <li>Informar a acessibilidade de cada posto de saúde.</li>
+                    <li>Orientar sobre segurança e canais de denúncia.</li>
+                    <li>Aproximar prefeitura, instituições e empresas parceiras.</li>
+                </ul>
+            </section>
         </div>
 
+        <!-- Público-alvo -->
+        <section class="card" aria-labelledby="titulo-publico">
+            <h2 id="titulo-publico"><span aria-hidden="true">👥</span> Para quem é o SaúdeMais</h2>
+            <div class="grade" style="margin-bottom: 0;">
+                <div>
+                    <h3>Quem recebe ajuda</h3>
+                    <ul class="lista">
+                        <li><strong>Idosos</strong> com 60 anos ou mais.</li>
+                        <li><strong>Pessoas com deficiência</strong> física, visual, auditiva, intelectual ou autismo.</li>
+                        <li><strong>Familiares e responsáveis</strong> que pedem ajuda por eles.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Quem ajuda</h3>
+                    <ul class="lista">
+                        <li><strong>Voluntários</strong> que acompanham a pé.</li>
+                        <li><strong>Motoristas</strong> com carro ou van.</li>
+                        <li><strong>Prefeitura e parceiros</strong>: instituições, associações e empresas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problemas -->
+        <section class="card" aria-labelledby="titulo-problemas">
+            <h2 id="titulo-problemas"><span aria-hidden="true">🚧</span> Os 4 problemas que queremos resolver</h2>
+            <div class="grade" style="margin-bottom: 0;">
+                <div class="unidade-box" style="margin-top: 0;">
+                    <h3>1. Distância</h3>
+                    <p>O posto fica longe de casa e a caminhada é cansativa ou impossível.</p>
+                </div>
+                <div class="unidade-box" style="margin-top: 0;">
+                    <h3>2. Falta de transporte</h3>
+                    <p>Não há ônibus perto, o táxi é caro e nem todo veículo leva cadeira de rodas.</p>
+                </div>
+                <div class="unidade-box" style="margin-top: 0;">
+                    <h3>3. Vias mal estruturadas</h3>
+                    <p>Becos, escadas, ladeiras, calçadas quebradas e buracos no caminho.</p>
+                </div>
+                <div class="unidade-box" style="margin-top: 0;">
+                    <h3>4. Limitações físicas ou mentais</h3>
+                    <p>Dificuldade para andar, enxergar, ouvir, se orientar ou lidar com lugares cheios.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- O que não faz -->
+        <section class="alerta alerta-emergencia" aria-labelledby="titulo-nao-faz">
+            <h2 id="titulo-nao-faz">O que o projeto não faz</h2>
+            <ul class="lista-check lista-nao">
+                <li><strong>Não marca consultas nem exames.</strong> O agendamento continua sendo feito no posto de saúde ou pelos canais da prefeitura.</li>
+                <li><strong>Não presta atendimento médico</strong> e não dá orientação sobre remédios ou tratamentos.</li>
+                <li><strong>Não substitui os serviços de emergência.</strong> Em caso de urgência, ligue <a href="tel:192">192 (SAMU)</a> ou <a href="tel:193">193 (Bombeiros)</a>.</li>
+                <li><strong>Não é empresa de transporte.</strong> As viagens são feitas por voluntários e parceiros da comunidade.</li>
+            </ul>
+        </section>
+
+        <!-- Sustentabilidade -->
+        <section class="card" aria-labelledby="titulo-sustentabilidade">
+            <h2 id="titulo-sustentabilidade"><span aria-hidden="true">🌱</span> Relação com a sustentabilidade</h2>
+            <div class="grade" style="margin-bottom: 0;">
+                <div>
+                    <h3>Social</h3>
+                    <p>Fortalece a rede de apoio do bairro, combate o isolamento de idosos e PCDs e garante o direito à saúde.</p>
+                </div>
+                <div>
+                    <h3>Ambiental</h3>
+                    <p>Caronas e vans compartilhadas juntam várias pessoas na mesma viagem, o que significa menos carros na rua e menos poluição.</p>
+                </div>
+                <div>
+                    <h3>Econômica</h3>
+                    <p>Transporte gratuito ou de baixo custo para as famílias. Menos consultas perdidas significa menos gasto com doenças que se agravam.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ODS -->
+        <section class="card" aria-labelledby="titulo-ods">
+            <h2 id="titulo-ods"><span aria-hidden="true">🌎</span> Objetivos de Desenvolvimento Sustentável (ODS) da ONU</h2>
+            <div class="grade" style="margin-bottom: 0;">
+                <div class="ods">
+                    <span class="ods-numero" aria-hidden="true">3</span>
+                    <div>
+                        <h3>ODS 3 – Saúde e Bem-Estar</h3>
+                        <p>Ajuda as pessoas a não perder consultas, exames, vacinas e tratamentos.</p>
+                    </div>
+                </div>
+                <div class="ods">
+                    <span class="ods-numero" aria-hidden="true">10</span>
+                    <div>
+                        <h3>ODS 10 – Redução das Desigualdades</h3>
+                        <p>Dá a idosos e pessoas com deficiência as mesmas chances de chegar ao atendimento.</p>
+                    </div>
+                </div>
+                <div class="ods">
+                    <span class="ods-numero" aria-hidden="true">11</span>
+                    <div>
+                        <h3>ODS 11 – Cidades e Comunidades Sustentáveis</h3>
+                        <p>Incentiva transporte solidário e mapeia rotas acessíveis e seguras no bairro.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Seção Acadêmica UNICID -->
-        <div class="card" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
-            <div style="flex: 1; min-width: 280px;">
-                <h2>Inovação Acadêmica (UNICID)</h2>
-                <p>Este projeto foi desenvolvido como parte das entregas oficiais da disciplina de Front-End da <strong>Universidade Cidade de São Paulo (UNICID)</strong>.</p>
-                <p>Nossa equipe uniu conhecimentos técnicos de desenvolvimento web, design de interface (UI/UX) e experiência do usuário para criar uma solução digital funcional e de alto impacto.</p>
-                <a href="./contato.html" class="btn" style="margin-top: 1rem;">Entre em Contato</a>
+        <section class="card" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;" aria-labelledby="titulo-unicid">
+            <div style="flex: 1; min-width: min(100%, 17rem);">
+                <h2 id="titulo-unicid">Projeto acadêmico (UNICID)</h2>
+                <p>Este projeto foi desenvolvido na disciplina de Front-End da <strong>Universidade Cidade de São Paulo (UNICID)</strong>, com foco em acessibilidade, linguagem simples e impacto social.</p>
+                <a href="./contato.html" class="btn">Fale com a equipe</a>
             </div>
-            <div style="background: #f1f5f9; padding: 2rem; border-radius: 12px; text-align: center; flex: 1; min-width: 250px; border: 1px solid #cbd5e1;">
-                <h3 style="color: #1e3a8a; font-size: 1.5rem; margin-bottom: 0.5rem;">Projeto Front-End</h3>
-                <p style="color: #475569; font-weight: 500;">Tecnologia com foco humano, eficiência e design moderno.</p>
+            <div style="background: #f1f5f9; padding: 2rem; border-radius: 12px; text-align: center; flex: 1; min-width: min(100%, 15rem); border: 1px solid #cbd5e1;">
+                <p style="color: #1e3a8a; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem;">Tecnologia com foco humano</p>
+                <p style="margin-bottom: 0;">Simples de usar, feita para quem mais precisa.</p>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- RODAPÉ -->
     <footer>
+        <nav aria-label="Outras páginas">
+            <ul class="rodape-links">
+                <li><a href="./perfil.html">Meus pedidos (Perfil)</a></li>
+                <li><a href="./prevencao.html">Prevenção</a></li>
+                <li><a href="./sus.html">SUS</a></li>
+                <li><a href="./seguranca.html#canais">Canais de denúncia e emergência</a></li>
+            </ul>
+        </nav>
+        <p>O SaúdeMais não marca consultas, não faz atendimento médico e não substitui serviços de emergência. Em emergência, ligue <a href="tel:192">192 (SAMU)</a>.</p>
         <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- VLIBRAS (TRADUÇÃO PARA LIBRAS) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+    </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }</script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -413,3 +414,220 @@
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaúdeMais - Início</title>
+    <meta name="description" content="SaúdeMais conecta idosos e pessoas com deficiência a voluntários e transporte comunitário para chegar ao posto de saúde.">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
+    <script src="./js/acessibilidade.js"></script>
+    <script src="./js/site.js" defer></script>
+</head>
+<body>
+    <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="barra-acessibilidade">
+            <div class="conteudo-barra">
+                <div class="grupo" role="group" aria-label="Tamanho da letra e contraste">
+                    <span aria-hidden="true">Letra:</span>
+                    <button type="button" data-fonte="diminuir">A-<span class="visualmente-oculto"> diminuir letra</span></button>
+                    <button type="button" data-fonte="padrao">A<span class="visualmente-oculto"> letra no tamanho padrão</span></button>
+                    <button type="button" data-fonte="aumentar">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+                    <span class="visualmente-oculto" data-fonte-indicador aria-live="polite"></span>
+                    <button type="button" data-contraste-rapido aria-pressed="false">◐ Contraste</button>
+                </div>
+                <p><strong>Emergência?</strong> Ligue <a href="tel:192">192 (SAMU)</a></p>
+            </div>
+        </div>
+        <div class="topo">
+            <a class="logo" href="./index.html">
+                <img src="./assets/image-removebg-preview.png" alt="">
+                SaúdeMais
+            </a>
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal">☰ <span data-rotulo>Menu</span></button>
+            <nav id="menu-principal" class="menu" aria-label="Menu principal">
+                <ul>
+                    <li><a href="./index.html" aria-current="page">Início</a></li>
+                    <li><a href="./sobre-nos.html">Sobre</a></li>
+                    <li><a href="./como-funciona.html">Como Funciona</a></li>
+                    <li><a href="./preciso-de-ajuda.html">Preciso de Ajuda</a></li>
+                    <li><a href="./quero-ajudar.html">Quero Ajudar</a></li>
+                    <li><a href="./mapa.html">Mapa</a></li>
+                    <li><a href="./unidades.html">Postos de Saúde</a></li>
+                    <li><a href="./configuracoes.html">Acessibilidade</a></li>
+                    <li><a href="./seguranca.html">Segurança</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+        <hr>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="conteudo">
+        <!-- APRESENTAÇÃO -->
+        <section class="hero-section" aria-labelledby="titulo-inicio">
+            <div class="hero-content">
+                <h1 id="titulo-inicio">Ninguém deve deixar de ir ao posto de saúde por falta de ajuda</h1>
+                <p>O <strong>SaúdeMais</strong> liga <strong>idosos</strong> e <strong>pessoas com deficiência</strong> a <strong>voluntários</strong> e a <strong>transporte comunitário</strong> (vans e caronas gratuitas ou de baixo custo).</p>
+                <p>Ajudamos com o caminho: longe, sem ônibus, com escadas, becos ou buracos. Um voluntário busca você em casa, vai junto até o posto e traz você de volta.</p>
+
+                <div class="botoes-principais">
+                    <a href="./preciso-de-ajuda.html" class="btn-grande primario">
+                        <span class="icone" aria-hidden="true">🙋</span>
+                        <span>
+                            <strong>Preciso de ajuda</strong>
+                            <span class="descricao">Peça transporte ou alguém para ir com você</span>
+                        </span>
+                    </a>
+                    <a href="./quero-ajudar.html" class="btn-grande secundario">
+                        <span class="icone" aria-hidden="true">🤝</span>
+                        <span>
+                            <strong>Quero ajudar</strong>
+                            <span class="descricao">Seja voluntário, motorista ou acompanhante</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARROSSEL DE IMAGENS -->
+            <div class="carousel-container" role="region" aria-roledescription="carrossel" aria-label="Imagens do projeto">
+                <img src="./assets/van-comunitaria.svg" class="carousel-slide active" alt="Ilustração: van comunitária azul com rampa aberta e uma pessoa em cadeira de rodas sendo ajudada por um voluntário com crachá.">
+                <img src="./assets/voluntario-acompanhante.svg" class="carousel-slide" alt="Ilustração: voluntário com crachá, de braço dado com uma senhora de bengala, caminhando até a rampa do posto de saúde.">
+                <img src="./assets/rota-segura.svg" class="carousel-slide" alt="Ilustração: mapa do bairro com uma rota segura em azul da casa até o posto e um atalho com escadaria marcado em vermelho como perigoso.">
+
+                <button type="button" class="carousel-btn prev" data-carrossel="-1" aria-label="Imagem anterior">&#10094;</button>
+                <button type="button" class="carousel-btn next" data-carrossel="1" aria-label="Próxima imagem">&#10095;</button>
+                <button type="button" class="carousel-pausa" aria-pressed="false">⏸ Pausar</button>
+            </div>
+        </section>
+
+        <!-- AVISO IMPORTANTE -->
+        <section class="alerta alerta-emergencia" aria-labelledby="titulo-aviso">
+            <h2 id="titulo-aviso">Importante</h2>
+            <p>O SaúdeMais <strong>não marca consultas</strong>, <strong>não faz atendimento médico</strong> e <strong>não substitui a emergência</strong>. Se alguém estiver passando mal agora, ligue <a href="tel:192"><strong>192 (SAMU)</strong></a>.</p>
+        </section>
+
+        <!-- CARDS DE DESTAQUE -->
+        <h2>Conheça o SaúdeMais</h2>
+        <div class="grade">
+            <section class="feature-card">
+                <h3><span aria-hidden="true">🧭</span> Como funciona</h3>
+                <p>Você pede ajuda, um voluntário perto de você aceita, leva você ao posto e traz de volta.</p>
+                <a href="./como-funciona.html">Ver o passo a passo &rarr;</a>
+            </section>
+            <section class="feature-card">
+                <h3><span aria-hidden="true">🗺️</span> Mapa e rotas seguras</h3>
+                <p>Veja os postos, os pontos de apoio e os trechos com escadas ou buracos para evitar.</p>
+                <a href="./mapa.html">Abrir o mapa &rarr;</a>
+            </section>
+            <section class="feature-card">
+                <h3><span aria-hidden="true">♿</span> Postos acessíveis</h3>
+                <p>Telefone, horário e se o posto tem rampa, elevador, banheiro adaptado e estacionamento.</p>
+                <a href="./unidades.html">Ver postos de saúde &rarr;</a>
+            </section>
+            <section class="feature-card">
+                <h3><span aria-hidden="true">🛡️</span> Segurança</h3>
+                <p>Como reconhecer um voluntário pelo crachá, cuidados no transporte e onde denunciar.</p>
+                <a href="./seguranca.html">Dicas de segurança &rarr;</a>
+            </section>
+        </div>
+
+        <!-- ODS -->
+        <section class="card" aria-labelledby="titulo-ods">
+            <h2 id="titulo-ods">Nosso compromisso com os Objetivos de Desenvolvimento Sustentável da ONU</h2>
+            <div class="grade">
+                <div class="ods">
+                    <span class="ods-numero" aria-hidden="true">3</span>
+                    <p><strong>ODS 3 – Saúde e Bem-Estar:</strong> mais pessoas conseguem fazer consultas, exames e tratamentos.</p>
+                </div>
+                <div class="ods">
+                    <span class="ods-numero" aria-hidden="true">10</span>
+                    <p><strong>ODS 10 – Redução das Desigualdades:</strong> idosos e pessoas com deficiência com o mesmo acesso que todos.</p>
+                </div>
+                <div class="ods">
+                    <span class="ods-numero" aria-hidden="true">11</span>
+                    <p><strong>ODS 11 – Cidades e Comunidades Sustentáveis:</strong> transporte solidário e rotas mais seguras no bairro.</p>
+                </div>
+            </div>
+            <a href="./sobre-nos.html" class="btn-outline">Saiba mais sobre o projeto</a>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <nav aria-label="Outras páginas">
+            <ul class="rodape-links">
+                <li><a href="./perfil.html">Meus pedidos (Perfil)</a></li>
+                <li><a href="./prevencao.html">Prevenção</a></li>
+                <li><a href="./sus.html">SUS</a></li>
+                <li><a href="./seguranca.html#canais">Canais de denúncia e emergência</a></li>
+            </ul>
+        </nav>
+        <p>O SaúdeMais não marca consultas, não faz atendimento médico e não substitui serviços de emergência. Em emergência, ligue <a href="tel:192">192 (SAMU)</a>.</p>
+        <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- SCRIPT DO CARROSSEL (com botão de pausa) -->
+    <script>
+        (() => {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const botaoPausa = document.querySelector('.carousel-pausa');
+            const reduzirMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let slideIndex = 0;
+            let timer = null;
+
+            function mostrarSlide(index) {
+                slideIndex = (index + slides.length) % slides.length;
+                slides.forEach((slide) => slide.classList.remove('active'));
+                slides[slideIndex].classList.add('active');
+            }
+
+            function iniciar() {
+                parar();
+                timer = setInterval(() => mostrarSlide(slideIndex + 1), 5000);
+                botaoPausa.textContent = '⏸ Pausar';
+                botaoPausa.setAttribute('aria-pressed', 'false');
+            }
+
+            function parar() {
+                clearInterval(timer);
+                timer = null;
+                botaoPausa.textContent = '▶ Continuar';
+                botaoPausa.setAttribute('aria-pressed', 'true');
+            }
+
+            document.querySelectorAll('[data-carrossel]').forEach((botao) => {
+                botao.addEventListener('click', () => {
+                    parar();
+                    mostrarSlide(slideIndex + Number(botao.dataset.carrossel));
+                });
+            });
+
+            botaoPausa.addEventListener('click', () => (timer ? parar() : iniciar()));
+
+            // Troca automática só para quem não pediu menos movimento
+            if (reduzirMovimento) {
+                parar();
+            } else {
+                iniciar();
+            }
+        })();
+    </script>
+
+    <!-- VLIBRAS (TRADUÇÃO PARA LIBRAS) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }</script>
+</body>
+</html>
+>>>>>>> Stashed changes

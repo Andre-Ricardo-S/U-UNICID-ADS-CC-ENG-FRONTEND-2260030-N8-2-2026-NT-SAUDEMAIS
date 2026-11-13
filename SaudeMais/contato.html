@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -255,3 +256,280 @@
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaúdeMais - Contato e Parcerias</title>
+    <meta name="description" content="Fale com o SaúdeMais, seja parceiro e saiba como levar o projeto para sua comunidade.">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
+    <script src="./js/acessibilidade.js"></script>
+    <script src="./js/site.js" defer></script>
+</head>
+<body>
+    <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="barra-acessibilidade">
+            <div class="conteudo-barra">
+                <div class="grupo" role="group" aria-label="Tamanho da letra e contraste">
+                    <span aria-hidden="true">Letra:</span>
+                    <button type="button" data-fonte="diminuir">A-<span class="visualmente-oculto"> diminuir letra</span></button>
+                    <button type="button" data-fonte="padrao">A<span class="visualmente-oculto"> letra no tamanho padrão</span></button>
+                    <button type="button" data-fonte="aumentar">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+                    <span class="visualmente-oculto" data-fonte-indicador aria-live="polite"></span>
+                    <button type="button" data-contraste-rapido aria-pressed="false">◐ Contraste</button>
+                </div>
+                <p><strong>Emergência?</strong> Ligue <a href="tel:192">192 (SAMU)</a></p>
+            </div>
+        </div>
+        <div class="topo">
+            <a class="logo" href="./index.html">
+                <img src="./assets/image-removebg-preview.png" alt="">
+                SaúdeMais
+            </a>
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal">☰ <span data-rotulo>Menu</span></button>
+            <nav id="menu-principal" class="menu" aria-label="Menu principal">
+                <ul>
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./sobre-nos.html">Sobre</a></li>
+                    <li><a href="./como-funciona.html">Como Funciona</a></li>
+                    <li><a href="./preciso-de-ajuda.html">Preciso de Ajuda</a></li>
+                    <li><a href="./quero-ajudar.html">Quero Ajudar</a></li>
+                    <li><a href="./mapa.html">Mapa</a></li>
+                    <li><a href="./unidades.html">Postos de Saúde</a></li>
+                    <li><a href="./configuracoes.html">Acessibilidade</a></li>
+                    <li><a href="./seguranca.html">Segurança</a></li>
+                    <li><a href="./contato.html" aria-current="page">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+        <hr>
+    </header>
+
+    <!-- CONTEÚDO DA PÁGINA DE CONTATO -->
+    <main id="conteudo">
+        <div class="card">
+            <h1>Contato e Parcerias</h1>
+            <p class="texto-grande">Tem dúvida, sugestão, quer ser parceiro ou levar o SaúdeMais para o seu bairro? Mande uma mensagem.</p>
+            <p>Quer pedir transporte ou acompanhante? Use a página <a href="./preciso-de-ajuda.html">Preciso de Ajuda</a>.</p>
+
+            <!-- MENSAGEM DE CONFIRMAÇÃO -->
+            <div id="confirmacao" class="alerta alerta-sucesso" tabindex="-1" hidden></div>
+
+            <form id="formContato" class="formulario" data-validar novalidate>
+                <p>Todos os campos são obrigatórios, menos os marcados com <strong>(opcional)</strong>.</p>
+
+                <div class="campo">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" autocomplete="name" required data-valida="nome" data-nome="Nome completo">
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Telefone com DDD <span class="dica" id="dica-telefone">Exemplo: (11) 91234-5678</span></label>
+                    <input type="tel" id="telefone" name="telefone" inputmode="tel" autocomplete="tel" required data-valida="telefone" data-nome="Telefone" aria-describedby="dica-telefone">
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail (opcional)</label>
+                    <input type="email" id="email" name="email" autocomplete="email">
+                </div>
+
+                <div class="campo">
+                    <label for="assunto">Assunto</label>
+                    <select id="assunto" name="assunto" required data-nome="Assunto">
+                        <option value="">Escolha o assunto</option>
+                        <option value="Dúvida">Dúvida</option>
+                        <option value="Sugestão">Sugestão ou elogio</option>
+                        <option value="Parceria">Quero ser parceiro</option>
+                        <option value="Comunidade">Levar o projeto para minha comunidade</option>
+                        <option value="Perigo no caminho">Avisar sobre buraco, escada ou perigo no caminho</option>
+                        <option value="Denúncia">Denúncia sobre voluntário ou transporte</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required data-nome="Mensagem"></textarea>
+                </div>
+
+                <div class="acoes-form">
+                    <button type="submit" class="btn">Enviar mensagem</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- REDES SOCIAIS -->
+        <section class="card" aria-labelledby="titulo-redes">
+            <h2 id="titulo-redes">Siga o SaúdeMais <span class="etiqueta-exemplo">Links de exemplo</span></h2>
+            <ul class="rodape-links" style="justify-content: flex-start; margin-bottom: 0;">
+                <li><a class="btn-outline" href="https://www.instagram.com/saudemais.exemplo" target="_blank" rel="noopener">Instagram<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+                <li><a class="btn-outline" href="https://www.facebook.com/saudemais.exemplo" target="_blank" rel="noopener">Facebook<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+                <li><a class="btn-outline" href="https://www.youtube.com/@saudemais.exemplo" target="_blank" rel="noopener">YouTube<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+                <li><a class="btn-outline" href="https://wa.me/5511000000000" target="_blank" rel="noopener">WhatsApp<span class="visualmente-oculto"> (abre em nova aba)</span></a></li>
+            </ul>
+        </section>
+
+        <!-- PARCEIROS -->
+        <section class="card" aria-labelledby="titulo-parceiros">
+            <h2 id="titulo-parceiros"><span aria-hidden="true">🤝</span> Seja parceiro</h2>
+            <p>O SaúdeMais funciona melhor quando toda a comunidade participa.</p>
+            <div class="grade" style="margin-bottom: 1rem;">
+                <div class="unidade-box" style="margin-top: 0;">
+                    <h3><span aria-hidden="true">🏛️</span> Prefeitura</h3>
+                    <ul class="lista">
+                        <li>Informar a acessibilidade dos postos.</li>
+                        <li>Consertar buracos e escadas apontados no mapa.</li>
+                        <li>Ceder vans e motoristas em alguns dias.</li>
+                        <li>Integrar agentes comunitários de saúde.</li>
+                    </ul>
+                </div>
+                <div class="unidade-box" style="margin-top: 0;">
+                    <h3><span aria-hidden="true">⛪</span> Instituições</h3>
+                    <ul class="lista">
+                        <li>ONGs, igrejas, associações de moradores e universidades.</li>
+                        <li>Divulgar o projeto e indicar voluntários.</li>
+                        <li>Ser ponto de apoio (banco, água, banheiro).</li>
+                        <li>Oferecer treinamento sobre cuidado e inclusão.</li>
+                    </ul>
+                </div>
+                <div class="unidade-box" style="margin-top: 0;">
+                    <h3><span aria-hidden="true">🏢</span> Empresas</h3>
+                    <ul class="lista">
+                        <li>Doar combustível ou manutenção de vans.</li>
+                        <li>Emprestar veículos da frota.</li>
+                        <li>Incentivar o voluntariado dos funcionários.</li>
+                        <li>Patrocinar crachás e materiais.</li>
+                    </ul>
+                </div>
+            </div>
+            <a class="btn" href="./contato.html?assunto=Parceria#formContato" data-assunto="Parceria">Quero ser parceiro</a>
+        </section>
+
+        <!-- LEVAR PARA A COMUNIDADE -->
+        <section class="card" aria-labelledby="titulo-comunidade">
+            <h2 id="titulo-comunidade"><span aria-hidden="true">🏘️</span> Como levar o projeto para sua comunidade</h2>
+            <ol class="passos">
+                <li><h3>Reúna um grupo</h3><p>Converse com a associação de moradores, igrejas, agentes comunitários e vizinhos interessados.</p></li>
+                <li><h3>Descubra quem precisa</h3><p>Faça uma lista de idosos e pessoas com deficiência que têm dificuldade de chegar ao posto.</p></li>
+                <li><h3>Mapeie o caminho</h3><p>Anote os postos, as rotas seguras, as escadas, os buracos e os pontos de apoio do bairro.</p></li>
+                <li><h3>Convide voluntários</h3><p>Chame motoristas, donos de van e pessoas que possam acompanhar a pé. Todos fazem cadastro e usam crachá.</p></li>
+                <li><h3>Converse com o posto e a prefeitura</h3><p>Apresente o projeto à UBS do bairro e à prefeitura para trabalhar junto.</p></li>
+                <li><h3>Fale com a gente</h3><p>Enviamos o material, o modelo de crachá e as orientações de segurança.</p></li>
+            </ol>
+            <p style="margin-top: 1.5rem;"><a class="btn" href="./contato.html?assunto=Comunidade#formContato" data-assunto="Comunidade">Quero levar para meu bairro</a></p>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <nav aria-label="Outras páginas">
+            <ul class="rodape-links">
+                <li><a href="./perfil.html">Meus pedidos (Perfil)</a></li>
+                <li><a href="./prevencao.html">Prevenção</a></li>
+                <li><a href="./sus.html">SUS</a></li>
+                <li><a href="./seguranca.html#canais">Canais de denúncia e emergência</a></li>
+            </ul>
+        </nav>
+        <p>O SaúdeMais não marca consultas, não faz atendimento médico e não substitui serviços de emergência. Em emergência, ligue <a href="tel:192">192 (SAMU)</a>.</p>
+        <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const S = window.SaudeMais;
+            const CHAVE = 'saudemais_mensagens';
+            const form = document.getElementById('formContato');
+            const confirmacao = document.getElementById('confirmacao');
+            const assunto = document.getElementById('assunto');
+
+            function escolherAssunto(valor) {
+                if (Array.from(assunto.options).some((o) => o.value === valor)) {
+                    assunto.value = valor;
+                }
+            }
+
+            // Assunto vindo do endereço (?assunto=Parceria)
+            const assuntoUrl = new URLSearchParams(window.location.search).get('assunto');
+            if (assuntoUrl) escolherAssunto(assuntoUrl);
+
+            // Botões "Quero ser parceiro" / "Quero levar para meu bairro" na mesma página
+            document.querySelectorAll('[data-assunto]').forEach((link) => {
+                link.addEventListener('click', (evento) => {
+                    evento.preventDefault();
+                    form.hidden = false;
+                    confirmacao.hidden = true;
+                    escolherAssunto(link.dataset.assunto);
+                    form.scrollIntoView({ block: 'start' });
+                    document.getElementById('nome').focus();
+                });
+            });
+
+            form.addEventListener('submit', (evento) => {
+                evento.preventDefault();
+                const erros = S.validar(form);
+                if (erros.length) {
+                    S.mostrarErros(form, erros);
+                    return;
+                }
+                S.limparErros(form);
+
+                const dados = {
+                    id: Date.now(),
+                    protocolo: S.gerarProtocolo('MSG'),
+                    nome: form.elements.nome.value.trim(),
+                    telefone: form.elements.telefone.value.trim(),
+                    email: form.elements.email.value.trim(),
+                    assunto: assunto.value,
+                    mensagem: form.elements.mensagem.value.trim(),
+                    data: new Date().toLocaleString('pt-BR')
+                };
+
+                try {
+                    S.salvarNaLista(CHAVE, dados);
+                } catch (e) {
+                    confirmacao.className = 'alerta alerta-erro';
+                    S.mostrarSucesso(confirmacao, '<h2>Não foi possível enviar</h2><p>Seu navegador bloqueou o armazenamento. Tente novamente.</p>');
+                    return;
+                }
+
+                const e = S.escapar;
+                const extraDenuncia = dados.assunto === 'Denúncia'
+                    ? '<p>Se houver perigo agora, ligue <a href="tel:190"><strong>190</strong></a>. Para maus-tratos a idosos ou PCDs, ligue também <a href="tel:100"><strong>Disque 100</strong></a>.</p>'
+                    : '';
+
+                confirmacao.className = 'alerta alerta-sucesso';
+                S.mostrarSucesso(confirmacao, `
+                    <h2>✔ Mensagem enviada, ${e(dados.nome.split(' ')[0])}!</h2>
+                    <p>Número da mensagem: <span class="protocolo">${e(dados.protocolo)}</span></p>
+                    <p>Assunto: <strong>${e(assunto.options[assunto.selectedIndex].text)}</strong>. Vamos responder pelo telefone <strong>${e(dados.telefone)}</strong>${dados.email ? ` ou pelo e-mail <strong>${e(dados.email)}</strong>` : ''}.</p>
+                    ${extraDenuncia}
+                    <div class="acoes-form" style="margin-top: 1rem;">
+                        <button type="button" class="btn-outline" id="nova-mensagem">Enviar outra mensagem</button>
+                    </div>`);
+
+                form.reset();
+                form.hidden = true;
+                document.getElementById('nova-mensagem').addEventListener('click', () => {
+                    confirmacao.hidden = true;
+                    form.hidden = false;
+                    document.getElementById('nome').focus();
+                });
+            });
+        });
+    </script>
+
+    <!-- VLIBRAS (TRADUÇÃO PARA LIBRAS) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }</script>
+</body>
+</html>
+>>>>>>> Stashed changes

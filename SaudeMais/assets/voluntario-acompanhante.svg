@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t">
+  <title id="t">Voluntário de braço dado com uma senhora de bengala, caminhando até o posto de saúde</title>
+  <rect width="800" height="500" fill="#eff6ff"/>
+  <rect y="410" width="800" height="90" fill="#e2e8f0"/>
+  <line x1="60" y1="440" x2="520" y2="440" stroke="#2563eb" stroke-width="6" stroke-dasharray="18 14"/>
+  <!-- Posto de saúde -->
+  <rect x="560" y="150" width="200" height="260" fill="#ffffff" stroke="#1e3a8a" stroke-width="4"/>
+  <rect x="560" y="150" width="200" height="50" fill="#1e3a8a"/>
+  <text x="660" y="184" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">POSTO</text>
+  <rect x="648" y="220" width="24" height="70" fill="#2563eb"/>
+  <rect x="625" y="243" width="70" height="24" fill="#2563eb"/>
+  <rect x="625" y="320" width="70" height="90" fill="#93c5fd"/>
+  <polygon points="505,410 625,388 625,410" fill="#475569"/>
+  <!-- Senhora com bengala -->
+  <line x1="246" y1="338" x2="240" y2="405" stroke="#334155" stroke-width="10" stroke-linecap="round"/>
+  <line x1="274" y1="338" x2="282" y2="405" stroke="#334155" stroke-width="10" stroke-linecap="round"/>
+  <path d="M238 236 L282 236 L296 342 L224 342 Z" fill="#1e3a8a"/>
+  <line x1="214" y1="292" x2="204" y2="406" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+  <line x1="240" y1="252" x2="214" y2="292" stroke="#8d5524" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="260" cy="212" r="22" fill="#8d5524"/>
+  <path d="M237 210 A23 23 0 0 1 283 210 Q260 194 237 210 Z" fill="#e2e8f0"/>
+  <!-- Voluntário com crachá -->
+  <line x1="334" y1="328" x2="326" y2="405" stroke="#0f172a" stroke-width="12" stroke-linecap="round"/>
+  <line x1="356" y1="328" x2="366" y2="405" stroke="#0f172a" stroke-width="12" stroke-linecap="round"/>
+  <rect x="322" y="220" width="46" height="112" rx="12" fill="#2563eb"/>
+  <rect x="350" y="240" width="14" height="18" rx="2" fill="#ffffff"/>
+  <line x1="326" y1="246" x2="282" y2="266" stroke="#c68642" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="345" cy="196" r="22" fill="#c68642"/>
+</svg>

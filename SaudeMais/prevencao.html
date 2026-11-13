@@ -22,6 +22,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SaúdeMais - Prevenção</title>
+<<<<<<< Updated upstream
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f8fafc; color: #334155; display: flex; flex-direction: column; min-height: 100vh; }
@@ -46,39 +47,95 @@
 <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
+=======
+    <meta name="description" content="Campanhas de vacinação e cuidados de prevenção.">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
+    <script src="./js/acessibilidade.js"></script>
+    <script src="./js/site.js" defer></script>
+>>>>>>> Stashed changes
 </head>
 <body>
+    <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO -->
     <header>
-        <nav>
-            <h1><a href="./index.html"><img alt="Logo" src="./assets/image-removebg-preview.png">SaúdeMais</a></h1>
-            <div>
-                <a href="./index.html">Home</a>
-                <a href="./agendar.html">Serviços</a>
-                <a href="./unidades.html">Unidades</a>
-                <a href="./prevencao.html" class="active">Prevenção</a>
-                <a href="./sus.html">SUS</a>
-                <a href="./sobre-nos.html">Sobre nós</a>
-                <a href="./contato.html">Contato</a>
-                <a href="./emergencia.html">Emergência</a>
-                <a href="./perfil.html">Perfil</a>
-                <a href="./configuracoes.html">Configurações</a>
+        <div class="barra-acessibilidade">
+            <div class="conteudo-barra">
+                <div class="grupo" role="group" aria-label="Tamanho da letra e contraste">
+                    <span aria-hidden="true">Letra:</span>
+                    <button type="button" data-fonte="diminuir">A-<span class="visualmente-oculto"> diminuir letra</span></button>
+                    <button type="button" data-fonte="padrao">A<span class="visualmente-oculto"> letra no tamanho padrão</span></button>
+                    <button type="button" data-fonte="aumentar">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+                    <span class="visualmente-oculto" data-fonte-indicador aria-live="polite"></span>
+                    <button type="button" data-contraste-rapido aria-pressed="false">◐ Contraste</button>
+                </div>
+                <p><strong>Emergência?</strong> Ligue <a href="tel:192">192 (SAMU)</a></p>
             </div>
-        </nav>
+        </div>
+        <div class="topo">
+            <a class="logo" href="./index.html">
+                <img src="./assets/image-removebg-preview.png" alt="">
+                SaúdeMais
+            </a>
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal">☰ <span data-rotulo>Menu</span></button>
+            <nav id="menu-principal" class="menu" aria-label="Menu principal">
+                <ul>
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./sobre-nos.html">Sobre</a></li>
+                    <li><a href="./como-funciona.html">Como Funciona</a></li>
+                    <li><a href="./preciso-de-ajuda.html">Preciso de Ajuda</a></li>
+                    <li><a href="./quero-ajudar.html">Quero Ajudar</a></li>
+                    <li><a href="./mapa.html">Mapa</a></li>
+                    <li><a href="./unidades.html">Postos de Saúde</a></li>
+                    <li><a href="./configuracoes.html">Acessibilidade</a></li>
+                    <li><a href="./seguranca.html">Segurança</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
         <hr>
     </header>
-    <main>
+
+    <main id="conteudo">
         <div class="card">
-            <h2>Campanhas de Vacinação e Bem-Estar</h2>
+            <h1>Campanhas de Vacinação e Bem-Estar</h1>
             <p>A prevenção é a melhor forma de garantir qualidade de vida. Fique por dentro das principais campanhas de saúde pública:</p>
-            <ul>
-                <li>Campanha Nacional de Vacinação contra a Gripe (Influenza).</li>
+            <ul class="lista">
+                <li>Campanha Nacional de Vacinação contra a Gripe (Influenza). Idosos e pessoas com deficiência têm prioridade.</li>
                 <li>Atualização da caderneta de vacinação infantil, adolescente e adulta.</li>
                 <li>Importância da prática regular de exercícios físicos e alimentação balanceada.</li>
                 <li>Orientações sobre exames de rotina preventivos.</li>
             </ul>
         </div>
+
+        <div class="card card-destaque">
+            <h2>Precisa de ajuda para ir tomar a vacina?</h2>
+            <p>Um voluntário pode levar você até o posto e trazer de volta.</p>
+            <a href="./preciso-de-ajuda.html" class="btn">Preciso de ajuda</a>
+        </div>
     </main>
-    <footer><p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p></footer>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <nav aria-label="Outras páginas">
+            <ul class="rodape-links">
+                <li><a href="./perfil.html">Meus pedidos (Perfil)</a></li>
+                <li><a href="./prevencao.html" aria-current="page">Prevenção</a></li>
+                <li><a href="./sus.html">SUS</a></li>
+                <li><a href="./seguranca.html#canais">Canais de denúncia e emergência</a></li>
+            </ul>
+        </nav>
+        <p>O SaúdeMais não marca consultas, não faz atendimento médico e não substitui serviços de emergência. Em emergência, ligue <a href="tel:192">192 (SAMU)</a>.</p>
+        <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- VLIBRAS (TRADUÇÃO PARA LIBRAS) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+    </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }</script>
 </body>
 </html>

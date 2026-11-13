@@ -1,0 +1,90 @@
+html.uppercase-mode body,
+body.uppercase-mode,
+html.uppercase-mode body *,
+body.uppercase-mode * {
+    text-transform: uppercase !important;
+}
+
+html.lowercase-mode body,
+body.lowercase-mode,
+html.lowercase-mode body *,
+body.lowercase-mode * {
+    text-transform: lowercase !important;
+}
+
+html.high-contrast body,
+body.high-contrast {
+    background-color: #000 !important;
+    color: #ff0 !important;
+}
+
+html.high-contrast body *,
+body.high-contrast * {
+    color: #ff0 !important;
+    border-color: #ff0 !important;
+}
+
+html.high-contrast body *:not(img):not(video):not(canvas):not(svg),
+body.high-contrast *:not(img):not(video):not(canvas):not(svg) {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Alto contraste: foco, botões, campos e destaques continuam visíveis */
+html.high-contrast :focus-visible,
+body.high-contrast :focus-visible {
+    outline: 4px solid #0ff !important;
+    outline-offset: 3px;
+}
+
+html.high-contrast body a,
+body.high-contrast a {
+    text-decoration: underline !important;
+}
+
+html.high-contrast body .btn,
+html.high-contrast body .btn-outline,
+html.high-contrast body .btn-grande,
+html.high-contrast body button,
+html.high-contrast body input,
+html.high-contrast body select,
+html.high-contrast body textarea,
+html.high-contrast body .card,
+html.high-contrast body .alerta,
+html.high-contrast body fieldset,
+html.high-contrast body .opcao,
+html.high-contrast body .unidade-box,
+html.high-contrast body .passos > li,
+html.high-contrast body header,
+html.high-contrast body footer {
+    border: 2px solid #ff0 !important;
+}
+
+html.high-contrast body .barra-acessibilidade button[aria-pressed="true"],
+html.high-contrast body .opcao:has(input:checked) {
+    background-color: #ff0 !important;
+    color: #000 !important;
+}
+
+html.high-contrast body .opcao:has(input:checked) * {
+    color: #000 !important;
+}
+
+html.high-contrast body .passos > li::before,
+html.high-contrast body .ods-numero {
+    border: 2px solid #ff0;
+}
+
+html.high-contrast body select option {
+    background-color: #000 !important;
+}
+
+html.daltonism-protanopia body,
+body.daltonism-protanopia {
+    filter: hue-rotate(25deg) saturate(1.15);
+}
+
+html.daltonism-deuteranopia body,
+body.daltonism-deuteranopia {
+    filter: hue-rotate(90deg) saturate(1.15);
+}

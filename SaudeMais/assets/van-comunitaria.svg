@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="t">
+  <title id="t">Van comunitária com rampa e pessoa em cadeira de rodas</title>
+  <rect width="800" height="500" fill="#eff6ff"/>
+  <rect y="400" width="800" height="100" fill="#cbd5e1"/>
+  <!-- Van -->
+  <rect x="300" y="170" width="360" height="200" rx="30" fill="#2563eb"/>
+  <path d="M650 230 L740 258 Q760 266 760 288 L760 370 L650 370 Z" fill="#2563eb"/>
+  <rect x="325" y="195" width="95" height="70" rx="8" fill="#dbeafe"/>
+  <rect x="440" y="195" width="95" height="70" rx="8" fill="#dbeafe"/>
+  <rect x="555" y="195" width="90" height="70" rx="8" fill="#dbeafe"/>
+  <path d="M665 240 L735 264 L735 300 L665 300 Z" fill="#dbeafe"/>
+  <rect x="300" y="300" width="460" height="14" fill="#ffffff"/>
+  <text x="470" y="352" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle">SaúdeMais</text>
+  <circle cx="380" cy="375" r="40" fill="#0f172a"/>
+  <circle cx="380" cy="375" r="16" fill="#e2e8f0"/>
+  <circle cx="680" cy="375" r="40" fill="#0f172a"/>
+  <circle cx="680" cy="375" r="16" fill="#e2e8f0"/>
+  <!-- Rampa -->
+  <polygon points="300,338 200,400 200,410 300,352" fill="#475569"/>
+  <!-- Pessoa em cadeira de rodas -->
+  <circle cx="130" cy="360" r="40" fill="none" stroke="#0f172a" stroke-width="8"/>
+  <circle cx="185" cy="392" r="10" fill="#0f172a"/>
+  <line x1="100" y1="268" x2="112" y2="335" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+  <rect x="108" y="320" width="64" height="14" rx="4" fill="#0f172a"/>
+  <line x1="170" y1="334" x2="185" y2="382" stroke="#0f172a" stroke-width="6"/>
+  <path d="M115 262 L152 262 L158 322 L118 322 Z" fill="#1e3a8a"/>
+  <path d="M150 324 L190 326 L190 378" fill="none" stroke="#334155" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="140" y1="278" x2="166" y2="306" stroke="#8d5524" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="135" cy="238" r="20" fill="#8d5524"/>
+  <path d="M115 236 A20 20 0 0 1 155 236 Q135 222 115 236 Z" fill="#e2e8f0"/>
+  <!-- Voluntário com crachá -->
+  <line x1="232" y1="310" x2="226" y2="398" stroke="#0f172a" stroke-width="13" stroke-linecap="round"/>
+  <line x1="252" y1="310" x2="258" y2="398" stroke="#0f172a" stroke-width="13" stroke-linecap="round"/>
+  <rect x="220" y="222" width="44" height="96" rx="12" fill="#1d4ed8"/>
+  <rect x="246" y="240" width="13" height="17" rx="2" fill="#ffffff"/>
+  <line x1="224" y1="240" x2="196" y2="290" stroke="#c68642" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="242" cy="200" r="20" fill="#c68642"/>
+</svg>

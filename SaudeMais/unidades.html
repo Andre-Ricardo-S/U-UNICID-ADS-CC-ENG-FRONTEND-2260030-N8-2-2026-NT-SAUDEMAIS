@@ -21,6 +21,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
     <title>SaúdeMais - Unidades</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -47,44 +48,157 @@
 <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
+=======
+    <title>SaúdeMais - Postos de Saúde</title>
+    <meta name="description" content="Endereço, telefone, horário e acessibilidade dos postos de saúde atendidos pelo SaúdeMais.">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
+    <script src="./js/acessibilidade.js"></script>
+    <script src="./js/site.js" defer></script>
+>>>>>>> Stashed changes
 </head>
 <body>
+    <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO -->
     <header>
-        <nav>
-            <h1><a href="./index.html"><img alt="Logo" src="./assets/image-removebg-preview.png">SaúdeMais</a></h1>
-            <div>
-                <a href="./index.html">Home</a>
-                <a href="./agendar.html">Serviços</a>
-                <a href="./unidades.html" class="active">Unidades</a>
-                <a href="./prevencao.html">Prevenção</a>
-                <a href="./sus.html">SUS</a>
-                <a href="./sobre-nos.html">Sobre nós</a>
-                <a href="./contato.html">Contato</a>
-                <a href="./emergencia.html">Emergência</a>
-                <a href="./perfil.html">Perfil</a>
-                <a href="./configuracoes.html">Configurações</a>
-            </div>
-        </nav>
-        <hr>
-    </header>
-    <main>
-        <div class="card">
-            <h2>Encontre uma Unidade Básica de Saúde (UBS)</h2>
-            <p>Busque postos de atendimento, hospitais e farmácias populares parceiras próximas de você.</p>
-            
-            <div class="unidade-box">
-                <h3>UBS Centro - Unicid Saúde</h3>
-                <p><strong>Endereço:</strong> Rua Principal, 123 - Centro</p>
-                <p><strong>Horário:</strong> Segunda a Sexta, das 07h às 19h</p>
-            </div>
-            <div class="unidade-box">
-                <h3>UBS Zona Leste - Bem Estar</h3>
-                <p><strong>Endereço:</strong> Avenida das Flores, 456 - Tatuapé</p>
-                <p><strong>Horário:</strong> Atendimento de Urgência 24h</p>
+        <div class="barra-acessibilidade">
+            <div class="conteudo-barra">
+                <div class="grupo" role="group" aria-label="Tamanho da letra e contraste">
+                    <span aria-hidden="true">Letra:</span>
+                    <button type="button" data-fonte="diminuir">A-<span class="visualmente-oculto"> diminuir letra</span></button>
+                    <button type="button" data-fonte="padrao">A<span class="visualmente-oculto"> letra no tamanho padrão</span></button>
+                    <button type="button" data-fonte="aumentar">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+                    <span class="visualmente-oculto" data-fonte-indicador aria-live="polite"></span>
+                    <button type="button" data-contraste-rapido aria-pressed="false">◐ Contraste</button>
+                </div>
+                <p><strong>Emergência?</strong> Ligue <a href="tel:192">192 (SAMU)</a></p>
             </div>
         </div>
+        <div class="topo">
+            <a class="logo" href="./index.html">
+                <img src="./assets/image-removebg-preview.png" alt="">
+                SaúdeMais
+            </a>
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal">☰ <span data-rotulo>Menu</span></button>
+            <nav id="menu-principal" class="menu" aria-label="Menu principal">
+                <ul>
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./sobre-nos.html">Sobre</a></li>
+                    <li><a href="./como-funciona.html">Como Funciona</a></li>
+                    <li><a href="./preciso-de-ajuda.html">Preciso de Ajuda</a></li>
+                    <li><a href="./quero-ajudar.html">Quero Ajudar</a></li>
+                    <li><a href="./mapa.html">Mapa</a></li>
+                    <li><a href="./unidades.html" aria-current="page">Postos de Saúde</a></li>
+                    <li><a href="./configuracoes.html">Acessibilidade</a></li>
+                    <li><a href="./seguranca.html">Segurança</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+        <hr>
+    </header>
+
+    <main id="conteudo">
+        <div class="card">
+            <h1>Postos de Saúde</h1>
+            <p class="texto-grande">Veja o telefone, o horário e a <strong>acessibilidade</strong> de cada posto antes de sair de casa.</p>
+            <p><span class="etiqueta-exemplo">Dados de exemplo</span> Endereços e telefones são fictícios, usados para demonstrar o projeto.</p>
+            <p><strong>Como ler:</strong> <span class="sim">Sim</span> &nbsp; <span class="nao">Não</span> &nbsp; <span class="parcial">Em parte</span></p>
+
+            <!-- POSTO 1 -->
+            <article class="unidade-box" aria-labelledby="posto-1">
+                <h2 id="posto-1">UBS Centro – Unicid Saúde</h2>
+                <p><strong>Endereço:</strong> Rua Principal, 123 – Centro</p>
+                <p><strong>Telefone:</strong> <a href="tel:+551100000001">(11) 0000-0001</a></p>
+                <p><strong>Horário:</strong> Segunda a sexta, das 7h às 19h</p>
+                <h3>Acessibilidade</h3>
+                <dl class="acessibilidade-lista">
+                    <div><dt>Rampa</dt><dd class="sim">Sim, na entrada principal</dd></div>
+                    <div><dt>Elevador</dt><dd class="sim">Sim, para o 1º andar</dd></div>
+                    <div><dt>Banheiro adaptado</dt><dd class="sim">Sim, no térreo</dd></div>
+                    <div><dt>Estacionamento</dt><dd class="sim">Sim, 2 vagas para PCD e 2 para idosos</dd></div>
+                </dl>
+                <p>Também tem piso tátil e atendimento em Libras às terças-feiras.</p>
+                <a class="btn" href="./preciso-de-ajuda.html?posto=UBS%20Centro%20%E2%80%93%20Unicid%20Sa%C3%BAde">Pedir ajuda para ir a este posto</a>
+            </article>
+
+            <!-- POSTO 2 -->
+            <article class="unidade-box" aria-labelledby="posto-2">
+                <h2 id="posto-2">UBS Zona Leste – Bem Estar</h2>
+                <p><strong>Endereço:</strong> Avenida das Flores, 456 – Tatuapé</p>
+                <p><strong>Telefone:</strong> <a href="tel:+551100000002">(11) 0000-0002</a></p>
+                <p><strong>Horário:</strong> Atendimento 24 horas</p>
+                <h3>Acessibilidade</h3>
+                <dl class="acessibilidade-lista">
+                    <div><dt>Rampa</dt><dd class="sim">Sim, com corrimão</dd></div>
+                    <div><dt>Elevador</dt><dd class="sim">Não precisa: tudo no térreo</dd></div>
+                    <div><dt>Banheiro adaptado</dt><dd class="sim">Sim</dd></div>
+                    <div><dt>Estacionamento</dt><dd class="parcial">Em parte: 1 vaga para PCD, na rua</dd></div>
+                </dl>
+                <a class="btn" href="./preciso-de-ajuda.html?posto=UBS%20Zona%20Leste%20%E2%80%93%20Bem%20Estar">Pedir ajuda para ir a este posto</a>
+            </article>
+
+            <!-- POSTO 3 -->
+            <article class="unidade-box" aria-labelledby="posto-3">
+                <h2 id="posto-3">UBS Vila Esperança</h2>
+                <p><strong>Endereço:</strong> Rua das Acácias, 78 – Vila Esperança</p>
+                <p><strong>Telefone:</strong> <a href="tel:+551100000003">(11) 0000-0003</a></p>
+                <p><strong>Horário:</strong> Segunda a sexta, das 7h às 17h</p>
+                <h3>Acessibilidade</h3>
+                <dl class="acessibilidade-lista">
+                    <div><dt>Rampa</dt><dd class="sim">Sim</dd></div>
+                    <div><dt>Elevador</dt><dd class="nao">Não. Consultórios no 1º andar. Peça atendimento no térreo na recepção.</dd></div>
+                    <div><dt>Banheiro adaptado</dt><dd class="nao">Não (em reforma)</dd></div>
+                    <div><dt>Estacionamento</dt><dd class="nao">Não. Desembarque em frente ao portão.</dd></div>
+                </dl>
+                <a class="btn" href="./preciso-de-ajuda.html?posto=UBS%20Vila%20Esperan%C3%A7a">Pedir ajuda para ir a este posto</a>
+            </article>
+
+            <!-- POSTO 4 -->
+            <article class="unidade-box" aria-labelledby="posto-4">
+                <h2 id="posto-4">Posto de Saúde Jardim Alegria</h2>
+                <p><strong>Endereço:</strong> Travessa do Morro, 15 – Jardim Alegria</p>
+                <p><strong>Telefone:</strong> <a href="tel:+551100000004">(11) 0000-0004</a></p>
+                <p><strong>Horário:</strong> Segunda a sexta, das 8h às 17h</p>
+                <h3>Acessibilidade</h3>
+                <dl class="acessibilidade-lista">
+                    <div><dt>Rampa</dt><dd class="parcial">Em parte. A entrada do beco tem 3 degraus. Use a entrada lateral pela Rua de Cima.</dd></div>
+                    <div><dt>Elevador</dt><dd class="sim">Não precisa: tudo no térreo</dd></div>
+                    <div><dt>Banheiro adaptado</dt><dd class="sim">Sim</dd></div>
+                    <div><dt>Estacionamento</dt><dd class="nao">Não. Desembarque na Rua de Cima.</dd></div>
+                </dl>
+                <a class="btn" href="./preciso-de-ajuda.html?posto=Posto%20de%20Sa%C3%BAde%20Jardim%20Alegria">Pedir ajuda para ir a este posto</a>
+            </article>
+        </div>
+
+        <div class="card">
+            <h2>Veja os postos no mapa</h2>
+            <p>No mapa você também encontra rotas seguras, pontos de apoio e trechos com escadas ou buracos.</p>
+            <a class="btn-outline" href="./mapa.html">Abrir o mapa</a>
+        </div>
     </main>
-    <footer><p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p></footer>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <nav aria-label="Outras páginas">
+            <ul class="rodape-links">
+                <li><a href="./perfil.html">Meus pedidos (Perfil)</a></li>
+                <li><a href="./prevencao.html">Prevenção</a></li>
+                <li><a href="./sus.html">SUS</a></li>
+                <li><a href="./seguranca.html#canais">Canais de denúncia e emergência</a></li>
+            </ul>
+        </nav>
+        <p>O SaúdeMais não marca consultas, não faz atendimento médico e não substitui serviços de emergência. Em emergência, ligue <a href="tel:192">192 (SAMU)</a>.</p>
+        <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- VLIBRAS (TRADUÇÃO PARA LIBRAS) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+    </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }</script>
 </body>
 </html>

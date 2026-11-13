@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaúdeMais - Mapa</title>
+    <meta name="description" content="Mapa com postos de saúde, rotas seguras, pontos de apoio e trechos com escadas ou buracos.">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/acessibilidade.css">
+    <script src="./js/acessibilidade.js"></script>
+    <script src="./js/site.js" defer></script>
+</head>
+<body>
+    <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="barra-acessibilidade">
+            <div class="conteudo-barra">
+                <div class="grupo" role="group" aria-label="Tamanho da letra e contraste">
+                    <span aria-hidden="true">Letra:</span>
+                    <button type="button" data-fonte="diminuir">A-<span class="visualmente-oculto"> diminuir letra</span></button>
+                    <button type="button" data-fonte="padrao">A<span class="visualmente-oculto"> letra no tamanho padrão</span></button>
+                    <button type="button" data-fonte="aumentar">A+<span class="visualmente-oculto"> aumentar letra</span></button>
+                    <span class="visualmente-oculto" data-fonte-indicador aria-live="polite"></span>
+                    <button type="button" data-contraste-rapido aria-pressed="false">◐ Contraste</button>
+                </div>
+                <p><strong>Emergência?</strong> Ligue <a href="tel:192">192 (SAMU)</a></p>
+            </div>
+        </div>
+        <div class="topo">
+            <a class="logo" href="./index.html">
+                <img src="./assets/image-removebg-preview.png" alt="">
+                SaúdeMais
+            </a>
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-principal">☰ <span data-rotulo>Menu</span></button>
+            <nav id="menu-principal" class="menu" aria-label="Menu principal">
+                <ul>
+                    <li><a href="./index.html">Início</a></li>
+                    <li><a href="./sobre-nos.html">Sobre</a></li>
+                    <li><a href="./como-funciona.html">Como Funciona</a></li>
+                    <li><a href="./preciso-de-ajuda.html">Preciso de Ajuda</a></li>
+                    <li><a href="./quero-ajudar.html">Quero Ajudar</a></li>
+                    <li><a href="./mapa.html" aria-current="page">Mapa</a></li>
+                    <li><a href="./unidades.html">Postos de Saúde</a></li>
+                    <li><a href="./configuracoes.html">Acessibilidade</a></li>
+                    <li><a href="./seguranca.html">Segurança</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+        <hr>
+    </header>
+
+    <main id="conteudo">
+        <div class="card">
+            <h1>Mapa da região</h1>
+            <p class="texto-grande">Veja onde ficam os postos de saúde, os <strong>caminhos mais seguros</strong>, os <strong>pontos de apoio</strong> e os trechos com <strong>escadas ou buracos</strong>.</p>
+            <p><span class="etiqueta-exemplo">Dados de exemplo</span> As rotas, os pontos e os postos desta página são fictícios, para demonstrar o projeto.</p>
+        </div>
+
+        <!-- MAPA REAL (OPENSTREETMAP) -->
+        <section class="card" aria-labelledby="titulo-mapa-real">
+            <h2 id="titulo-mapa-real">Mapa da região (OpenStreetMap)</h2>
+            <p>Use os botões + e − para aproximar ou afastar.</p>
+            <div class="mapa-container">
+                <iframe
+                    title="Mapa interativo do OpenStreetMap da região do Tatuapé, em São Paulo"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-46.5900%2C-23.5500%2C-46.5600%2C-23.5300&amp;layer=mapnik&amp;marker=-23.5400%2C-46.5750"
+                    loading="lazy"></iframe>
+            </div>
+            <p style="margin-top: 0.75rem;"><a href="https://www.openstreetmap.org/?mlat=-23.5400&amp;mlon=-46.5750#map=16/-23.5400/-46.5750" target="_blank" rel="noopener">Abrir o mapa em tela cheia (abre em nova aba)</a></p>
+        </section>
+
+        <!-- CROQUI COM ROTAS -->
+        <section class="card" aria-labelledby="titulo-croqui">
+            <h2 id="titulo-croqui">Rotas seguras e pontos de atenção</h2>
+            <p>Desenho simplificado do bairro. Todos os itens também estão na tabela logo abaixo.</p>
+
+            <h3>Legenda</h3>
+            <ul class="legenda">
+                <li>
+                    <svg width="56" height="24" aria-hidden="true"><line x1="4" y1="12" x2="52" y2="12" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/></svg>
+                    <span><strong>Rota segura</strong> (linha azul contínua): calçada boa, sem escadas</span>
+                </li>
+                <li>
+                    <svg width="56" height="24" aria-hidden="true"><line x1="4" y1="12" x2="52" y2="12" stroke="#b91c1c" stroke-width="6" stroke-dasharray="8 6"/></svg>
+                    <span><strong>Escadas ou beco estreito</strong> (linha vermelha tracejada): evite com cadeira de rodas</span>
+                </li>
+                <li>
+                    <svg width="56" height="24" aria-hidden="true"><circle cx="28" cy="12" r="10" fill="#b91c1c"/><path d="M23 7 L33 17 M33 7 L23 17" stroke="#fff" stroke-width="3"/></svg>
+                    <span><strong>Buraco ou calçada quebrada</strong> (círculo vermelho com X)</span>
+                </li>
+                <li>
+                    <svg width="56" height="24" aria-hidden="true"><circle cx="28" cy="12" r="11" fill="#0f172a"/><text x="28" y="17" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">A</text></svg>
+                    <span><strong>Ponto de apoio</strong> (círculo preto com A): banco, sombra, água ou banheiro</span>
+                </li>
+                <li>
+                    <svg width="56" height="24" aria-hidden="true"><rect x="16" y="0" width="24" height="24" rx="4" fill="#1e3a8a"/><rect x="25" y="4" width="6" height="16" fill="#fff"/><rect x="20" y="9" width="16" height="6" fill="#fff"/></svg>
+                    <span><strong>Posto de saúde</strong> (quadrado azul com cruz)</span>
+                </li>
+            </ul>
+
+            <div class="tabela-container">
+                <svg class="croqui" viewBox="0 0 900 560" role="img" aria-labelledby="croqui-titulo croqui-desc" style="min-width: 36rem;">
+                    <title id="croqui-titulo">Croqui do bairro com rotas seguras, escadas, buracos, pontos de apoio e postos de saúde</title>
+                    <desc id="croqui-desc">A rota segura sai da Comunidade do Morro pela Rua de Cima, sobe a Rua do Comércio até a UBS Centro e segue pela Rua Principal até a UBS Zona Leste. A escadaria do Morro, na Rua das Acácias, deve ser evitada. Há buracos na Avenida das Flores e no fim da Rua de Cima. Os detalhes estão na tabela abaixo.</desc>
+                    <rect width="900" height="560" fill="#f1f5f9"/>
+                    <!-- Ruas -->
+                    <rect x="0" y="120" width="900" height="36" fill="#ffffff"/>
+                    <rect x="0" y="300" width="900" height="36" fill="#ffffff"/>
+                    <rect x="0" y="470" width="900" height="36" fill="#ffffff"/>
+                    <rect x="180" y="0" width="36" height="560" fill="#ffffff"/>
+                    <rect x="470" y="0" width="36" height="560" fill="#ffffff"/>
+                    <rect x="740" y="0" width="36" height="560" fill="#ffffff"/>
+                    <g font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#475569">
+                        <text x="560" y="114">Avenida das Flores</text>
+                        <text x="240" y="294">Rua Principal</text>
+                        <text x="250" y="464">Rua de Cima</text>
+                        <text x="222" y="40">Rua das Acácias</text>
+                        <text x="512" y="40">Rua do Comércio</text>
+                    </g>
+                    <!-- Comunidade -->
+                    <rect x="20" y="380" width="140" height="70" rx="10" fill="#e2e8f0" stroke="#475569" stroke-width="2"/>
+                    <text x="90" y="410" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a" text-anchor="middle">Comunidade</text>
+                    <text x="90" y="430" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a" text-anchor="middle">do Morro</text>
+                    <!-- Rotas seguras -->
+                    <polyline points="90,450 90,488 488,488 488,318 450,318" fill="none" stroke="#2563eb" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="488,318 758,318 758,170" fill="none" stroke="#2563eb" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="488,488 620,488" fill="none" stroke="#2563eb" stroke-width="10" stroke-linecap="round"/>
+                    <!-- Escadaria -->
+                    <line x1="198" y1="340" x2="198" y2="466" stroke="#b91c1c" stroke-width="8" stroke-dasharray="14 10"/>
+                    <polyline points="210,440 222,440 222,428 234,428 234,416 246,416 246,404" fill="none" stroke="#b91c1c" stroke-width="4"/>
+                    <text x="254" y="400" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#991b1b">Escadaria do Morro</text>
+                    <!-- Buracos -->
+                    <circle cx="320" cy="138" r="14" fill="#b91c1c"/>
+                    <path d="M313 131 L327 145 M327 131 L313 145" stroke="#ffffff" stroke-width="3"/>
+                    <circle cx="840" cy="488" r="14" fill="#b91c1c"/>
+                    <path d="M833 481 L847 495 M847 481 L833 495" stroke="#ffffff" stroke-width="3"/>
+                    <!-- Pontos de apoio -->
+                    <g font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="middle">
+                        <circle cx="300" cy="488" r="15" fill="#0f172a"/><text x="300" y="494" font-size="16" fill="#ffffff">A</text>
+                        <circle cx="620" cy="318" r="15" fill="#0f172a"/><text x="620" y="324" font-size="16" fill="#ffffff">A</text>
+                        <circle cx="758" cy="240" r="15" fill="#0f172a"/><text x="758" y="246" font-size="16" fill="#ffffff">A</text>
+                    </g>
+                    <!-- Postos -->
+                    <g font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">
+                        <rect x="400" y="228" width="40" height="40" rx="6" fill="#1e3a8a"/><rect x="415" y="234" width="10" height="28" fill="#fff"/><rect x="406" y="243" width="28" height="10" fill="#fff"/>
+                        <text x="300" y="252">UBS Centro</text>
+                        <rect x="738" y="60" width="40" height="40" rx="6" fill="#1e3a8a"/><rect x="753" y="66" width="10" height="28" fill="#fff"/><rect x="744" y="75" width="28" height="10" fill="#fff"/>
+                        <text x="610" y="86">UBS Zona Leste</text>
+                        <rect x="60" y="60" width="40" height="40" rx="6" fill="#1e3a8a"/><rect x="75" y="66" width="10" height="28" fill="#fff"/><rect x="66" y="75" width="28" height="10" fill="#fff"/>
+                        <text x="40" y="54">UBS Vila Esperança</text>
+                        <rect x="630" y="510" width="40" height="40" rx="6" fill="#1e3a8a"/><rect x="645" y="516" width="10" height="28" fill="#fff"/><rect x="636" y="525" width="28" height="10" fill="#fff"/>
+                        <text x="680" y="536">Posto Jardim Alegria</text>
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <!-- TABELA COM OS MESMOS DADOS -->
+        <section class="card" aria-labelledby="titulo-tabela">
+            <h2 id="titulo-tabela">Lista de rotas e pontos</h2>
+            <div class="tabela-container">
+                <table>
+                    <caption>Rotas seguras, pontos de apoio e trechos para evitar (dados de exemplo)</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Onde</th>
+                            <th scope="col">O que saber</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="sim">Rota segura</span></td>
+                            <td>Comunidade do Morro → Rua de Cima → Rua do Comércio → UBS Centro</td>
+                            <td>Calçada larga e plana. Boa para cadeira de rodas e andador.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="sim">Rota segura</span></td>
+                            <td>UBS Centro → Rua Principal → UBS Zona Leste</td>
+                            <td>Calçada com rampas nas esquinas e faixa de pedestre com semáforo.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="sim">Rota segura</span></td>
+                            <td>Rua de Cima → Posto Jardim Alegria (entrada lateral)</td>
+                            <td>Use a entrada lateral; a entrada pelo beco tem degraus.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="nao">Escadas</span></td>
+                            <td>Escadaria do Morro (Rua das Acácias)</td>
+                            <td>48 degraus, sem corrimão em parte do caminho. Evite com cadeira de rodas, andador ou bengala.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="nao">Buraco</span></td>
+                            <td>Avenida das Flores, perto do nº 300</td>
+                            <td>Buraco grande na calçada. Atravesse para o outro lado.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="nao">Buraco</span></td>
+                            <td>Fim da Rua de Cima</td>
+                            <td>Calçada quebrada e sem iluminação à noite.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ponto de apoio</strong></td>
+                            <td>Padaria da Rua de Cima</td>
+                            <td>Banco para descansar e água.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ponto de apoio</strong></td>
+                            <td>Igreja da Rua Principal</td>
+                            <td>Sombra, banco e banheiro.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ponto de apoio</strong></td>
+                            <td>Associação de Moradores (Rua Principal com Avenida)</td>
+                            <td>Banheiro adaptado, água e local para esperar o voluntário.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Viu um buraco, escada ou perigo que não está no mapa? <a href="./contato.html">Avise a gente</a>.</p>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <nav aria-label="Outras páginas">
+            <ul class="rodape-links">
+                <li><a href="./perfil.html">Meus pedidos (Perfil)</a></li>
+                <li><a href="./prevencao.html">Prevenção</a></li>
+                <li><a href="./sus.html">SUS</a></li>
+                <li><a href="./seguranca.html#canais">Canais de denúncia e emergência</a></li>
+            </ul>
+        </nav>
+        <p>O SaúdeMais não marca consultas, não faz atendimento médico e não substitui serviços de emergência. Em emergência, ligue <a href="tel:192">192 (SAMU)</a>.</p>
+        <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- VLIBRAS (TRADUÇÃO PARA LIBRAS) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }</script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 # U-UNICID-ADS-CC-ENG-FRONTEND-2260030-N8-2-2026-NT-SAUDEMAIS
-Código fonte do projeto de site, da Unicid, da materia de frontend
+Código fonte do projeto de site, da Unicid, da materia de frontend.
 
 Desenvolvedores: Aleksandro Soares Oliveira, André Ricardo Santos Marques, Karoline da Cruz Barbosa, Pedro Martins Rodrigues Alves, Mohamed Osman Pechliye, Ysmaell Anthony Carvalho dos Santos
 

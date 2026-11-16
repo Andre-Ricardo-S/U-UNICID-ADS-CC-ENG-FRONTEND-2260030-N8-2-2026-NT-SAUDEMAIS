@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fale com o SaúdeMais, seja parceiro ou leve o projeto à sua comunidade.">
+    <title>SaúdeMais - Contato e Parcerias</title>
+    <style>
+        /* ==========================================
+           ESTILOS EMBUTIDOS (AZUL, BRANCO E CINZA)
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            font-size: 112.5%;
+            scroll-padding-top: 24px;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        /* CONTORNO DO TECLADO (aparece no item selecionado com Tab) */
+        :focus-visible {
+            outline: 4px solid #f59e0b !important;
+            outline-offset: 3px !important;
+            box-shadow: 0 0 0 7px #0f172a !important;
+        }
+
+        main:focus {
+            outline: none;
+        }
+
+        /* LINK PARA PULAR O MENU */
+        .pular-conteudo {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            background: #0f172a;
+            color: #ffffff;
+            padding: 0.75rem 1rem;
+            z-index: 3000;
+        }
+
+        .pular-conteudo:focus {
+            left: 1rem;
+            top: 1rem;
+        }
+
+        /* FAIXA DE EMERGÊNCIA E BOTÕES DE ACESSIBILIDADE */
+        .faixa-emergencia {
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 0.85rem;
+        }
+
+        .faixa-emergencia div.faixa-conteudo {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.4rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .faixa-emergencia a {
+            color: #fde68a;
+            font-weight: 700;
+        }
+
+        .barra-acessibilidade {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .barra-acessibilidade button,
+        .barra-acessibilidade a {
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid #64748b;
+            border-radius: 6px;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .barra-acessibilidade button:hover,
+        .barra-acessibilidade a:hover {
+            background: #1e293b;
+        }
+
+        /* CABEÇALHO */
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav h1 a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #1d4ed8;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        /* TRAVA DE SEGURANÇA PARA A LOGO NUNCA FICAR GIGANTE */
+        nav h1 img {
+            height: 38px !important;
+            max-height: 38px !important;
+            width: auto !important;
+        }
+
+        .menu-botao {
+            display: none;
+            background: #1d4ed8;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.6rem 1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #menu-links {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            margin-top: 0.75rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        #menu-links a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.45rem 0.7rem;
+            border-radius: 6px;
+        }
+
+        #menu-links a:hover {
+            background: #eff6ff;
+            color: #1d4ed8;
+        }
+
+        #menu-links a.active {
+            background: #1d4ed8;
+            color: #ffffff;
+        }
+
+        /* CONTEÚDO PRINCIPAL */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 0.9rem;
+        }
+
+        .titulo-pagina {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitulo {
+            font-size: 1.15rem;
+            color: #1e293b;
+        }
+
+        .lista {
+            padding-left: 1.4rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .lista li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* GRID DE CARTÕES */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-grid .card {
+            margin-bottom: 0;
+        }
+
+        .icone {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .borda-azul {
+            border-top: 5px solid #1d4ed8;
+        }
+
+        .borda-verde {
+            border-top: 5px solid #15803d;
+        }
+
+        .borda-vermelha {
+            border-left: 6px solid #b91c1c;
+        }
+
+        /* AVISOS */
+        .aviso {
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid;
+        }
+
+        .aviso p {
+            margin-bottom: 0;
+        }
+
+        .aviso-vermelho {
+            background: #fef2f2;
+            border-color: #fca5a5;
+        }
+
+        .aviso-vermelho strong {
+            color: #b91c1c;
+        }
+
+        .aviso-amarelo {
+            background: #fffbeb;
+            border-color: #fcd34d;
+        }
+
+        .aviso-azul {
+            background: #eff6ff;
+            border-color: #93c5fd;
+        }
+
+        /* BOTÕES */
+        .btn {
+            display: inline-block;
+            background: #1d4ed8;
+            color: #ffffff;
+            padding: 0.8rem 1.6rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border: 2px solid #1d4ed8;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #1e3a8a;
+            border-color: #1e3a8a;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: #ffffff;
+            color: #1d4ed8;
+            padding: 0.8rem 1.6rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border: 2px solid #1d4ed8;
+            cursor: pointer;
+        }
+
+        .btn-outline:hover {
+            background: #eff6ff;
+        }
+
+        .btn-verde {
+            background: #15803d;
+            border-color: #15803d;
+        }
+
+        .btn-verde:hover {
+            background: #166534;
+            border-color: #166534;
+        }
+
+        /* TRANSIÇÕES */
+        a,
+        .btn,
+        .btn-outline,
+        #menu-links a,
+        .barra-acessibilidade button,
+        .barra-acessibilidade a,
+        input,
+        select,
+        textarea,
+        label.opcao {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .features-grid .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .features-grid .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Quem prefere menos movimento no sistema não vê animações */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* RODAPÉ */
+        footer {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        .rodape-colunas {
+            max-width: 1200px;
+            margin: 0 auto 1.5rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        footer h2 {
+            color: #ffffff;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer p,
+        footer li {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer a {
+            color: #bfdbfe;
+        }
+
+        footer p.copyright {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid #334155;
+            padding-top: 1rem;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        /* FORMULÁRIO */
+        form {
+            max-width: 760px;
+        }
+
+        fieldset {
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        legend {
+            font-weight: 700;
+            color: #1e3a8a;
+            padding: 0 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            color: #1e293b;
+            margin-top: 1rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="time"],
+        select,
+        textarea {
+            display: block;
+            width: 100%;
+            min-height: 50px;
+            padding: 0.7rem 0.9rem;
+            margin-top: 0.35rem;
+            border-radius: 8px;
+            border: 2px solid #cbd5e1;
+            font-size: 1rem;
+            background-color: #ffffff;
+            color: #1e293b;
+            font-weight: 400;
+        }
+
+        textarea {
+            min-height: 110px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #1d4ed8;
+        }
+
+        .dica {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #475569;
+            margin-top: 0.25rem;
+        }
+
+        .duas-colunas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .grupo-titulo {
+            display: block;
+            font-weight: 700;
+            color: #1e293b;
+            margin-top: 1rem;
+        }
+
+        .opcoes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.6rem;
+            margin-top: 0.35rem;
+        }
+
+        label.opcao {
+            display: flex;
+            gap: 0.6rem;
+            align-items: flex-start;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 0.75rem;
+            margin-top: 0;
+            cursor: pointer;
+            background: #ffffff;
+            font-weight: 600;
+        }
+
+        label.opcao input {
+            width: 22px;
+            height: 22px;
+            margin-top: 2px;
+            accent-color: #1d4ed8;
+            flex-shrink: 0;
+        }
+
+        label.opcao.marcada {
+            border-color: #1d4ed8;
+            background: #eff6ff;
+        }
+
+        .btn-enviar {
+            margin-top: 1.5rem;
+            min-height: 70px;
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+        }
+
+        /* ERROS DO FORMULÁRIO (borda e mensagem em vermelho) */
+        input.campo-erro,
+        select.campo-erro,
+        textarea.campo-erro {
+            border-color: #b91c1c;
+            background-color: #fef2f2;
+        }
+
+        .opcoes.campo-erro {
+            outline: 2px solid #b91c1c;
+            outline-offset: 4px;
+            border-radius: 8px;
+        }
+
+        label.opcao.campo-erro {
+            border-color: #b91c1c;
+            background-color: #fef2f2;
+        }
+
+        .mensagem-erro {
+            display: block;
+            color: #b91c1c;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 0.35rem;
+        }
+
+        .resumo-erros {
+            display: none;
+            background: #fef2f2;
+            border: 2px solid #b91c1c;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            color: #b91c1c;
+            font-weight: 700;
+        }
+
+        /* RASCUNHO RECUPERADO */
+        .aviso-rascunho {
+            display: none;
+            background: #eff6ff;
+            border: 2px solid #93c5fd;
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .btn-pequeno {
+            padding: 0.5rem 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* HISTÓRICO DO LOCALSTORAGE */
+        .historico {
+            display: none;
+        }
+
+        /* MENSAGEM DE CONFIRMAÇÃO */
+        .mensagem-sucesso {
+            display: none;
+            background: #f0fdf4;
+            border: 2px solid #15803d;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .mensagem-sucesso h3 {
+            color: #15803d;
+        }
+
+        /* PASSO A PASSO */
+        .passo {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .passo-numero {
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 50%;
+            background: #1d4ed8;
+            color: #ffffff;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .passo p {
+            margin-bottom: 0;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 1050px) {
+            .menu-botao {
+                display: inline-block;
+            }
+
+            #menu-links {
+                display: none;
+                flex-direction: column;
+            }
+
+            #menu-links.aberto {
+                display: flex;
+            }
+
+            #menu-links a {
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+                border: 1px solid #cbd5e1;
+            }
+        }
+
+        @media (max-width: 800px) {
+            nav,
+            main,
+            .faixa-emergencia div.faixa-conteudo {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+
+            .card {
+                padding: 1.4rem;
+            }
+
+            .titulo-pagina {
+                font-size: 1.6rem;
+            }
+
+            .rodape-colunas {
+                grid-template-columns: 1fr;
+            }
+
+            .duas-colunas {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="./css/acessibilidade.css">
+    <script src="./js/acessibilidade.js"></script>
+</head>
+<body>
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- FAIXA DE EMERGÊNCIA E BOTÕES DE ACESSIBILIDADE -->
+    <div class="faixa-emergencia">
+        <div class="faixa-conteudo">
+            <span>🚨 Emergência? Ligue <a href="tel:192">192 (SAMU)</a>. Este site não substitui serviços de emergência.</span>
+            <div class="barra-acessibilidade" role="group" aria-label="Acessibilidade rápida">
+                <button type="button" data-acess="menos" aria-label="Diminuir letra">A−</button>
+                <button type="button" data-acess="normal" aria-label="Tamanho de letra padrão">A</button>
+                <button type="button" data-acess="mais" aria-label="Aumentar letra">A+</button>
+                <button type="button" data-acess="contraste" aria-pressed="false">◐ Contraste</button>
+                <button type="button" data-acess="ouvir" aria-pressed="false">🔊 Ouvir página</button>
+                <a href="./configuracoes.html">♿ Mais opções</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CABEÇALHO COM AS 10 PÁGINAS -->
+    <header>
+        <nav aria-label="Menu principal">
+            <h1>
+                <a href="./index.html">
+                    <img alt="" src="./assets/image-removebg-preview.png">
+                    SaúdeMais
+                </a>
+            </h1>
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-links">☰ Menu</button>
+            <div id="menu-links">
+                <a href="./index.html">Início</a>
+                <a href="./sobre-nos.html">Sobre o Projeto</a>
+                <a href="./como-funciona.html">Como Funciona</a>
+                <a href="./preciso-de-ajuda.html">Preciso de Ajuda</a>
+                <a href="./quero-ajudar.html">Quero Ajudar</a>
+                <a href="./mapa.html">Mapa</a>
+                <a href="./unidades.html">Postos de Saúde</a>
+                <a href="./configuracoes.html">Acessibilidade</a>
+                <a href="./seguranca.html">Segurança</a>
+                <a href="./contato.html" class="active" aria-current="page">Contato e Parcerias</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="conteudo" tabindex="-1">
+        <h2 class="titulo-pagina">Contato e Parcerias</h2>
+        <p class="subtitulo">Dúvidas, sugestões, problemas com um atendimento ou vontade de levar o projeto para a sua comunidade? Fale com a gente.</p>
+
+        <div class="features-grid">
+            <div class="card">
+                <h2>Envie uma mensagem</h2>
+            <div id="avisoRascunho" class="aviso-rascunho">
+                    <p>💾 <strong>Recuperamos o que você tinha preenchido</strong> (salvo em <span id="horaRascunho"></span>). Pode continuar de onde parou.</p>
+                    <button type="button" id="apagarRascunho" class="btn-outline btn-pequeno">Apagar e começar de novo</button>
+                </div>
+                <p id="resumoErros" class="resumo-erros" role="alert"></p>
+                <form id="formContato" novalidate>
+                    <label>Nome *
+                        <input type="text" id="nome" autocomplete="name" required>
+                    </label>
+                    <label>Telefone ou e-mail *
+                        <input type="text" id="contato" required>
+                    </label>
+                    <label>Assunto *
+                        <select id="assunto" required>
+                            <option value="">Escolha</option>
+                            <option>Dúvida sobre como funciona</option>
+                            <option>Sugestão para o mapa (rota ou ponto de apoio)</option>
+                            <option>Problema com um atendimento</option>
+                            <option>Quero ser parceiro</option>
+                            <option>Levar o projeto para minha comunidade</option>
+                            <option>Outro</option>
+                        </select>
+                    </label>
+                    <label>Mensagem *
+                        <textarea id="mensagem" required></textarea>
+                    </label>
+                    <button type="submit" class="btn btn-enviar">Enviar mensagem</button>
+                </form>
+                <div id="sucessoContato" class="mensagem-sucesso" role="status" aria-live="polite" tabindex="-1">
+                    <h3>✅ Mensagem enviada!</h3>
+                    <p>Protocolo: <strong id="protocoloContato"></strong>. Respondemos em até 2 dias úteis.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Outros canais</h2>
+                <ul class="lista">
+                    <li>📞 Telefone e WhatsApp: (11) 0000-0000 (fictício)</li>
+                    <li>✉️ E-mail: contato@saudemais.exemplo</li>
+                    <li>📷 Instagram: @saudemais.comunidade</li>
+                    <li>📘 Facebook: /saudemaiscomunidade</li>
+                </ul>
+                <p class="dica">Canais de demonstração do projeto acadêmico.</p>
+                <h3>Horário de atendimento</h3>
+                <p>Segunda a sexta, das 8h às 18h.</p>
+            </div>
+        </div>
+
+
+        <!-- O QUE JÁ FOI ENVIADO (lido do localStorage) -->
+        <div id="secaoEnviados" class="card historico">
+            <h2>Mensagens enviadas neste aparelho</h2>
+            <p>Estes dados ficam guardados só neste aparelho (localStorage).</p>
+            <ul id="listaEnviados" class="lista"></ul>
+            <button type="button" id="apagarEnviados" class="btn-outline btn-pequeno">Apagar histórico deste aparelho</button>
+        </div>
+
+        <div class="card" id="parcerias">
+            <h2>🤝 Para parceiros</h2>
+            <p>O transporte gratuito ou de baixo custo só funciona com parcerias. Veja como cada parceiro pode ajudar:</p>
+            <div class="features-grid">
+                <div><h3>🏛️ Prefeitura</h3><p>Ceder vans adaptadas em dias fixos, divulgar o projeto nas UBS e compartilhar dados de acessibilidade dos postos.</p></div>
+                <div><h3>🏢 Instituições e ONGs</h3><p>Servir como ponto de apoio, oferecer espaço para orientar voluntários e indicar moradores que precisam.</p></div>
+                <div><h3>🚐 Transportadoras e cooperativas</h3><p>Oferecer viagens a preço social ou horas de van por mês.</p></div>
+                <div><h3>🎓 Universidades</h3><p>Estudantes de saúde e de tecnologia como voluntários e na melhoria do site.</p></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🌱 Leve o projeto para a sua comunidade</h2>
+            <div class="passo">
+                <span class="passo-numero" aria-hidden="true">1</span>
+                <div>
+                    <h3>Fale com a gente</h3>
+                    <p>Escolha "Levar o projeto para minha comunidade" no formulário acima.</p>
+                </div>
+            </div>
+            <div class="passo">
+                <span class="passo-numero" aria-hidden="true">2</span>
+                <div>
+                    <h3>Mapeie junto com os moradores</h3>
+                    <p>Caminhe pelas ruas, marque escadas, buracos, rotas seguras e pontos de apoio.</p>
+                </div>
+            </div>
+            <div class="passo">
+                <span class="passo-numero" aria-hidden="true">3</span>
+                <div>
+                    <h3>Reúna voluntários</h3>
+                    <p>Associação de moradores, igrejas e vizinhos costumam ser o primeiro grupo.</p>
+                </div>
+            </div>
+            <div class="passo">
+                <span class="passo-numero" aria-hidden="true">4</span>
+                <div>
+                    <h3>Busque parcerias locais</h3>
+                    <p>Converse com a UBS e a subprefeitura da região.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="rodape-colunas">
+            <div>
+                <h2>SaúdeMais</h2>
+                <p>Conectamos idosos e pessoas com deficiência a voluntários e transporte comunitário para chegar aos postos de saúde com segurança, autonomia e menor custo.</p>
+                <p>ODS 3 · ODS 10 · ODS 11</p>
+            </div>
+            <div>
+                <h2>Acesso rápido</h2>
+                <ul>
+                    <li><a href="./preciso-de-ajuda.html">Preciso de ajuda</a></li>
+                    <li><a href="./quero-ajudar.html">Quero ajudar</a></li>
+                    <li><a href="./unidades.html">Postos de saúde</a></li>
+                    <li><a href="./seguranca.html">Segurança e denúncia</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Telefones úteis</h2>
+                <ul>
+                    <li>SAMU: <a href="tel:192">192</a></li>
+                    <li>Disque Direitos Humanos: <a href="tel:100">100</a></li>
+                    <li>Ouvidoria do SUS: <a href="tel:136">136</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Este site facilita o deslocamento: não presta atendimento médico nem marca consultas.</p>
+    </footer>
+
+    <!-- SCRIPT DO MENU (CELULAR) E DO VLIBRAS PELO TECLADO -->
+    <script>
+        const menuBotao = document.querySelector('.menu-botao');
+        const menuLinks = document.getElementById('menu-links');
+
+        function abrirFecharMenu(abrir) {
+            if (abrir) {
+                menuLinks.classList.add('aberto');
+                menuBotao.textContent = '✕ Fechar';
+            } else {
+                menuLinks.classList.remove('aberto');
+                menuBotao.textContent = '☰ Menu';
+            }
+            menuBotao.setAttribute('aria-expanded', abrir);
+        }
+
+        menuBotao.addEventListener('click', function () {
+            const vaiAbrir = !menuLinks.classList.contains('aberto');
+            abrirFecharMenu(vaiAbrir);
+            if (vaiAbrir) {
+                menuLinks.querySelector('a').focus();
+            }
+        });
+
+        // Esc fecha o menu e volta para o botão
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && menuLinks.classList.contains('aberto')) {
+                abrirFecharMenu(false);
+                menuBotao.focus();
+            }
+        });
+
+        // O botão do VLibras não recebe Tab, então liberamos ele para o teclado
+        window.addEventListener('load', function () {
+            const botaoLibras = document.querySelector('[vw-access-button]');
+            if (!botaoLibras || !window.VLibras) return;
+            botaoLibras.setAttribute('role', 'button');
+            botaoLibras.setAttribute('tabindex', '0');
+            botaoLibras.setAttribute('aria-label', 'Abrir tradutor de Libras (VLibras)');
+            botaoLibras.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    botaoLibras.click();
+                }
+            });
+        });
+    </script>
+    <!-- SCRIPT DO FORMULÁRIO -->
+    <script>
+        const CHAVE = 'saudemais_mensagens';
+        const CHAVE_RASCUNHO = 'saudemais_mensagens_rascunho';
+        const form = document.getElementById('formContato');
+        const caixaSucesso = document.getElementById('sucessoContato');
+        const resumoErros = document.getElementById('resumoErros');
+        const avisoRascunho = document.getElementById('avisoRascunho');
+        const listaEnviados = document.getElementById('listaEnviados');
+
+        // ==========================================
+        // OPÇÕES MARCADAS (borda azul)
+        // ==========================================
+        function atualizarOpcoesMarcadas() {
+            form.querySelectorAll('label.opcao input').forEach(function (c) {
+                c.parentElement.classList.toggle('marcada', c.checked);
+            });
+        }
+
+        form.querySelectorAll('label.opcao input').forEach(function (campo) {
+            campo.addEventListener('change', atualizarOpcoesMarcadas);
+        });
+
+        // ==========================================
+        // CAMPOS QUE ACEITAM SÓ NÚMEROS
+        // ==========================================
+        const campoTelefone = document.getElementById('telefone');
+        const campoIdade = document.getElementById('idade');
+        const campoData = document.getElementById('data');
+
+        // Coloca o telefone no formato (11) 90000-0000 enquanto digita
+        function formatarTelefone(numeros) {
+            numeros = numeros.slice(0, 11);
+            if (numeros.length <= 2) return numeros.length ? '(' + numeros : '';
+            if (numeros.length <= 6) return '(' + numeros.slice(0, 2) + ') ' + numeros.slice(2);
+            if (numeros.length <= 10) return '(' + numeros.slice(0, 2) + ') ' + numeros.slice(2, 6) + '-' + numeros.slice(6);
+            return '(' + numeros.slice(0, 2) + ') ' + numeros.slice(2, 7) + '-' + numeros.slice(7);
+        }
+
+        if (campoTelefone) {
+            campoTelefone.addEventListener('input', function () {
+                const numeros = campoTelefone.value.replace(/\D/g, '');
+                campoTelefone.value = formatarTelefone(numeros);
+            });
+        }
+
+        if (campoIdade) {
+            campoIdade.addEventListener('input', function () {
+                campoIdade.value = campoIdade.value.replace(/\D/g, '');
+            });
+        }
+
+        // Data de hoje no formato do campo (aaaa-mm-dd)
+        function dataDeHoje() {
+            const agora = new Date();
+            const mes = String(agora.getMonth() + 1).padStart(2, '0');
+            const dia = String(agora.getDate()).padStart(2, '0');
+            return agora.getFullYear() + '-' + mes + '-' + dia;
+        }
+
+        if (campoData) {
+            campoData.min = dataDeHoje();
+        }
+
+        // ==========================================
+        // MENSAGENS DE ERRO E BORDA EM DESTAQUE
+        // ==========================================
+        function mostrarErro(elemento, mensagem) {
+            elemento.classList.add('campo-erro');
+            if (elemento.matches('input, select, textarea')) {
+                elemento.setAttribute('aria-invalid', 'true');
+            } else {
+                elemento.querySelectorAll('input').forEach(function (c) { c.setAttribute('aria-invalid', 'true'); });
+            }
+
+            const erro = document.createElement('span');
+            erro.className = 'mensagem-erro';
+            erro.id = 'erro-' + Math.random().toString(36).slice(2, 8);
+            erro.textContent = '⚠ ' + mensagem;
+            elemento.insertAdjacentElement('afterend', erro);
+
+            // O leitor de tela lê a mensagem junto com o campo
+            const alvo = elemento.matches('input, select, textarea') ? elemento : elemento.querySelector('input');
+            if (alvo) alvo.setAttribute('aria-describedby', erro.id);
+        }
+
+        function limparErro(elemento) {
+            if (!elemento || !elemento.classList.contains('campo-erro')) return;
+            elemento.classList.remove('campo-erro');
+            elemento.removeAttribute('aria-invalid');
+            elemento.querySelectorAll('input').forEach(function (c) {
+                c.removeAttribute('aria-invalid');
+                c.removeAttribute('aria-describedby');
+            });
+            elemento.removeAttribute('aria-describedby');
+            const proximo = elemento.nextElementSibling;
+            if (proximo && proximo.classList.contains('mensagem-erro')) proximo.remove();
+        }
+
+        // Quando a pessoa corrige o campo, o erro some
+        function limparErroDoCampo(event) {
+            const campo = event.target;
+            limparErro(campo);
+            limparErro(campo.closest('.opcoes'));
+            limparErro(campo.closest('label.opcao'));
+        }
+
+        form.addEventListener('input', limparErroDoCampo);
+        form.addEventListener('change', limparErroDoCampo);
+
+        function validarFormulario() {
+            // Apaga os erros da tentativa anterior
+            form.querySelectorAll('.campo-erro').forEach(limparErro);
+
+            // Campos obrigatórios
+            form.querySelectorAll('input[required], select[required], textarea[required]').forEach(function (campo) {
+                if (campo.type === 'checkbox') {
+                    if (!campo.checked) mostrarErro(campo.parentElement, 'Marque esta caixa para continuar.');
+                } else if (campo.value.trim() === '') {
+                    mostrarErro(campo, 'Preencha este campo.');
+                }
+            });
+
+            // Grupos em que pelo menos uma opção precisa ser marcada
+            form.querySelectorAll('[data-grupo-obrigatorio]').forEach(function (grupo) {
+                if (!grupo.querySelector('input:checked')) {
+                    mostrarErro(grupo, 'Marque pelo menos uma opção.');
+                }
+            });
+
+            // Telefone: precisa ter DDD + número (10 ou 11 números)
+            if (campoTelefone && campoTelefone.value !== '') {
+                const numeros = campoTelefone.value.replace(/\D/g, '');
+                if (numeros.length < 10) {
+                    mostrarErro(campoTelefone, 'Telefone incompleto. Digite com DDD, ex.: (11) 98765-4321.');
+                }
+            }
+
+            // Idade entre 1 e 120
+            if (campoIdade && campoIdade.value !== '') {
+                const idade = Number(campoIdade.value);
+                if (idade < 1 || idade > 120) {
+                    mostrarErro(campoIdade, 'Digite uma idade entre 1 e 120.');
+                }
+            }
+
+            // E-mail com formato válido
+            const campoEmail = document.getElementById('email');
+            if (campoEmail && campoEmail.value.trim() !== '') {
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(campoEmail.value.trim())) {
+                    mostrarErro(campoEmail, 'E-mail inválido. Exemplo: nome@email.com.');
+                }
+            }
+
+            // A consulta não pode ser em uma data que já passou
+            if (campoData && campoData.value !== '' && campoData.value < dataDeHoje()) {
+                mostrarErro(campoData, 'Escolha hoje ou uma data futura.');
+            }
+
+            // Mensagem com pelo menos 10 letras
+            const campoMensagem = document.getElementById('mensagem');
+            if (campoMensagem && campoMensagem.value.trim() !== '' && campoMensagem.value.trim().length < 10) {
+                mostrarErro(campoMensagem, 'Escreva uma mensagem um pouco maior (mínimo de 10 letras).');
+            }
+
+            // Resumo no topo e foco no primeiro campo com erro
+            const erros = form.querySelectorAll('.campo-erro');
+            if (erros.length > 0) {
+                if (erros.length === 1) {
+                    resumoErros.textContent = 'Falta corrigir 1 campo, marcado em vermelho.';
+                } else {
+                    resumoErros.textContent = 'Falta corrigir ' + erros.length + ' campos, marcados em vermelho.';
+                }
+                resumoErros.style.display = 'block';
+                const primeiro = erros[0];
+                const foco = primeiro.matches('input, select, textarea') ? primeiro : primeiro.querySelector('input');
+                foco.focus();
+                return false;
+            }
+
+            resumoErros.textContent = '';
+            resumoErros.style.display = 'none';
+            return true;
+        }
+
+        // ==========================================
+        // LOCALSTORAGE: ENVIADOS
+        // ==========================================
+        function obterRegistros() {
+            try {
+                return JSON.parse(localStorage.getItem(CHAVE)) || [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function salvarRegistro(dados) {
+            const registros = obterRegistros();
+            registros.push(dados);
+            localStorage.setItem(CHAVE, JSON.stringify(registros));
+        }
+
+        // Mostra na página o que já foi enviado neste aparelho
+        function mostrarEnviados() {
+            const registros = obterRegistros();
+            const secao = document.getElementById('secaoEnviados');
+            listaEnviados.innerHTML = '';
+            secao.style.display = registros.length ? 'block' : 'none';
+
+            registros.slice().reverse().forEach(function (registro) {
+                const item = document.createElement('li');
+                const protocolo = document.createElement('strong');
+                protocolo.textContent = registro.protocolo;
+                item.appendChild(protocolo);
+                item.appendChild(document.createTextNode(' — ' + registro.nome + ' — ' + registro.assunto + ' — enviado em ' + registro.data));
+                listaEnviados.appendChild(item);
+            });
+        }
+
+        document.getElementById('apagarEnviados').addEventListener('click', function () {
+            localStorage.removeItem(CHAVE);
+            mostrarEnviados();
+        });
+
+        // ==========================================
+        // LOCALSTORAGE: RASCUNHO
+        // (o que a pessoa digita fica salvo, mesmo se fechar a página)
+        // ==========================================
+        function salvarRascunho() {
+            const rascunho = { campos: {}, marcados: [], salvoEm: new Date().toLocaleString('pt-BR') };
+
+            form.querySelectorAll('input, select, textarea').forEach(function (campo) {
+                if (campo.id === 'consentimento' || campo.id === 'compromisso') return;
+                if (campo.type === 'checkbox' || campo.type === 'radio') {
+                    if (campo.checked) rascunho.marcados.push(campo.name + '=' + campo.value);
+                } else if (campo.id) {
+                    rascunho.campos[campo.id] = campo.value;
+                }
+            });
+
+            try {
+                localStorage.setItem(CHAVE_RASCUNHO, JSON.stringify(rascunho));
+            } catch (e) {
+                console.warn('Não foi possível salvar o rascunho.', e);
+            }
+        }
+
+        function carregarRascunho() {
+            let rascunho = null;
+            try {
+                rascunho = JSON.parse(localStorage.getItem(CHAVE_RASCUNHO));
+            } catch (e) {
+                rascunho = null;
+            }
+            if (!rascunho) return;
+
+            // Só avisa se a pessoa tinha digitado alguma coisa
+            const temTexto = Object.keys(rascunho.campos).some(function (id) { return rascunho.campos[id].trim() !== ''; });
+            if (!temTexto) return;
+
+            Object.keys(rascunho.campos).forEach(function (id) {
+                const campo = document.getElementById(id);
+                if (campo) campo.value = rascunho.campos[id];
+            });
+            form.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(function (campo) {
+                if (campo.name) campo.checked = rascunho.marcados.includes(campo.name + '=' + campo.value);
+            });
+            atualizarOpcoesMarcadas();
+
+            document.getElementById('horaRascunho').textContent = rascunho.salvoEm;
+            avisoRascunho.style.display = 'block';
+        }
+
+        function apagarRascunho() {
+            localStorage.removeItem(CHAVE_RASCUNHO);
+            avisoRascunho.style.display = 'none';
+        }
+
+        document.getElementById('apagarRascunho').addEventListener('click', function () {
+            apagarRascunho();
+            form.reset();
+            form.querySelectorAll('.campo-erro').forEach(limparErro);
+            atualizarOpcoesMarcadas();
+            form.querySelector('input, select, textarea').focus();
+        });
+
+        form.addEventListener('input', salvarRascunho);
+        form.addEventListener('change', salvarRascunho);
+
+        // ==========================================
+        // ENVIO DO FORMULÁRIO
+        // ==========================================
+        function valoresMarcados(nome) {
+            const marcados = form.querySelectorAll('input[name="' + nome + '"]:checked');
+            return Array.from(marcados).map(function (c) { return c.value; });
+        }
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            if (!validarFormulario()) {
+                return;
+            }
+
+            const protocolo = 'CT-' + Date.now().toString().slice(-6);
+            const dados = {
+                protocolo: protocolo,
+                nome: document.getElementById('nome').value.trim(),
+                contato: document.getElementById('contato').value.trim(),
+                assunto: document.getElementById('assunto').value.trim(),
+                mensagem: document.getElementById('mensagem').value.trim(),
+                data: new Date().toLocaleString('pt-BR')
+            };
+
+            try {
+                salvarRegistro(dados);
+            } catch (e) {
+                console.warn('Não foi possível guardar no navegador.', e);
+            }
+
+            apagarRascunho();
+            document.getElementById('protocoloContato').textContent = protocolo;
+            caixaSucesso.style.display = 'block';
+            caixaSucesso.focus();
+            form.reset();
+            atualizarOpcoesMarcadas();
+            mostrarEnviados();
+        });
+
+        carregarRascunho();
+        mostrarEnviados();
+    </script>
+
+    <!-- SCRIPT OFICIAL DO VLIBRAS -->
+    <!-- O VLibras usa atributos próprios (vw), que o validador W3C não aceita no HTML.
+         Por isso a caixa dele é criada pelo JavaScript, antes de carregar o plugin. -->
+    <script>
+        const caixaLibras = document.createElement('div');
+        caixaLibras.setAttribute('vw', '');
+        caixaLibras.className = 'enabled';
+        caixaLibras.innerHTML = '<div vw-access-button class="active"></div>' +
+            '<div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>';
+        document.body.appendChild(caixaLibras);
+    </script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        if (window.VLibras) {
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transporte e acompanhamento comunitário para idosos e PCDs chegarem aos postos de saúde.">
+    <title>SaúdeMais - Início</title>
+    <style>
+        /* ==========================================
+           ESTILOS EMBUTIDOS (AZUL, BRANCO E CINZA)
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            font-size: 112.5%;
+            scroll-padding-top: 24px;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        /* CONTORNO DO TECLADO (aparece no item selecionado com Tab) */
+        :focus-visible {
+            outline: 4px solid #f59e0b !important;
+            outline-offset: 3px !important;
+            box-shadow: 0 0 0 7px #0f172a !important;
+        }
+
+        main:focus {
+            outline: none;
+        }
+
+        /* LINK PARA PULAR O MENU */
+        .pular-conteudo {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            background: #0f172a;
+            color: #ffffff;
+            padding: 0.75rem 1rem;
+            z-index: 3000;
+        }
+
+        .pular-conteudo:focus {
+            left: 1rem;
+            top: 1rem;
+        }
+
+        /* FAIXA DE EMERGÊNCIA E BOTÕES DE ACESSIBILIDADE */
+        .faixa-emergencia {
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 0.85rem;
+        }
+
+        .faixa-emergencia div.faixa-conteudo {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.4rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .faixa-emergencia a {
+            color: #fde68a;
+            font-weight: 700;
+        }
+
+        .barra-acessibilidade {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .barra-acessibilidade button,
+        .barra-acessibilidade a {
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid #64748b;
+            border-radius: 6px;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .barra-acessibilidade button:hover,
+        .barra-acessibilidade a:hover {
+            background: #1e293b;
+        }
+
+        /* CABEÇALHO */
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav h1 a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #1d4ed8;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        /* TRAVA DE SEGURANÇA PARA A LOGO NUNCA FICAR GIGANTE */
+        nav h1 img {
+            height: 38px !important;
+            max-height: 38px !important;
+            width: auto !important;
+        }
+
+        .menu-botao {
+            display: none;
+            background: #1d4ed8;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.6rem 1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #menu-links {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            margin-top: 0.75rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        #menu-links a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.45rem 0.7rem;
+            border-radius: 6px;
+        }
+
+        #menu-links a:hover {
+            background: #eff6ff;
+            color: #1d4ed8;
+        }
+
+        #menu-links a.active {
+            background: #1d4ed8;
+            color: #ffffff;
+        }
+
+        /* CONTEÚDO PRINCIPAL */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 0.9rem;
+        }
+
+        .titulo-pagina {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitulo {
+            font-size: 1.15rem;
+            color: #1e293b;
+        }
+
+        .lista {
+            padding-left: 1.4rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .lista li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* GRID DE CARTÕES */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-grid .card {
+            margin-bottom: 0;
+        }
+
+        .icone {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .borda-azul {
+            border-top: 5px solid #1d4ed8;
+        }
+
+        .borda-verde {
+            border-top: 5px solid #15803d;
+        }
+
+        .borda-vermelha {
+            border-left: 6px solid #b91c1c;
+        }
+
+        /* AVISOS */
+        .aviso {
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid;
+        }
+
+        .aviso p {
+            margin-bottom: 0;
+        }
+
+        .aviso-vermelho {
+            background: #fef2f2;
+            border-color: #fca5a5;
+        }
+
+        .aviso-vermelho strong {
+            color: #b91c1c;
+        }
+
+        .aviso-amarelo {
+            background: #fffbeb;
+            border-color: #fcd34d;
+        }
+
+        .aviso-azul {
+            background: #eff6ff;
+            border-color: #93c5fd;
+        }
+
+        /* BOTÕES */
+        .btn {
+            display: inline-block;
+            background: #1d4ed8;
+            color: #ffffff;
+            padding: 0.8rem 1.6rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border: 2px solid #1d4ed8;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #1e3a8a;
+            border-color: #1e3a8a;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: #ffffff;
+            color: #1d4ed8;
+            padding: 0.8rem 1.6rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border: 2px solid #1d4ed8;
+            cursor: pointer;
+        }
+
+        .btn-outline:hover {
+            background: #eff6ff;
+        }
+
+        .btn-verde {
+            background: #15803d;
+            border-color: #15803d;
+        }
+
+        .btn-verde:hover {
+            background: #166534;
+            border-color: #166534;
+        }
+
+        /* TRANSIÇÕES */
+        a,
+        .btn,
+        .btn-outline,
+        #menu-links a,
+        .barra-acessibilidade button,
+        .barra-acessibilidade a,
+        input,
+        select,
+        textarea,
+        label.opcao {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .features-grid .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .features-grid .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Quem prefere menos movimento no sistema não vê animações */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* RODAPÉ */
+        footer {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        .rodape-colunas {
+            max-width: 1200px;
+            margin: 0 auto 1.5rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        footer h2 {
+            color: #ffffff;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer p,
+        footer li {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer a {
+            color: #bfdbfe;
+        }
+
+        footer p.copyright {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid #334155;
+            padding-top: 1rem;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        /* NOTÍCIAS */
+        .secao-noticias {
+            margin-bottom: 1.5rem;
+        }
+
+        .dica-noticias {
+            font-size: 0.9rem;
+        }
+
+        .filtro-noticias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .btn-filtro {
+            background: #ffffff;
+            color: #1d4ed8;
+            border: 2px solid #1d4ed8;
+            border-radius: 999px;
+            padding: 0.45rem 1.1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-filtro:hover {
+            background: #eff6ff;
+        }
+
+        .btn-filtro[aria-pressed="true"] {
+            background: #1d4ed8;
+            color: #ffffff;
+        }
+
+        .contador {
+            font-size: 0.9rem;
+        }
+
+        .noticia-info {
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            background: #eff6ff;
+            color: #1e3a8a;
+            border: 1px solid #93c5fd;
+            border-radius: 999px;
+            padding: 0.1rem 0.6rem;
+            font-weight: 700;
+            margin-right: 0.4rem;
+        }
+
+        .btn-ler-mais {
+            background: none;
+            border: none;
+            color: #1d4ed8;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: underline;
+            cursor: pointer;
+            padding: 0.25rem 0;
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2.5rem;
+            padding: 2.5rem;
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-content h2 {
+            font-size: 2.3rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            line-height: 1.25;
+        }
+
+        .hero-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn-grande {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 84px;
+            font-size: 1.3rem;
+        }
+
+        .btn-grande small {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .hero-imagem {
+            flex: 1;
+        }
+
+        .hero-imagem img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* PASSO A PASSO */
+        .passo {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .passo-numero {
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 50%;
+            background: #1d4ed8;
+            color: #ffffff;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .passo p {
+            margin-bottom: 0;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 1050px) {
+            .menu-botao {
+                display: inline-block;
+            }
+
+            #menu-links {
+                display: none;
+                flex-direction: column;
+            }
+
+            #menu-links.aberto {
+                display: flex;
+            }
+
+            #menu-links a {
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+                border: 1px solid #cbd5e1;
+            }
+        }
+
+        @media (max-width: 800px) {
+            nav,
+            main,
+            .faixa-emergencia div.faixa-conteudo {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+
+            .card {
+                padding: 1.4rem;
+            }
+
+            .titulo-pagina {
+                font-size: 1.6rem;
+            }
+
+            .rodape-colunas {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-section {
+                flex-direction: column;
+                padding: 1.5rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-imagem img {
+                height: 220px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="./css/acessibilidade.css">
+    <script src="./js/acessibilidade.js"></script>
+</head>
+<body>
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- FAIXA DE EMERGÊNCIA E BOTÕES DE ACESSIBILIDADE -->
+    <div class="faixa-emergencia">
+        <div class="faixa-conteudo">
+            <span>🚨 Emergência? Ligue <a href="tel:192">192 (SAMU)</a>. Este site não substitui serviços de emergência.</span>
+            <div class="barra-acessibilidade" role="group" aria-label="Acessibilidade rápida">
+                <button type="button" data-acess="menos" aria-label="Diminuir letra">A−</button>
+                <button type="button" data-acess="normal" aria-label="Tamanho de letra padrão">A</button>
+                <button type="button" data-acess="mais" aria-label="Aumentar letra">A+</button>
+                <button type="button" data-acess="contraste" aria-pressed="false">◐ Contraste</button>
+                <button type="button" data-acess="ouvir" aria-pressed="false">🔊 Ouvir página</button>
+                <a href="./configuracoes.html">♿ Mais opções</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CABEÇALHO COM AS 10 PÁGINAS -->
+    <header>
+        <nav aria-label="Menu principal">
+            <h1>
+                <a href="./index.html">
+                    <img alt="" src="./assets/image-removebg-preview.png">
+                    SaúdeMais
+                </a>
+            </h1>
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-links">☰ Menu</button>
+            <div id="menu-links">
+                <a href="./index.html" class="active" aria-current="page">Início</a>
+                <a href="./sobre-nos.html">Sobre o Projeto</a>
+                <a href="./como-funciona.html">Como Funciona</a>
+                <a href="./preciso-de-ajuda.html">Preciso de Ajuda</a>
+                <a href="./quero-ajudar.html">Quero Ajudar</a>
+                <a href="./mapa.html">Mapa</a>
+                <a href="./unidades.html">Postos de Saúde</a>
+                <a href="./configuracoes.html">Acessibilidade</a>
+                <a href="./seguranca.html">Segurança</a>
+                <a href="./contato.html">Contato e Parcerias</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="conteudo" tabindex="-1">
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Ninguém deve deixar de ir ao posto de saúde por não conseguir chegar lá.</h2>
+                <p class="subtitulo">O SaúdeMais liga idosos e pessoas com deficiência a <strong>voluntários e transporte da própria comunidade</strong> — de ida e volta, com acompanhamento, de graça ou a baixo custo.</p>
+                <div class="hero-buttons">
+                    <a href="./preciso-de-ajuda.html" class="btn btn-grande">🙋 Preciso de ajuda<small>Pedir transporte ou acompanhante</small></a>
+                    <a href="./quero-ajudar.html" class="btn btn-verde btn-grande">🤝 Quero ajudar<small>Ser voluntário ou motorista</small></a>
+                </div>
+            </div>
+            <div class="hero-imagem">
+                <img src="./assets/medica.avif" alt="Profissional de saúde sorrindo em atendimento">
+            </div>
+        </section>
+
+        <!-- PROBLEMAS -->
+        <h2>O que dificulta chegar ao posto</h2>
+        <div class="features-grid">
+            <div class="card borda-azul"><span class="icone" aria-hidden="true">📍</span><h3>Distância</h3><p>Percursos longos demais para fazer sozinho.</p></div>
+            <div class="card borda-azul"><span class="icone" aria-hidden="true">🚌</span><h3>Falta de transporte</h3><p>Pouco ônibus acessível e táxi ou aplicativo caros.</p></div>
+            <div class="card borda-azul"><span class="icone" aria-hidden="true">🛣️</span><h3>Vias ruins</h3><p>Becos, escadas, vielas, buracos e desníveis.</p></div>
+            <div class="card borda-azul"><span class="icone" aria-hidden="true">♿</span><h3>Limitações</h3><p>Dificuldades físicas ou mentais de locomoção.</p></div>
+        </div>
+
+        <!-- COMO FUNCIONA (RESUMO) -->
+        <section class="card">
+            <h2>Como funciona, em 3 passos</h2>
+            <div class="passo">
+                <span class="passo-numero" aria-hidden="true">1</span>
+                <div>
+                    <h3>Você pede ajuda</h3>
+                    <p>Preencha o formulário ou peça a um familiar. Diga o dia, o posto e do que precisa.</p>
+                </div>
+            </div>
+            <div class="passo">
+                <span class="passo-numero" aria-hidden="true">2</span>
+                <div>
+                    <h3>Encontramos alguém perto</h3>
+                    <p>Um voluntário ou motorista da comunidade, preparado para o seu tipo de necessidade.</p>
+                </div>
+            </div>
+            <div class="passo">
+                <span class="passo-numero" aria-hidden="true">3</span>
+                <div>
+                    <h3>Ida e volta com segurança</h3>
+                    <p>O acompanhante vai pelo caminho mais seguro e espera você para voltar.</p>
+                </div>
+            </div>
+            <a href="./como-funciona.html" class="btn-outline">Ver explicação completa</a>
+        </section>
+
+
+
+        <!-- NOTÍCIAS -->
+        <section class="secao-noticias" aria-labelledby="titulo-noticias">
+            <h2 id="titulo-noticias">Notícias do projeto</h2>
+            <p class="dica-noticias">Notícias de exemplo do projeto acadêmico.</p>
+            <div class="filtro-noticias" role="group" aria-label="Filtrar notícias por assunto">
+                <button type="button" class="btn-filtro" data-filtro="todas" aria-pressed="true">Todas</button>
+                <button type="button" class="btn-filtro" data-filtro="projeto" aria-pressed="false">Projeto</button>
+                <button type="button" class="btn-filtro" data-filtro="comunidade" aria-pressed="false">Comunidade</button>
+                <button type="button" class="btn-filtro" data-filtro="saude" aria-pressed="false">Saúde</button>
+                <button type="button" class="btn-filtro" data-filtro="parcerias" aria-pressed="false">Parcerias</button>
+            </div>
+            <p id="contadorNoticias" class="contador" role="status" aria-live="polite"></p>
+            <div class="features-grid">
+            <article class="card noticia" data-categoria="projeto">
+                <p class="noticia-info"><span class="etiqueta">Projeto</span> 10/11/2026</p>
+                <h3>Primeira rota segura mapeada na Vila Esperança</h3>
+                <p>Moradores e voluntários percorreram as ruas e marcaram escadas, buracos e calçadas boas até a UBS.</p>
+                <p id="noticia-mais-1" class="noticia-mais" hidden>O caminho pela Avenida Principal foi escolhido como rota segura, e a escadaria da Viela 3 ficou marcada para evitar. O resultado já está na página Mapa.</p>
+                <button type="button" class="btn-ler-mais" aria-expanded="false" aria-controls="noticia-mais-1">Ler mais</button>
+            </article>
+            <article class="card noticia" data-categoria="comunidade">
+                <p class="noticia-info"><span class="etiqueta">Comunidade</span> 03/11/2026</p>
+                <h3>Mutirão reúne 25 novos voluntários</h3>
+                <p>Vizinhos, estudantes e motoristas participaram da primeira orientação de como acompanhar idosos e PCDs.</p>
+                <p id="noticia-mais-2" class="noticia-mais" hidden>Na orientação, os voluntários aprenderam a oferecer o braço, avisar degraus, ajudar a entrar no carro e respeitar o ritmo de cada pessoa.</p>
+                <button type="button" class="btn-ler-mais" aria-expanded="false" aria-controls="noticia-mais-2">Ler mais</button>
+            </article>
+            <article class="card noticia" data-categoria="saude">
+                <p class="noticia-info"><span class="etiqueta">Saúde</span> 27/10/2026</p>
+                <h3>Dia de vacina no posto? Peça o transporte antes</h3>
+                <p>Em dias de campanha, os postos ficam mais cheios. Peça o transporte com pelo menos 2 dias de antecedência.</p>
+                <p id="noticia-mais-3" class="noticia-mais" hidden>Leve documento com foto, Cartão SUS e a caderneta de vacinação. O acompanhante pode esperar com você na fila.</p>
+                <button type="button" class="btn-ler-mais" aria-expanded="false" aria-controls="noticia-mais-3">Ler mais</button>
+            </article>
+            <article class="card noticia" data-categoria="parcerias">
+                <p class="noticia-info"><span class="etiqueta">Parcerias</span> 20/10/2026</p>
+                <h3>Associação de Moradores vira ponto de apoio</h3>
+                <p>O espaço oferece cadeiras, água e banheiro acessível para quem precisa descansar no caminho até o posto.</p>
+                <p id="noticia-mais-4" class="noticia-mais" hidden>A parceria também cede a sala para as orientações de voluntários. Quer ser parceiro? Veja a página Contato e Parcerias.</p>
+                <button type="button" class="btn-ler-mais" aria-expanded="false" aria-controls="noticia-mais-4">Ler mais</button>
+            </article>
+            </div>
+        </section>
+
+        <!-- CARDS DE DESTAQUE -->
+        <h2>Informação e segurança em um só lugar</h2>
+        <div class="features-grid">
+            <div class="card"><span class="icone" aria-hidden="true">🗺️</span><h3>Mapa de rotas seguras</h3><p>Caminhos acessíveis, trechos difíceis e pontos de apoio da comunidade.</p><a href="./mapa.html">Abrir o mapa &rarr;</a></div>
+            <div class="card"><span class="icone" aria-hidden="true">🏥</span><h3>Postos de saúde</h3><p>Endereço, telefone, horário e acessibilidade de cada posto.</p><a href="./unidades.html">Ver postos &rarr;</a></div>
+            <div class="card"><span class="icone" aria-hidden="true">🛡️</span><h3>Segurança</h3><p>Como reconhecer um voluntário, cuidados no transporte e canais de denúncia.</p><a href="./seguranca.html">Saber mais &rarr;</a></div>
+            <div class="card"><span class="icone" aria-hidden="true">💙</span><h3>Apoie com doações</h3><p>Combustível, cadeiras de rodas e andadores ajudam mais gente a chegar ao posto.</p><a href="./quero-ajudar.html#doacoes">Como doar &rarr;</a></div>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="rodape-colunas">
+            <div>
+                <h2>SaúdeMais</h2>
+                <p>Conectamos idosos e pessoas com deficiência a voluntários e transporte comunitário para chegar aos postos de saúde com segurança, autonomia e menor custo.</p>
+                <p>ODS 3 · ODS 10 · ODS 11</p>
+            </div>
+            <div>
+                <h2>Acesso rápido</h2>
+                <ul>
+                    <li><a href="./preciso-de-ajuda.html">Preciso de ajuda</a></li>
+                    <li><a href="./quero-ajudar.html">Quero ajudar</a></li>
+                    <li><a href="./unidades.html">Postos de saúde</a></li>
+                    <li><a href="./seguranca.html">Segurança e denúncia</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Telefones úteis</h2>
+                <ul>
+                    <li>SAMU: <a href="tel:192">192</a></li>
+                    <li>Disque Direitos Humanos: <a href="tel:100">100</a></li>
+                    <li>Ouvidoria do SUS: <a href="tel:136">136</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Este site facilita o deslocamento: não presta atendimento médico nem marca consultas.</p>
+    </footer>
+
+    <!-- SCRIPT DO MENU (CELULAR) E DO VLIBRAS PELO TECLADO -->
+    <script>
+        const menuBotao = document.querySelector('.menu-botao');
+        const menuLinks = document.getElementById('menu-links');
+
+        function abrirFecharMenu(abrir) {
+            if (abrir) {
+                menuLinks.classList.add('aberto');
+                menuBotao.textContent = '✕ Fechar';
+            } else {
+                menuLinks.classList.remove('aberto');
+                menuBotao.textContent = '☰ Menu';
+            }
+            menuBotao.setAttribute('aria-expanded', abrir);
+        }
+
+        menuBotao.addEventListener('click', function () {
+            const vaiAbrir = !menuLinks.classList.contains('aberto');
+            abrirFecharMenu(vaiAbrir);
+            if (vaiAbrir) {
+                menuLinks.querySelector('a').focus();
+            }
+        });
+
+        // Esc fecha o menu e volta para o botão
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && menuLinks.classList.contains('aberto')) {
+                abrirFecharMenu(false);
+                menuBotao.focus();
+            }
+        });
+
+        // O botão do VLibras não recebe Tab, então liberamos ele para o teclado
+        window.addEventListener('load', function () {
+            const botaoLibras = document.querySelector('[vw-access-button]');
+            if (!botaoLibras || !window.VLibras) return;
+            botaoLibras.setAttribute('role', 'button');
+            botaoLibras.setAttribute('tabindex', '0');
+            botaoLibras.setAttribute('aria-label', 'Abrir tradutor de Libras (VLibras)');
+            botaoLibras.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    botaoLibras.click();
+                }
+            });
+        });
+    </script>
+    <!-- SCRIPT DAS NOTÍCIAS (FILTRO E LER MAIS) -->
+    <script>
+        const botoesFiltro = document.querySelectorAll('.btn-filtro');
+        const noticias = document.querySelectorAll('.noticia');
+        const contadorNoticias = document.getElementById('contadorNoticias');
+
+        // Mostra só as notícias do assunto escolhido
+        function filtrarNoticias(categoria) {
+            let total = 0;
+            noticias.forEach(function (noticia) {
+                const mostrar = categoria === 'todas' || noticia.getAttribute('data-categoria') === categoria;
+                noticia.style.display = mostrar ? 'block' : 'none';
+                if (mostrar) total++;
+            });
+
+            botoesFiltro.forEach(function (botao) {
+                botao.setAttribute('aria-pressed', botao.getAttribute('data-filtro') === categoria);
+            });
+
+            contadorNoticias.textContent = total === 1 ? '1 notícia' : total + ' notícias';
+        }
+
+        botoesFiltro.forEach(function (botao) {
+            botao.addEventListener('click', function () {
+                filtrarNoticias(botao.getAttribute('data-filtro'));
+            });
+        });
+
+        // Botão "Ler mais" mostra e esconde o resto da notícia
+        document.querySelectorAll('.btn-ler-mais').forEach(function (botao) {
+            botao.addEventListener('click', function () {
+                const texto = document.getElementById(botao.getAttribute('aria-controls'));
+                const aberto = botao.getAttribute('aria-expanded') === 'true';
+                texto.hidden = aberto;
+                botao.setAttribute('aria-expanded', !aberto);
+                botao.textContent = aberto ? 'Ler mais' : 'Ler menos';
+            });
+        });
+
+        filtrarNoticias('todas');
+    </script>
+
+    <!-- SCRIPT OFICIAL DO VLIBRAS -->
+    <!-- O VLibras usa atributos próprios (vw), que o validador W3C não aceita no HTML.
+         Por isso a caixa dele é criada pelo JavaScript, antes de carregar o plugin. -->
+    <script>
+        const caixaLibras = document.createElement('div');
+        caixaLibras.setAttribute('vw', '');
+        caixaLibras.className = 'enabled';
+        caixaLibras.innerHTML = '<div vw-access-button class="active"></div>' +
+            '<div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>';
+        document.body.appendChild(caixaLibras);
+    </script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        if (window.VLibras) {
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        }
+    </script>
+</body>
+</html>

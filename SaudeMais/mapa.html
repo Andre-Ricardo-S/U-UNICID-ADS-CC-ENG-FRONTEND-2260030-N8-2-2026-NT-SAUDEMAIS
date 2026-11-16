@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Postos de saúde, rotas seguras e pontos de apoio da comunidade.">
+    <title>SaúdeMais - Mapa</title>
+    <style>
+        /* ==========================================
+           ESTILOS EMBUTIDOS (AZUL, BRANCO E CINZA)
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            font-size: 112.5%;
+            scroll-padding-top: 24px;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        /* CONTORNO DO TECLADO (aparece no item selecionado com Tab) */
+        :focus-visible {
+            outline: 4px solid #f59e0b !important;
+            outline-offset: 3px !important;
+            box-shadow: 0 0 0 7px #0f172a !important;
+        }
+
+        main:focus {
+            outline: none;
+        }
+
+        /* LINK PARA PULAR O MENU */
+        .pular-conteudo {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            background: #0f172a;
+            color: #ffffff;
+            padding: 0.75rem 1rem;
+            z-index: 3000;
+        }
+
+        .pular-conteudo:focus {
+            left: 1rem;
+            top: 1rem;
+        }
+
+        /* FAIXA DE EMERGÊNCIA E BOTÕES DE ACESSIBILIDADE */
+        .faixa-emergencia {
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 0.85rem;
+        }
+
+        .faixa-emergencia div.faixa-conteudo {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.4rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .faixa-emergencia a {
+            color: #fde68a;
+            font-weight: 700;
+        }
+
+        .barra-acessibilidade {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .barra-acessibilidade button,
+        .barra-acessibilidade a {
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid #64748b;
+            border-radius: 6px;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .barra-acessibilidade button:hover,
+        .barra-acessibilidade a:hover {
+            background: #1e293b;
+        }
+
+        /* CABEÇALHO */
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav h1 a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #1d4ed8;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        /* TRAVA DE SEGURANÇA PARA A LOGO NUNCA FICAR GIGANTE */
+        nav h1 img {
+            height: 38px !important;
+            max-height: 38px !important;
+            width: auto !important;
+        }
+
+        .menu-botao {
+            display: none;
+            background: #1d4ed8;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.6rem 1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #menu-links {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            margin-top: 0.75rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        #menu-links a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.45rem 0.7rem;
+            border-radius: 6px;
+        }
+
+        #menu-links a:hover {
+            background: #eff6ff;
+            color: #1d4ed8;
+        }
+
+        #menu-links a.active {
+            background: #1d4ed8;
+            color: #ffffff;
+        }
+
+        /* CONTEÚDO PRINCIPAL */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 0.9rem;
+        }
+
+        .titulo-pagina {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitulo {
+            font-size: 1.15rem;
+            color: #1e293b;
+        }
+
+        .lista {
+            padding-left: 1.4rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .lista li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* GRID DE CARTÕES */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-grid .card {
+            margin-bottom: 0;
+        }
+
+        .icone {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .borda-azul {
+            border-top: 5px solid #1d4ed8;
+        }
+
+        .borda-verde {
+            border-top: 5px solid #15803d;
+        }
+
+        .borda-vermelha {
+            border-left: 6px solid #b91c1c;
+        }
+
+        /* AVISOS */
+        .aviso {
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid;
+        }
+
+        .aviso p {
+            margin-bottom: 0;
+        }
+
+        .aviso-vermelho {
+            background: #fef2f2;
+            border-color: #fca5a5;
+        }
+
+        .aviso-vermelho strong {
+            color: #b91c1c;
+        }
+
+        .aviso-amarelo {
+            background: #fffbeb;
+            border-color: #fcd34d;
+        }
+
+        .aviso-azul {
+            background: #eff6ff;
+            border-color: #93c5fd;
+        }
+
+        /* BOTÕES */
+        .btn {
+            display: inline-block;
+            background: #1d4ed8;
+            color: #ffffff;
+            padding: 0.8rem 1.6rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border: 2px solid #1d4ed8;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #1e3a8a;
+            border-color: #1e3a8a;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: #ffffff;
+            color: #1d4ed8;
+            padding: 0.8rem 1.6rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border: 2px solid #1d4ed8;
+            cursor: pointer;
+        }
+
+        .btn-outline:hover {
+            background: #eff6ff;
+        }
+
+        .btn-verde {
+            background: #15803d;
+            border-color: #15803d;
+        }
+
+        .btn-verde:hover {
+            background: #166534;
+            border-color: #166534;
+        }
+
+        /* TRANSIÇÕES */
+        a,
+        .btn,
+        .btn-outline,
+        #menu-links a,
+        .barra-acessibilidade button,
+        .barra-acessibilidade a,
+        input,
+        select,
+        textarea,
+        label.opcao {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .features-grid .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .features-grid .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Quem prefere menos movimento no sistema não vê animações */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* RODAPÉ */
+        footer {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        .rodape-colunas {
+            max-width: 1200px;
+            margin: 0 auto 1.5rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        footer h2 {
+            color: #ffffff;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer p,
+        footer li {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer a {
+            color: #bfdbfe;
+        }
+
+        footer p.copyright {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid #334155;
+            padding-top: 1rem;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        /* MAPA */
+        .mapa-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .mapa-desenho {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .legenda {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .legenda li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.6rem;
+            color: #1e293b;
+        }
+
+        .cor-legenda {
+            width: 36px;
+            height: 14px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .mapa-real {
+            width: 100%;
+            height: 380px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 1050px) {
+            .menu-botao {
+                display: inline-block;
+            }
+
+            #menu-links {
+                display: none;
+                flex-direction: column;
+            }
+
+            #menu-links.aberto {
+                display: flex;
+            }
+
+            #menu-links a {
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+                border: 1px solid #cbd5e1;
+            }
+        }
+
+        @media (max-width: 800px) {
+            nav,
+            main,
+            .faixa-emergencia div.faixa-conteudo {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+
+            .card {
+                padding: 1.4rem;
+            }
+
+            .titulo-pagina {
+                font-size: 1.6rem;
+            }
+
+            .rodape-colunas {
+                grid-template-columns: 1fr;
+            }
+
+            .mapa-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="./css/acessibilidade.css">
+    <script src="./js/acessibilidade.js"></script>
+</head>
+<body>
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- FAIXA DE EMERGÊNCIA E BOTÕES DE ACESSIBILIDADE -->
+    <div class="faixa-emergencia">
+        <div class="faixa-conteudo">
+            <span>🚨 Emergência? Ligue <a href="tel:192">192 (SAMU)</a>. Este site não substitui serviços de emergência.</span>
+            <div class="barra-acessibilidade" role="group" aria-label="Acessibilidade rápida">
+                <button type="button" data-acess="menos" aria-label="Diminuir letra">A−</button>
+                <button type="button" data-acess="normal" aria-label="Tamanho de letra padrão">A</button>
+                <button type="button" data-acess="mais" aria-label="Aumentar letra">A+</button>
+                <button type="button" data-acess="contraste" aria-pressed="false">◐ Contraste</button>
+                <button type="button" data-acess="ouvir" aria-pressed="false">🔊 Ouvir página</button>
+                <a href="./configuracoes.html">♿ Mais opções</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CABEÇALHO COM AS 10 PÁGINAS -->
+    <header>
+        <nav aria-label="Menu principal">
+            <h1>
+                <a href="./index.html">
+                    <img alt="" src="./assets/image-removebg-preview.png">
+                    SaúdeMais
+                </a>
+            </h1>
+            <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu-links">☰ Menu</button>
+            <div id="menu-links">
+                <a href="./index.html">Início</a>
+                <a href="./sobre-nos.html">Sobre o Projeto</a>
+                <a href="./como-funciona.html">Como Funciona</a>
+                <a href="./preciso-de-ajuda.html">Preciso de Ajuda</a>
+                <a href="./quero-ajudar.html">Quero Ajudar</a>
+                <a href="./mapa.html" class="active" aria-current="page">Mapa</a>
+                <a href="./unidades.html">Postos de Saúde</a>
+                <a href="./configuracoes.html">Acessibilidade</a>
+                <a href="./seguranca.html">Segurança</a>
+                <a href="./contato.html">Contato e Parcerias</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="conteudo" tabindex="-1">
+        <h2 class="titulo-pagina">Mapa</h2>
+        <p class="subtitulo">Postos de saúde, rotas seguras e pontos de apoio da comunidade. Os trechos perigosos estão marcados para o acompanhante evitar ou ajudar.</p>
+
+        <div class="aviso aviso-amarelo">
+            <p><strong>Mapa ilustrativo:</strong> os locais abaixo são de exemplo. As rotas reais são mapeadas junto com os moradores de cada comunidade atendida.</p>
+        </div>
+
+        <div class="mapa-grid">
+            <div class="card">
+                <h2>Comunidade Vila Esperança</h2>
+                <!-- DESENHO DO MAPA (SVG) -->
+                <svg class="mapa-desenho" viewBox="0 0 640 460" role="img" aria-labelledby="mapa-titulo mapa-descricao">
+                    <title id="mapa-titulo">Mapa da comunidade Vila Esperança</title>
+                    <desc id="mapa-descricao">A rota segura, em verde, sai da Rua das Palmeiras, passa pela Avenida Principal e chega à UBS Vila Esperança. A escadaria da Viela 3 e a Rua do Córrego, com buracos, estão marcadas em vermelho para evitar. Há pontos de apoio na Associação de Moradores e na Igreja.</desc>
+                    <rect x="0" y="0" width="640" height="460" fill="#e2e8f0"/>
+                    <!-- quarteirões -->
+                    <g fill="#f8fafc" stroke="#cbd5e1">
+                        <rect x="30" y="30" width="170" height="110" rx="6"/>
+                        <rect x="240" y="30" width="160" height="110" rx="6"/>
+                        <rect x="440" y="30" width="170" height="110" rx="6"/>
+                        <rect x="30" y="190" width="170" height="100" rx="6"/>
+                        <rect x="240" y="190" width="160" height="100" rx="6"/>
+                        <rect x="440" y="190" width="170" height="100" rx="6"/>
+                        <rect x="30" y="340" width="170" height="90" rx="6"/>
+                        <rect x="240" y="340" width="160" height="90" rx="6"/>
+                        <rect x="440" y="340" width="170" height="90" rx="6"/>
+                    </g>
+                    <!-- ruas -->
+                    <g stroke="#ffffff" stroke-width="26" fill="none">
+                        <line x1="0" y1="165" x2="640" y2="165"/>
+                        <line x1="0" y1="315" x2="640" y2="315"/>
+                        <line x1="220" y1="0" x2="220" y2="460"/>
+                        <line x1="420" y1="0" x2="420" y2="460"/>
+                    </g>
+                    <g font-size="12" fill="#475569" font-family="Segoe UI, sans-serif">
+                        <text x="40" y="160">Av. Principal</text>
+                        <text x="130" y="310">Rua das Palmeiras</text>
+                        <text x="226" y="455" transform="rotate(-90 226 455)">Rua do Córrego</text>
+                    </g>
+                    <!-- trechos perigosos -->
+                    <line x1="420" y1="315" x2="420" y2="460" stroke="#b91c1c" stroke-width="8" stroke-dasharray="12 8"/>
+                    <line x1="220" y1="315" x2="220" y2="165" stroke="#b91c1c" stroke-width="8" stroke-dasharray="12 8"/>
+                    <!-- rota segura -->
+                    <polyline points="110,315 110,165 520,165 520,120" fill="none" stroke="#15803d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- casa -->
+                    <circle cx="110" cy="330" r="13" fill="#0f172a"/>
+                    <text x="110" y="335" text-anchor="middle" fill="#fff" font-size="13">🏠</text>
+                    <!-- UBS -->
+                    <rect x="490" y="70" width="60" height="44" rx="8" fill="#1d4ed8"/>
+                    <text x="520" y="98" text-anchor="middle" fill="#fff" font-size="15" font-weight="700" font-family="Segoe UI, sans-serif">UBS</text>
+                    <!-- pontos de apoio -->
+                    <circle cx="320" cy="215" r="13" fill="#f59e0b" stroke="#0f172a"/>
+                    <text x="320" y="220" text-anchor="middle" font-size="13" font-weight="700" font-family="Segoe UI, sans-serif">A</text>
+                    <circle cx="320" cy="60" r="13" fill="#f59e0b" stroke="#0f172a"/>
+                    <text x="320" y="65" text-anchor="middle" font-size="13" font-weight="700" font-family="Segoe UI, sans-serif">B</text>
+                    <!-- alertas -->
+                    <text x="434" y="400" font-size="13" fill="#b91c1c" font-weight="700" font-family="Segoe UI, sans-serif">⚠ Escadaria (Viela 3)</text>
+                    <text x="232" y="250" font-size="13" fill="#b91c1c" font-weight="700" font-family="Segoe UI, sans-serif">⚠ Buracos</text>
+                </svg>
+            </div>
+
+            <div class="card">
+                <h2>Legenda</h2>
+                <ul class="legenda">
+                    <li><span class="cor-legenda" style="background: #15803d;"></span> Rota segura e acessível (calçada plana, rampa)</li>
+                    <li><span class="cor-legenda" style="height: 0; border-top: 6px dashed #b91c1c;"></span> Trecho difícil: escada, buraco ou desnível</li>
+                    <li><span class="cor-legenda" style="background: #1d4ed8;"></span> Posto de saúde</li>
+                    <li><span class="cor-legenda" style="background: #f59e0b;"></span> Ponto de apoio (descanso, água, banheiro)</li>
+                    <li><span class="cor-legenda" style="background: #0f172a;"></span> Local de saída</li>
+                </ul>
+                <h3>Pontos de apoio</h3>
+                <ul class="lista">
+                    <li><strong>A – Associação de Moradores:</strong> cadeiras, água e banheiro acessível.</li>
+                    <li><strong>B – Igreja da Comunidade:</strong> sombra e banco para descanso.</li>
+                </ul>
+                <h3>Trechos para evitar</h3>
+                <ul class="lista">
+                    <li><strong>Escadaria da Viela 3:</strong> 42 degraus, sem corrimão.</li>
+                    <li><strong>Rua do Córrego:</strong> buracos e calçada estreita.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Mapa real da região</h2>
+            <p>Use o mapa abaixo para localizar ruas e postos. Você pode aproximar e arrastar.</p>
+            <iframe class="mapa-real" title="Mapa da região no OpenStreetMap" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-46.5860%2C-23.5480%2C-46.5600%2C-23.5320&amp;layer=mapnik"></iframe>
+            <p class="dica"><a href="https://www.openstreetmap.org/#map=16/-23.5400/-46.5730" target="_blank" rel="noopener">Abrir mapa maior em nova aba</a> · Dados © colaboradores do OpenStreetMap.</p>
+        </div>
+
+        <div class="aviso aviso-azul">
+            <p><strong>Conhece um trecho perigoso ou um bom ponto de apoio?</strong> Conte para a gente em <a href="./contato.html">Contato</a> e ajude a atualizar o mapa.</p>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="rodape-colunas">
+            <div>
+                <h2>SaúdeMais</h2>
+                <p>Conectamos idosos e pessoas com deficiência a voluntários e transporte comunitário para chegar aos postos de saúde com segurança, autonomia e menor custo.</p>
+                <p>ODS 3 · ODS 10 · ODS 11</p>
+            </div>
+            <div>
+                <h2>Acesso rápido</h2>
+                <ul>
+                    <li><a href="./preciso-de-ajuda.html">Preciso de ajuda</a></li>
+                    <li><a href="./quero-ajudar.html">Quero ajudar</a></li>
+                    <li><a href="./unidades.html">Postos de saúde</a></li>
+                    <li><a href="./seguranca.html">Segurança e denúncia</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Telefones úteis</h2>
+                <ul>
+                    <li>SAMU: <a href="tel:192">192</a></li>
+                    <li>Disque Direitos Humanos: <a href="tel:100">100</a></li>
+                    <li>Ouvidoria do SUS: <a href="tel:136">136</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID. Este site facilita o deslocamento: não presta atendimento médico nem marca consultas.</p>
+    </footer>
+
+    <!-- SCRIPT DO MENU (CELULAR) E DO VLIBRAS PELO TECLADO -->
+    <script>
+        const menuBotao = document.querySelector('.menu-botao');
+        const menuLinks = document.getElementById('menu-links');
+
+        function abrirFecharMenu(abrir) {
+            if (abrir) {
+                menuLinks.classList.add('aberto');
+                menuBotao.textContent = '✕ Fechar';
+            } else {
+                menuLinks.classList.remove('aberto');
+                menuBotao.textContent = '☰ Menu';
+            }
+            menuBotao.setAttribute('aria-expanded', abrir);
+        }
+
+        menuBotao.addEventListener('click', function () {
+            const vaiAbrir = !menuLinks.classList.contains('aberto');
+            abrirFecharMenu(vaiAbrir);
+            if (vaiAbrir) {
+                menuLinks.querySelector('a').focus();
+            }
+        });
+
+        // Esc fecha o menu e volta para o botão
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && menuLinks.classList.contains('aberto')) {
+                abrirFecharMenu(false);
+                menuBotao.focus();
+            }
+        });
+
+        // O botão do VLibras não recebe Tab, então liberamos ele para o teclado
+        window.addEventListener('load', function () {
+            const botaoLibras = document.querySelector('[vw-access-button]');
+            if (!botaoLibras || !window.VLibras) return;
+            botaoLibras.setAttribute('role', 'button');
+            botaoLibras.setAttribute('tabindex', '0');
+            botaoLibras.setAttribute('aria-label', 'Abrir tradutor de Libras (VLibras)');
+            botaoLibras.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    botaoLibras.click();
+                }
+            });
+        });
+    </script>
+
+    <!-- SCRIPT OFICIAL DO VLIBRAS -->
+    <!-- O VLibras usa atributos próprios (vw), que o validador W3C não aceita no HTML.
+         Por isso a caixa dele é criada pelo JavaScript, antes de carregar o plugin. -->
+    <script>
+        const caixaLibras = document.createElement('div');
+        caixaLibras.setAttribute('vw', '');
+        caixaLibras.className = 'enabled';
+        caixaLibras.innerHTML = '<div vw-access-button class="active"></div>' +
+            '<div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>';
+        document.body.appendChild(caixaLibras);
+    </script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        if (window.VLibras) {
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        }
+    </script>
+</body>
+</html>

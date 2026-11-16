@@ -170,12 +170,14 @@ Canais públicos e gratuitos divulgados na página de Segurança (página 9):
 | **SAMU** | Atendimento móvel de urgência e emergência em saúde | ☎️ 192 (gratuito) |
 
 > ⚠️ **Em caso de emergência, ligue 192 (SAMU).** Este projeto não substitui serviços de emergência.
-link do railway: 8b60c0c1-d914-48d8-ac3e-49acd6e9d7d0
 
+---
 
-link do site:https://saudemais.up.railway.app/index.html
+## 💻 Como rodar o projeto
 
+O site é feito só com HTML, CSS e JavaScript, e os arquivos ficam na pasta `SaudeMais/`.
 
+- **No computador:** abra a pasta no VS Code e use a extensão **Live Server** no `SaudeMais/index.html`, ou rode `npm install` e depois `npm start` e acesse `http://localhost:3000`.
+- **No Railway:** o Railway lê o `package.json`, instala o `serve` e publica a pasta `SaudeMais/` automaticamente.
 
-
-
+🔗 **Site publicado:** (adicionar o link depois de publicar no Railway)

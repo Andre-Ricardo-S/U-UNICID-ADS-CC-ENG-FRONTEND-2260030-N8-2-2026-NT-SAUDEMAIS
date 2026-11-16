@@ -1,0 +1,15 @@
+{
+  "name": "saudemais",
+  "version": "1.0.0",
+  "description": "Site acadêmico SaúdeMais - UNICID (Front-End)",
+  "private": true,
+  "scripts": {
+    "start": "serve SaudeMais -l tcp://0.0.0.0:${PORT:-3000}"
+  },
+  "dependencies": {
+    "serve": "^14.2.8"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

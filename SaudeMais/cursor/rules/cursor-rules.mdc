@@ -1,0 +1,27 @@
+---
+description: Como criar e manter regras do Cursor e seu espelho no VS Code
+alwaysApply: true
+---
+## Objetivo
+Padronizar regras curtas, locais e sincronizadas entre Cursor e VS Code.
+
+## Contexto
+As regras Cursor ficam em `SaudeMais/cursor/rules/`; o espelho desta orientacao fica em `.github/instructions/cursor-rules.instructions.md`.
+
+## Regras
+- Mantenha uma preocupacao por arquivo `.mdc`, com nome kebab-case e menos de 80 linhas.
+- Use, nesta ordem, as secoes Objetivo, Contexto, Regras, Exemplo concreto, Erros a evitar e Quando perguntar.
+- Regras gerais de visao, autoria e melhoria continua usam `alwaysApply: true`; regras de linguagem usam glob, e regras pontuais nao sao sempre ativas.
+- Mantenha o texto desta regra e de seu espelho VS Code identico fora do frontmatter.
+- Use exemplos reais deste repositorio; se ainda nao houver arquivo-exemplo, marque o trecho minimo como ainda a ser criado.
+
+## Exemplo concreto
+Em `SaudeMais/css/styles.css`, a regra `nav h1 img` limita a altura da logo a `35px`.
+
+## Erros a evitar
+- Salvar regras em `docs/`, na raiz ou com extensao `.md`.
+- Misturar assuntos, colar o plano inteiro na regra ou criar exemplos de outro repositorio.
+- Incluir segredos, dados pessoais ou paginas, modulos e dependencias nao aprovados.
+
+## Quando perguntar
+Pergunte antes de gravar se faltarem stack, lista de paginas, idioma ou escopo de aplicacao da regra.

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orçamento de hospedagem do site SaúdeMais e justificativa da escolha do Railway.">
+    <title>SaúdeMais - Orçamento de Hospedagem</title>
+    <style>
+        /* ==========================================
+           ESTILOS EMBUTIDOS (AZUL, BRANCO E CINZA)
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            font-size: 112.5%;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+        }
+
+        :focus-visible {
+            outline: 4px solid #f59e0b;
+            outline-offset: 3px;
+        }
+
+        /* CABEÇALHO */
+        header {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 1.5rem 2rem;
+        }
+
+        header p {
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        header a {
+            color: #fde68a;
+            font-weight: 700;
+        }
+
+        /* CONTEÚDO PRINCIPAL */
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            color: #1e3a8a;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: #1e3a8a;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 0.9rem;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+            margin-bottom: 1.5rem;
+        }
+
+        .escolhido {
+            border-left: 6px solid #15803d;
+        }
+
+        .lista {
+            padding-left: 1.4rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* TABELA */
+        .tabela-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 0.75rem;
+            border-bottom: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+
+        th {
+            background: #eff6ff;
+            color: #1e3a8a;
+        }
+
+        .fonte {
+            font-size: 0.85rem;
+        }
+
+        /* RODAPÉ */
+        footer {
+            background: #0f172a;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        footer p {
+            color: #94a3b8;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p>Documentação do projeto · <a href="../index.html">Voltar ao site SaúdeMais</a></p>
+    </header>
+
+    <main>
+        <h1>Orçamento de Hospedagem</h1>
+        <p>Onde o site SaúdeMais está publicado, quanto custaria manter e por que escolhemos essa opção.</p>
+
+        <!-- COMPARAÇÃO -->
+        <section class="card">
+            <h2>Opções comparadas</h2>
+            <div class="tabela-container" tabindex="0" role="region" aria-label="Tabela de comparação de hospedagens">
+                <table>
+                    <tr>
+                        <th>Opção</th>
+                        <th>Custo</th>
+                        <th>HTTPS</th>
+                        <th>Deploy automático pelo GitHub</th>
+                        <th>Aceita back-end no futuro</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Railway Free</strong></td>
+                        <td>US$ 0 por mês</td>
+                        <td>Sim</td>
+                        <td>Sim</td>
+                        <td>Sim</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Railway Hobby</strong></td>
+                        <td>US$ 5 por mês, com US$ 5 de uso incluído</td>
+                        <td>Sim</td>
+                        <td>Sim</td>
+                        <td>Sim</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Railway Pro</strong></td>
+                        <td>US$ 20 por mês</td>
+                        <td>Sim</td>
+                        <td>Sim</td>
+                        <td>Sim</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GitHub Pages</strong></td>
+                        <td>Grátis para repositório público</td>
+                        <td>Sim</td>
+                        <td>Sim</td>
+                        <td>Não (só sites estáticos)</td>
+                    </tr>
+                </table>
+            </div>
+            <p class="fonte">Preços do Railway: página oficial de preços, <a href="https://docs.railway.com/pricing/plans">docs.railway.com/pricing/plans</a>, consultada em 16/11/2026. Os valores são em dólar e podem mudar.</p>
+        </section>
+
+        <!-- ESCOLHA -->
+        <section class="card escolhido">
+            <h2>✅ Nossa escolha: Railway</h2>
+            <ul class="lista">
+                <li><strong>Publica sozinho:</strong> a cada commit no GitHub, o Railway atualiza o site em poucos minutos.</li>
+                <li><strong>HTTPS e endereço prontos:</strong> o site já sai com cadeado e um domínio <code>.up.railway.app</code>, sem custo extra.</li>
+                <li><strong>Pensando no futuro:</strong> hoje os pedidos ficam só no localStorage de cada aparelho. Para o voluntário receber os pedidos de verdade, o projeto vai precisar de um back-end, e o Railway já roda servidores. O GitHub Pages não roda.</li>
+                <li><strong>Equipe já conhecia:</strong> o Railway já tinha sido usado no MVP.</li>
+            </ul>
+        </section>
+
+        <!-- ESTIMATIVA -->
+        <section class="card">
+            <h2>Quanto custaria</h2>
+            <div class="tabela-container" tabindex="0" role="region" aria-label="Tabela de estimativa de custos">
+                <table>
+                    <tr>
+                        <th>Cenário</th>
+                        <th>Plano</th>
+                        <th>Custo estimado</th>
+                    </tr>
+                    <tr>
+                        <td>Projeto acadêmico (hoje)</td>
+                        <td>Railway Free</td>
+                        <td>US$ 0 por mês</td>
+                    </tr>
+                    <tr>
+                        <td>Uso real numa comunidade, só o site</td>
+                        <td>Railway Hobby</td>
+                        <td>US$ 5 por mês (US$ 60 por ano), pois um site leve cabe nos US$ 5 de uso incluídos</td>
+                    </tr>
+                    <tr>
+                        <td>Com back-end e banco de dados</td>
+                        <td>Railway Hobby</td>
+                        <td>US$ 5 por mês ou mais: o que passar dos US$ 5 de uso é cobrado à parte</td>
+                    </tr>
+                    <tr>
+                        <td>Domínio próprio (.com.br), opcional</td>
+                        <td>Registro.br</td>
+                        <td>R$40/ano</td>
+                    </tr>
+                </table>
+            </div>
+            <p>Plano usado pela equipe hoje: Railway Free.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SaúdeMais - Projeto Acadêmico UNICID.</p>
+    </footer>
+</body>
+</html>

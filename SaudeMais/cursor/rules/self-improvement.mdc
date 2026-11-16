@@ -1,0 +1,24 @@
+---
+description: Revisao gradual das regras a partir de padroes recorrentes
+alwaysApply: true
+---
+## Objetivo
+Manter as regras uteis e alinhadas ao codigo observado.
+
+## Contexto
+As regras do projeto estao em `SaudeMais/cursor/rules/` e devem refletir arquivos reais.
+
+## Regras
+- Proponha atualizar uma regra quando o mesmo padrao aparecer em tres ou mais arquivos ou o mesmo erro voltar a ocorrer.
+- Antes de gravar, mostre o diff proposto e aguarde confirmacao explicita.
+- Restrinja a alteracao a regra relacionada; nao atualize regras por preferencias isoladas.
+
+## Exemplo concreto
+Se o padrao de `lang="pt-BR"` observado em `SaudeMais/index.html` surgir em tres paginas novas, proponha uma atualizacao da regra HTML.
+
+## Erros a evitar
+- Gravar a melhoria antes da confirmacao.
+- Tratar ocorrencias isoladas como padrao recorrente.
+
+## Quando perguntar
+Sempre apresente o diff e pergunte se pode gravar a atualizacao proposta.

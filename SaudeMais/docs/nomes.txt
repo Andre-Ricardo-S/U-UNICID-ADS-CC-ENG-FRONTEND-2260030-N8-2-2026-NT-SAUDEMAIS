@@ -1,4 +1,23 @@
-Projeto: Rezenhex
-Empresa: Mais Saude
+AV A1 - PROJETO DE SITE (2ª entrega)
+Professor(a): Prof. Paulo Fratta
+Turma: ADS/Noite
 
-Nomes: Aleksandro
+INTEGRANTES (nome completo e RGM):
+1. Aleksandro Soares Oliveira - RGM 48123994
+2. André Ricardo Santos Marques - RGM 48394726
+3. Karoline da Cruz Barbosa - RGM 48005533
+4. Pedro Martins Rodrigues Alves - RGM 48199672
+5. Mohamed Osman Pechliye - RGM 47384204
+6. Ysmaell Anthony Carvalho dos Santos - RGM 48103021
+
+DESCRIÇÃO DA ATIVIDADE:
+Site “SaúdeMais”, com 10 páginas HTML5 interligadas que conectam idosos e 
+pessoas com deficiência (PCDs) a voluntários e transporte comunitário, 
+para que consigam chegar aos postos de saúde com segurança, 
+autonomia e menor custo (ODS 3, 10 e 11).
+
+ARQUIVOS ENTREGUES:
+- Saudemais.zip (pasta completa do site)
+- nome.txt (este arquivo)
+- print da interface (.png)
+- escopo do projeto (.doc ou .pdf)

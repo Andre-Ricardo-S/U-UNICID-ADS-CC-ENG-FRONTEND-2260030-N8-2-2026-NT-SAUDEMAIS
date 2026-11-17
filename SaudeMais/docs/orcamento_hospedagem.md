@@ -2,7 +2,6 @@
 
 Onde o site SaúdeMais está publicado, quanto custaria manter e por que escolhemos essa opção.
 
-🔗 [Voltar ao site SaúdeMais](../index.html)
 
 ---
 

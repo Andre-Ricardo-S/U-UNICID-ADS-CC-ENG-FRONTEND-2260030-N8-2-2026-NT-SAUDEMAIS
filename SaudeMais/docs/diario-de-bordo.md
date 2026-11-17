@@ -10,16 +10,16 @@ Registro datado do que a equipe fez, das decisões tomadas e do uso de IA.
 
 | Data | O que foi feito | Decisões e dificuldades |
 |------|-----------------|-------------------------|
-| 06/10/2026 | Criação do repositório, primeira versão do código do site e do README com o escopo (problema, público-alvo e ODS) | [preencher] |
-| 20/10/2026 | Criação das páginas e da navegação do SaúdeMais | [preencher] |
-| 27/10/2026 | MVP (1ª entrega): páginas Configurações, Emergência, Perfil, Prevenção, SUS e Unidades criadas; ajustes no CSS, Início, Sobre, Agendar e Contato | [preencher] |
+| 06/10/2026 | Criação do repositório, primeira versão do código do site e do README com o escopo (problema, público-alvo e ODS) | Decidimos como seria o projeto |
+| 20/10/2026 | Criação das páginas e da navegação do SaúdeMais | Começamos a desenvolver as paginas do site |
+| 27/10/2026 | MVP (1ª entrega): páginas Configurações, Emergência, Perfil, Prevenção, SUS e Unidades criadas; ajustes no CSS, Início, Sobre, Agendar e Contato | Fizemos a base do projeto  |
 | 27/10/2026 | Primeiras regras do Cursor para uso de IA (acessibilidade, CSS, HTML semântico e visão do projeto) | Regras para a IA seguir o escopo e o estilo do projeto |
-| 03/11/2026 | Mais regras do Cursor, espelho das regras para o VS Code (`.github/instructions`), contexto técnico (`docs/readme.md`) e `acessibilidade.js` | [preencher] |
+| 03/11/2026 | Mais regras do Cursor, espelho das regras para o VS Code (`.github/instructions`), contexto técnico (`docs/readme.md`) e `acessibilidade.js` | Adicionamos as regras do cursor |
 | 10/11/2026 | Aprovação do **pull request #1** (branch `primeira_Branch`) | — |
-| 10/11/2026 | Recursos de acessibilidade em todas as páginas: alto contraste, daltonismo, maiúsculas/minúsculas e VLibras (`acessibilidade.css` e `acessibilidade.js`) | [preencher] |
-| 10/11/2026 | Formulário de contato salvando no localStorage | [preencher] |
-| 13/11/2026 | Atualizações no README | [preencher] |
-| 13/11/2026 | Escopo organizado no README do GitHub com ajuda de IA (prompt 2) | [preencher] |
+| 10/11/2026 | Recursos de acessibilidade em todas as páginas: alto contraste, daltonismo, maiúsculas/minúsculas e VLibras (`acessibilidade.css` e `acessibilidade.js`) | Adicionamos os recursos de acessibilidade em todas as paginas, estavamos tendo dificuldades para todas as paginas ficarem com a mesma preferencia que a pessoa colocou |
+| 10/11/2026 | Formulário de contato salvando no localStorage | Consertamos o localstorage para ele guardar dados |
+| 13/11/2026 | Atualizações no README | Trocamos o link do railway |
+| 13/11/2026 | Escopo organizado no README do GitHub com ajuda de IA (prompt 2) | Pedimos para a ia organizar o nosso escopo de uma forma que conseguiriamos colocar no README |
 | 16/11/2026 | Comparação do site com o escopo: o site agendava consultas, o que o escopo diz que o projeto não faz | Decidimos mudar o site para seguir o escopo, e não o contrário |
 | 16/11/2026 | Novas páginas: Como Funciona, Preciso de Ajuda, Quero Ajudar, Mapa e Segurança; Sobre, Postos e Acessibilidade reescritas | Reaproveitamos os nomes de arquivo antigos sempre que o assunto batia |
 | 16/11/2026 | Navegação completa só com teclado em todas as páginas | Contorno de foco amarelo; cabeçalho deixou de ser fixo porque cobria o campo focado |
@@ -31,9 +31,8 @@ Registro datado do que a equipe fez, das decisões tomadas e do uso de IA.
 | 16/11/2026 | Versão final do site enviada ao repositório oficial | A pasta antiga foi substituída pela nova |
 | 16/11/2026 | Deploy no Railway com HTTPS | Railway publica sozinho a cada commit; endereço final `saudemais.up.railway.app` |
 | 16/11/2026 | Documentação da pasta `docs`: diário, escopo, orçamento, testes, melhorias do MVP e plano de contexto | Documentação fica dentro de `SaudeMais/` para também abrir pelo site |
-| 16/11/2026 | Atualização no README | [preencher] |
+| 16/11/2026 | Atualização no README | Atualizamos o README para ele ficar mais apresentavel |
 | 17/11/2026 | Lighthouse no celular e no computador: Acessibilidade 100 | Links do rodapé ganharam área de toque maior (a nota era 96) |
-| 17/11/2026 | Ajustes nos slides da apresentação | [preencher] |
 
 ---
 

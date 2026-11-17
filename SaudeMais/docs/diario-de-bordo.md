@@ -55,11 +55,11 @@ Registro datado do que a equipe fez, das decisões tomadas e do uso de IA.
 
 | | |
 |---|---|
-| **Data** | 13/11/2026 [conferir] |
+| **Data** | 13/11/2026  |
 | **Prompt** | "Você consegue organizar isso para eu colocar no read-me do github" (enviado junto com o arquivo *ESCOPO_COMPLETO.docx*) |
 | **Resposta da IA** | Um `README.md` com sumário com links, selos (badges) de status e dos ODS 3, 10 e 11, e tabelas no lugar dos textos longos (problemas × soluções, tipos de acessibilidade, as 10 páginas, paleta de cores e canais de apoio) |
 | **O que aceitamos** | A organização em seções, o sumário, os selos e as tabelas |
-| **O que corrigimos ou conferimos** | Conferimos o texto com o escopo original (*ESCOPO_COMPLETO.docx*). [preencher: o que a equipe mudou no texto] |
+| **O que corrigimos ou conferimos** | Conferimos o texto com o escopo original (*ESCOPO_COMPLETO.docx*). |
 
 ### Regras que seguimos ao usar IA
 

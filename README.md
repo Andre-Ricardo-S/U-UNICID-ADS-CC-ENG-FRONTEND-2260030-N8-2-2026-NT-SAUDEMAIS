@@ -43,7 +43,7 @@ O projeto oferece assistência a **idosos e pessoas com deficiência (PCDs)** qu
 
 Em muitas comunidades, a distância até os postos de saúde, a falta de transporte acessível, as condições das ruas e a dificuldade de locomoção fazem com que idosos e PCDs tenham dificuldades — ou até deixem de realizar consultas e acompanhamentos médicos.
 
-Daí surgiu a ideia de uma **solução tecnológica que conecte quem precisa de auxílio a voluntários e serviços de transporte da comunidade**, usando a tecnologia para resolver um problema social real e promover acessibilidade, segurança, inclusão e qualidade de vida.
+A partir disto surgiu a ideia de uma **solução tecnológica que conecte quem precisa de auxílio a voluntários e serviços de transporte da comunidade**, usando a tecnologia para resolver um problema social real e promover acessibilidade, segurança, inclusão e qualidade de vida.
 
 O tema ganha ainda mais relevância com o **envelhecimento da população brasileira**. Segundo as projeções demográficas do IBGE, a participação de pessoas idosas na população está aumentando, o que torna soluções de acessibilidade, mobilidade e assistência cada vez mais necessárias.
 

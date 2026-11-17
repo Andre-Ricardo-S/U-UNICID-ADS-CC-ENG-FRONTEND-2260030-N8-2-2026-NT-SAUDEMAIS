@@ -180,4 +180,4 @@ O site é feito só com HTML, CSS e JavaScript, e os arquivos ficam na pasta `Sa
 - **No computador:** abra a pasta no VS Code e use a extensão **Live Server** no `SaudeMais/index.html`, ou rode `npm install` e depois `npm start` e acesse `http://localhost:3000`.
 - **No Railway:** o Railway lê o `package.json`, instala o `serve` e publica a pasta `SaudeMais/` automaticamente.
 
-🔗 **Site publicado:** (adicionar o link depois de publicar no Railway)
+🔗 **Site publicado:** https://saudemais.up.railway.app/index.html

@@ -1,7 +1,7 @@
 # Contexto do projeto SaudeMais
 
 ## Objetivo
-Site academico que conecta idosos e PCDs a voluntarios e transporte comunitario para chegar aos postos de saude.
+Site academico que conecta idosos e PCDs a voluntarios e transporte comunitario para chegar com mais aos postos de saude e ter a oportunidade de aproveitar todos os beneficios do sistema de saúde publico.
 
 ## Stack observada
 - HTML5 nas paginas existentes.
